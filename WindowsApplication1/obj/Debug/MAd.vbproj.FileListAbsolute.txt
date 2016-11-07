@@ -1,0 +1,11 @@
+C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\bin\Debug\MAd.exe.config
+C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\bin\Debug\MAd.exe
+C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\bin\Debug\MAd.pdb
+C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\bin\Debug\MAd.xml
+C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.vbprojResolveAssemblyReference.cache
+C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.frmGrd.resources
+C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.Resources.resources
+C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.vbproj.GenerateResource.Cache
+C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.exe
+C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.xml
+C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.pdb
