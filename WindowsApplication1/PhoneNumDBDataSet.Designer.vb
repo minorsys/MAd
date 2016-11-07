@@ -7147,7 +7147,7 @@ Namespace PhoneNumDBDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT                      tbl_Integrate.integ_id, tbl_Integrate.integ_phonenum,"& _ 
@@ -7170,6 +7170,29 @@ Namespace PhoneNumDBDataSetTableAdapters
                 "f ON "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_PhoneNum.phonenum = tbl_Integra"& _ 
                 "te.integ_phonenum"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT                      tbl_Integrate.integ_id, tbl_Integrate.integ_phonenum,"& _ 
+                " tbl_Integrate.integ_staff, tbl_Integrate.integ_carnum, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      "& _ 
+                "                tbl_PhoneNum.phonenum, tbl_PhoneNum.mail, tbl_PhoneNum.biko, tbl"& _ 
+                "_PhoneNum.model, tbl_staff.id_staff, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl"& _ 
+                "_staff.staff_name, tbl_staff.staff_kana, tbl_staff.branch_id, tbl_car.branch_id "& _ 
+                "AS car_branch, tbl_car.biko AS car_biko, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                     "& _ 
+                " tbl_car.ton, tbl_car.musen, tbl_car.carnum4, tbl_car.carnum3, tbl_car.carnum2, "& _ 
+                "tbl_car.carnum1, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_branch_1.branch_nam"& _ 
+                "e, tbl_branch_1.id_branch, tbl_branch.id_branch AS staff_branch_id, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"          "& _ 
+                "                            tbl_branch.branch_name AS staff_branch_name"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM   "& _ 
+                "                      tbl_PhoneNum RIGHT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                           "& _ 
+                "           tbl_car INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_branch "& _ 
+                "AS tbl_branch_1 ON tbl_car.branch_id = tbl_branch_1.id_branch RIGHT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                "                                      tbl_Integrate ON tbl_car.carnum1 = tbl_Int"& _ 
+                "egrate.integ_carnum LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_b"& _ 
+                "ranch INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_staff ON tbl_branch."& _ 
+                "id_branch = tbl_staff.branch_id ON tbl_Integrate.integ_staff = tbl_staff.id_staf"& _ 
+                "f ON "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_PhoneNum.phonenum = tbl_Integra"& _ 
+                "te.integ_phonenum"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE tbl_staff.staff_kana like @filtername"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@filtername", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "staff_kana", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7194,6 +7217,24 @@ Namespace PhoneNumDBDataSetTableAdapters
             Dim dataTable As PhoneNumDBDataSet.dtIntegDataTable = New PhoneNumDBDataSet.dtIntegDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByName(ByVal dataTable As PhoneNumDBDataSet.dtIntegDataTable, ByVal filtername As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (filtername Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(filtername,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
         End Function
     End Class
     

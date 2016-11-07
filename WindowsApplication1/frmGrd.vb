@@ -4,4 +4,8 @@
         Me.DtIntegTableAdapter.FillIntegTable(Me.PhoneNumDBDataSet.dtInteg)
 
     End Sub
+
+    Private Sub txtFilterKana_TextChanged(sender As Object, e As EventArgs) Handles txtFilterKana.TextChanged
+
+    End Sub
 End Class
