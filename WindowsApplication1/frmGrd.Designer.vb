@@ -24,24 +24,50 @@ Partial Class frmGrd
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmGrd))
-        Me.PhoneNumDBDataSet = New MAd.PhoneNumDBDataSet()
-        Me.DtIntegBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DtIntegTableAdapter = New MAd.PhoneNumDBDataSetTableAdapters.dtIntegTableAdapter()
-        Me.TableAdapterManager = New MAd.PhoneNumDBDataSetTableAdapters.TableAdapterManager()
         Me.DtIntegBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.DtIntegBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PhoneNumDBDataSet = New MAd.PhoneNumDBDataSet()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.DtIntegBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
-        Me.DtIntegDataGridView = New System.Windows.Forms.DataGridView()
+        Me.grdMain = New System.Windows.Forms.DataGridView()
+        Me.cmbBranchStaff = New System.Windows.Forms.ComboBox()
+        Me.txtFilterPhonenum = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtFilterKana = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnA = New System.Windows.Forms.Button()
+        Me.btnKa = New System.Windows.Forms.Button()
+        Me.btnSa = New System.Windows.Forms.Button()
+        Me.btnTa = New System.Windows.Forms.Button()
+        Me.btnNa = New System.Windows.Forms.Button()
+        Me.btnHa = New System.Windows.Forms.Button()
+        Me.btnMa = New System.Windows.Forms.Button()
+        Me.btnYa = New System.Windows.Forms.Button()
+        Me.btnRa = New System.Windows.Forms.Button()
+        Me.btnWa = New System.Windows.Forms.Button()
+        Me.btn1 = New System.Windows.Forms.Button()
+        Me.btn1000 = New System.Windows.Forms.Button()
+        Me.btn2000 = New System.Windows.Forms.Button()
+        Me.btn3000 = New System.Windows.Forms.Button()
+        Me.btn4000 = New System.Windows.Forms.Button()
+        Me.btn5000 = New System.Windows.Forms.Button()
+        Me.btn6000 = New System.Windows.Forms.Button()
+        Me.btn7000 = New System.Windows.Forms.Button()
+        Me.btn8000 = New System.Windows.Forms.Button()
+        Me.btn9000 = New System.Windows.Forms.Button()
+        Me.DtIntegTableAdapter = New MAd.PhoneNumDBDataSetTableAdapters.dtIntegTableAdapter()
+        Me.TableAdapterManager = New MAd.PhoneNumDBDataSetTableAdapters.TableAdapterManager()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -66,64 +92,14 @@ Partial Class frmGrd
         Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cmbBranch = New System.Windows.Forms.ComboBox()
-        Me.txtFilterPhonenum = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtFilterKana = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.btnA = New System.Windows.Forms.Button()
-        Me.btnKa = New System.Windows.Forms.Button()
-        Me.btnSa = New System.Windows.Forms.Button()
-        Me.btnTa = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
-        Me.Button12 = New System.Windows.Forms.Button()
-        Me.Button13 = New System.Windows.Forms.Button()
-        Me.Button14 = New System.Windows.Forms.Button()
-        Me.Button15 = New System.Windows.Forms.Button()
-        Me.Button16 = New System.Windows.Forms.Button()
-        Me.Button17 = New System.Windows.Forms.Button()
-        CType(Me.PhoneNumDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DtIntegBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.cmbBranchCar = New System.Windows.Forms.ComboBox()
         CType(Me.DtIntegBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DtIntegBindingNavigator.SuspendLayout()
-        CType(Me.DtIntegDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DtIntegBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PhoneNumDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grdMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'PhoneNumDBDataSet
-        '
-        Me.PhoneNumDBDataSet.DataSetName = "PhoneNumDBDataSet"
-        Me.PhoneNumDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'DtIntegBindingSource
-        '
-        Me.DtIntegBindingSource.DataMember = "dtInteg"
-        Me.DtIntegBindingSource.DataSource = Me.PhoneNumDBDataSet
-        '
-        'DtIntegTableAdapter
-        '
-        Me.DtIntegTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.tbl_branchTableAdapter = Nothing
-        Me.TableAdapterManager.tbl_carTableAdapter = Nothing
-        Me.TableAdapterManager.tbl_feeTableAdapter = Nothing
-        Me.TableAdapterManager.tbl_IntegrateTableAdapter = Nothing
-        Me.TableAdapterManager.tbl_PhoneNumTableAdapter = Nothing
-        Me.TableAdapterManager.tbl_staffTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = MAd.PhoneNumDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'DtIntegBindingNavigator
         '
@@ -143,6 +119,41 @@ Partial Class frmGrd
         Me.DtIntegBindingNavigator.TabIndex = 0
         Me.DtIntegBindingNavigator.Text = "BindingNavigator1"
         Me.DtIntegBindingNavigator.Visible = False
+        '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 28)
+        Me.BindingNavigatorAddNewItem.Text = "新規追加"
+        '
+        'DtIntegBindingSource
+        '
+        Me.DtIntegBindingSource.DataMember = "dtInteg"
+        Me.DtIntegBindingSource.DataSource = Me.PhoneNumDBDataSet
+        '
+        'PhoneNumDBDataSet
+        '
+        Me.PhoneNumDBDataSet.DataSetName = "PhoneNumDBDataSet"
+        Me.PhoneNumDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorCountItem.Text = "/ {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "項目の総数"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 28)
+        Me.BindingNavigatorDeleteItem.Text = "削除"
         '
         'BindingNavigatorMoveFirstItem
         '
@@ -176,16 +187,9 @@ Partial Class frmGrd
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "現在の場所"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(29, 28)
-        Me.BindingNavigatorCountItem.Text = "/ {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "項目の総数"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
         Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 31)
         '
         'BindingNavigatorMoveNextItem
@@ -208,26 +212,8 @@ Partial Class frmGrd
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 31)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 28)
-        Me.BindingNavigatorAddNewItem.Text = "新規追加"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 28)
-        Me.BindingNavigatorDeleteItem.Text = "削除"
         '
         'DtIntegBindingNavigatorSaveItem
         '
@@ -238,24 +224,295 @@ Partial Class frmGrd
         Me.DtIntegBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 28)
         Me.DtIntegBindingNavigatorSaveItem.Text = "データの保存"
         '
-        'DtIntegDataGridView
+        'grdMain
         '
-        Me.DtIntegDataGridView.AllowUserToAddRows = False
-        Me.DtIntegDataGridView.AllowUserToDeleteRows = False
-        Me.DtIntegDataGridView.AllowUserToResizeColumns = False
-        Me.DtIntegDataGridView.AllowUserToResizeRows = False
-        Me.DtIntegDataGridView.AutoGenerateColumns = False
-        Me.DtIntegDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DtIntegDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn24, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn21, Me.DataGridViewTextBoxColumn22, Me.DataGridViewTextBoxColumn23})
-        Me.DtIntegDataGridView.DataSource = Me.DtIntegBindingSource
-        Me.DtIntegDataGridView.Location = New System.Drawing.Point(99, 82)
-        Me.DtIntegDataGridView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.DtIntegDataGridView.Name = "DtIntegDataGridView"
-        Me.DtIntegDataGridView.ReadOnly = True
-        Me.DtIntegDataGridView.RowHeadersWidth = 25
-        Me.DtIntegDataGridView.RowTemplate.Height = 21
-        Me.DtIntegDataGridView.Size = New System.Drawing.Size(607, 284)
-        Me.DtIntegDataGridView.TabIndex = 1
+        Me.grdMain.AllowUserToAddRows = False
+        Me.grdMain.AllowUserToDeleteRows = False
+        Me.grdMain.AllowUserToResizeColumns = False
+        Me.grdMain.AllowUserToResizeRows = False
+        Me.grdMain.AutoGenerateColumns = False
+        Me.grdMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grdMain.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn24, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn21, Me.DataGridViewTextBoxColumn22, Me.DataGridViewTextBoxColumn23})
+        Me.grdMain.DataSource = Me.DtIntegBindingSource
+        Me.grdMain.Location = New System.Drawing.Point(114, 87)
+        Me.grdMain.Margin = New System.Windows.Forms.Padding(4)
+        Me.grdMain.Name = "grdMain"
+        Me.grdMain.ReadOnly = True
+        Me.grdMain.RowHeadersWidth = 25
+        Me.grdMain.RowTemplate.Height = 21
+        Me.grdMain.Size = New System.Drawing.Size(689, 284)
+        Me.grdMain.TabIndex = 1
+        '
+        'cmbBranchStaff
+        '
+        Me.cmbBranchStaff.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.cmbBranchStaff.FormattingEnabled = True
+        Me.cmbBranchStaff.Location = New System.Drawing.Point(444, 56)
+        Me.cmbBranchStaff.Name = "cmbBranchStaff"
+        Me.cmbBranchStaff.Size = New System.Drawing.Size(77, 20)
+        Me.cmbBranchStaff.TabIndex = 2
+        '
+        'txtFilterPhonenum
+        '
+        Me.txtFilterPhonenum.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.txtFilterPhonenum.Location = New System.Drawing.Point(182, 57)
+        Me.txtFilterPhonenum.Name = "txtFilterPhonenum"
+        Me.txtFilterPhonenum.Size = New System.Drawing.Size(75, 19)
+        Me.txtFilterPhonenum.TabIndex = 3
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Label1.Location = New System.Drawing.Point(123, 60)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(53, 12)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "電話番号"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Label2.Location = New System.Drawing.Point(263, 60)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(44, 12)
+        Me.Label2.TabIndex = 7
+        Me.Label2.Text = "氏名ｶﾅ"
+        '
+        'txtFilterKana
+        '
+        Me.txtFilterKana.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.txtFilterKana.Location = New System.Drawing.Point(313, 57)
+        Me.txtFilterKana.Name = "txtFilterKana"
+        Me.txtFilterKana.Size = New System.Drawing.Size(75, 19)
+        Me.txtFilterKana.TabIndex = 6
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Label3.Location = New System.Drawing.Point(409, 60)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(29, 12)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "所属"
+        '
+        'btnA
+        '
+        Me.btnA.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btnA.Location = New System.Drawing.Point(18, 87)
+        Me.btnA.Name = "btnA"
+        Me.btnA.Size = New System.Drawing.Size(26, 23)
+        Me.btnA.TabIndex = 9
+        Me.btnA.Text = "ｱ"
+        Me.btnA.UseVisualStyleBackColor = True
+        '
+        'btnKa
+        '
+        Me.btnKa.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btnKa.Location = New System.Drawing.Point(18, 116)
+        Me.btnKa.Name = "btnKa"
+        Me.btnKa.Size = New System.Drawing.Size(26, 23)
+        Me.btnKa.TabIndex = 10
+        Me.btnKa.Text = "ｶ"
+        Me.btnKa.UseVisualStyleBackColor = True
+        '
+        'btnSa
+        '
+        Me.btnSa.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btnSa.Location = New System.Drawing.Point(18, 145)
+        Me.btnSa.Name = "btnSa"
+        Me.btnSa.Size = New System.Drawing.Size(26, 23)
+        Me.btnSa.TabIndex = 11
+        Me.btnSa.Text = "ｻ"
+        Me.btnSa.UseVisualStyleBackColor = True
+        '
+        'btnTa
+        '
+        Me.btnTa.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btnTa.Location = New System.Drawing.Point(18, 174)
+        Me.btnTa.Name = "btnTa"
+        Me.btnTa.Size = New System.Drawing.Size(26, 23)
+        Me.btnTa.TabIndex = 12
+        Me.btnTa.Text = "ﾀ"
+        Me.btnTa.UseVisualStyleBackColor = True
+        '
+        'btnNa
+        '
+        Me.btnNa.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btnNa.Location = New System.Drawing.Point(18, 203)
+        Me.btnNa.Name = "btnNa"
+        Me.btnNa.Size = New System.Drawing.Size(26, 23)
+        Me.btnNa.TabIndex = 13
+        Me.btnNa.Text = "ﾅ"
+        Me.btnNa.UseVisualStyleBackColor = True
+        '
+        'btnHa
+        '
+        Me.btnHa.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btnHa.Location = New System.Drawing.Point(18, 232)
+        Me.btnHa.Name = "btnHa"
+        Me.btnHa.Size = New System.Drawing.Size(26, 23)
+        Me.btnHa.TabIndex = 14
+        Me.btnHa.Text = "ﾊ"
+        Me.btnHa.UseVisualStyleBackColor = True
+        '
+        'btnMa
+        '
+        Me.btnMa.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btnMa.Location = New System.Drawing.Point(18, 261)
+        Me.btnMa.Name = "btnMa"
+        Me.btnMa.Size = New System.Drawing.Size(26, 23)
+        Me.btnMa.TabIndex = 15
+        Me.btnMa.Text = "ﾏ"
+        Me.btnMa.UseVisualStyleBackColor = True
+        '
+        'btnYa
+        '
+        Me.btnYa.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btnYa.Location = New System.Drawing.Point(18, 290)
+        Me.btnYa.Name = "btnYa"
+        Me.btnYa.Size = New System.Drawing.Size(26, 23)
+        Me.btnYa.TabIndex = 16
+        Me.btnYa.Text = "ﾔ"
+        Me.btnYa.UseVisualStyleBackColor = True
+        '
+        'btnRa
+        '
+        Me.btnRa.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btnRa.Location = New System.Drawing.Point(18, 319)
+        Me.btnRa.Name = "btnRa"
+        Me.btnRa.Size = New System.Drawing.Size(26, 23)
+        Me.btnRa.TabIndex = 17
+        Me.btnRa.Text = "ﾗ"
+        Me.btnRa.UseVisualStyleBackColor = True
+        '
+        'btnWa
+        '
+        Me.btnWa.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btnWa.Location = New System.Drawing.Point(18, 348)
+        Me.btnWa.Name = "btnWa"
+        Me.btnWa.Size = New System.Drawing.Size(26, 23)
+        Me.btnWa.TabIndex = 18
+        Me.btnWa.Text = "ﾜ"
+        Me.btnWa.UseVisualStyleBackColor = True
+        '
+        'btn1
+        '
+        Me.btn1.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn1.Location = New System.Drawing.Point(50, 87)
+        Me.btn1.Name = "btn1"
+        Me.btn1.Size = New System.Drawing.Size(57, 23)
+        Me.btn1.TabIndex = 20
+        Me.btn1.Text = "1-"
+        Me.btn1.UseVisualStyleBackColor = True
+        '
+        'btn1000
+        '
+        Me.btn1000.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn1000.Location = New System.Drawing.Point(50, 116)
+        Me.btn1000.Name = "btn1000"
+        Me.btn1000.Size = New System.Drawing.Size(57, 23)
+        Me.btn1000.TabIndex = 21
+        Me.btn1000.Text = "1000-"
+        Me.btn1000.UseVisualStyleBackColor = True
+        '
+        'btn2000
+        '
+        Me.btn2000.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn2000.Location = New System.Drawing.Point(50, 145)
+        Me.btn2000.Name = "btn2000"
+        Me.btn2000.Size = New System.Drawing.Size(57, 23)
+        Me.btn2000.TabIndex = 22
+        Me.btn2000.Text = "2000-"
+        Me.btn2000.UseVisualStyleBackColor = True
+        '
+        'btn3000
+        '
+        Me.btn3000.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn3000.Location = New System.Drawing.Point(50, 174)
+        Me.btn3000.Name = "btn3000"
+        Me.btn3000.Size = New System.Drawing.Size(57, 23)
+        Me.btn3000.TabIndex = 23
+        Me.btn3000.Text = "3000-"
+        Me.btn3000.UseVisualStyleBackColor = True
+        '
+        'btn4000
+        '
+        Me.btn4000.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn4000.Location = New System.Drawing.Point(50, 203)
+        Me.btn4000.Name = "btn4000"
+        Me.btn4000.Size = New System.Drawing.Size(57, 23)
+        Me.btn4000.TabIndex = 24
+        Me.btn4000.Text = "4000-"
+        Me.btn4000.UseVisualStyleBackColor = True
+        '
+        'btn5000
+        '
+        Me.btn5000.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn5000.Location = New System.Drawing.Point(50, 232)
+        Me.btn5000.Name = "btn5000"
+        Me.btn5000.Size = New System.Drawing.Size(57, 23)
+        Me.btn5000.TabIndex = 25
+        Me.btn5000.Text = "5000-"
+        Me.btn5000.UseVisualStyleBackColor = True
+        '
+        'btn6000
+        '
+        Me.btn6000.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn6000.Location = New System.Drawing.Point(50, 261)
+        Me.btn6000.Name = "btn6000"
+        Me.btn6000.Size = New System.Drawing.Size(57, 23)
+        Me.btn6000.TabIndex = 26
+        Me.btn6000.Text = "6000-"
+        Me.btn6000.UseVisualStyleBackColor = True
+        '
+        'btn7000
+        '
+        Me.btn7000.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn7000.Location = New System.Drawing.Point(50, 290)
+        Me.btn7000.Name = "btn7000"
+        Me.btn7000.Size = New System.Drawing.Size(57, 23)
+        Me.btn7000.TabIndex = 27
+        Me.btn7000.Text = "7000-"
+        Me.btn7000.UseVisualStyleBackColor = True
+        '
+        'btn8000
+        '
+        Me.btn8000.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn8000.Location = New System.Drawing.Point(50, 319)
+        Me.btn8000.Name = "btn8000"
+        Me.btn8000.Size = New System.Drawing.Size(57, 23)
+        Me.btn8000.TabIndex = 28
+        Me.btn8000.Text = "8000-"
+        Me.btn8000.UseVisualStyleBackColor = True
+        '
+        'btn9000
+        '
+        Me.btn9000.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn9000.Location = New System.Drawing.Point(50, 348)
+        Me.btn9000.Name = "btn9000"
+        Me.btn9000.Size = New System.Drawing.Size(57, 23)
+        Me.btn9000.TabIndex = 29
+        Me.btn9000.Text = "9000-"
+        Me.btn9000.UseVisualStyleBackColor = True
+        '
+        'DtIntegTableAdapter
+        '
+        Me.DtIntegTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.tbl_branchTableAdapter = Nothing
+        Me.TableAdapterManager.tbl_carTableAdapter = Nothing
+        Me.TableAdapterManager.tbl_feeTableAdapter = Nothing
+        Me.TableAdapterManager.tbl_IntegrateTableAdapter = Nothing
+        Me.TableAdapterManager.tbl_PhoneNumTableAdapter = Nothing
+        Me.TableAdapterManager.tbl_staffTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = MAd.PhoneNumDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'DataGridViewTextBoxColumn1
         '
@@ -428,10 +685,9 @@ Partial Class frmGrd
         'DataGridViewTextBoxColumn21
         '
         Me.DataGridViewTextBoxColumn21.DataPropertyName = "branch_name"
-        Me.DataGridViewTextBoxColumn21.HeaderText = "所属(車)"
+        Me.DataGridViewTextBoxColumn21.HeaderText = "車庫"
         Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
         Me.DataGridViewTextBoxColumn21.ReadOnly = True
-        Me.DataGridViewTextBoxColumn21.Visible = False
         Me.DataGridViewTextBoxColumn21.Width = 80
         '
         'DataGridViewTextBoxColumn22
@@ -450,282 +706,48 @@ Partial Class frmGrd
         Me.DataGridViewTextBoxColumn23.ReadOnly = True
         Me.DataGridViewTextBoxColumn23.Visible = False
         '
-        'cmbBranch
+        'Label4
         '
-        Me.cmbBranch.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.cmbBranch.FormattingEnabled = True
-        Me.cmbBranch.Location = New System.Drawing.Point(429, 51)
-        Me.cmbBranch.Name = "cmbBranch"
-        Me.cmbBranch.Size = New System.Drawing.Size(77, 20)
-        Me.cmbBranch.TabIndex = 2
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Label4.Location = New System.Drawing.Point(534, 60)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(29, 12)
+        Me.Label4.TabIndex = 31
+        Me.Label4.Text = "車庫"
         '
-        'txtFilterPhonenum
+        'cmbBranchCar
         '
-        Me.txtFilterPhonenum.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.txtFilterPhonenum.Location = New System.Drawing.Point(167, 52)
-        Me.txtFilterPhonenum.Name = "txtFilterPhonenum"
-        Me.txtFilterPhonenum.Size = New System.Drawing.Size(75, 19)
-        Me.txtFilterPhonenum.TabIndex = 3
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Label1.Location = New System.Drawing.Point(108, 55)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(53, 12)
-        Me.Label1.TabIndex = 5
-        Me.Label1.Text = "電話番号"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Label2.Location = New System.Drawing.Point(248, 55)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(44, 12)
-        Me.Label2.TabIndex = 7
-        Me.Label2.Text = "氏名ｶﾅ"
-        '
-        'txtFilterKana
-        '
-        Me.txtFilterKana.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.txtFilterKana.Location = New System.Drawing.Point(298, 52)
-        Me.txtFilterKana.Name = "txtFilterKana"
-        Me.txtFilterKana.Size = New System.Drawing.Size(75, 19)
-        Me.txtFilterKana.TabIndex = 6
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Label3.Location = New System.Drawing.Point(394, 55)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(29, 12)
-        Me.Label3.TabIndex = 8
-        Me.Label3.Text = "所属"
-        '
-        'btnA
-        '
-        Me.btnA.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnA.Location = New System.Drawing.Point(3, 82)
-        Me.btnA.Name = "btnA"
-        Me.btnA.Size = New System.Drawing.Size(26, 23)
-        Me.btnA.TabIndex = 9
-        Me.btnA.Text = "ｱ"
-        Me.btnA.UseVisualStyleBackColor = True
-        '
-        'btnKa
-        '
-        Me.btnKa.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnKa.Location = New System.Drawing.Point(3, 111)
-        Me.btnKa.Name = "btnKa"
-        Me.btnKa.Size = New System.Drawing.Size(26, 23)
-        Me.btnKa.TabIndex = 10
-        Me.btnKa.Text = "ｶ"
-        Me.btnKa.UseVisualStyleBackColor = True
-        '
-        'btnSa
-        '
-        Me.btnSa.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnSa.Location = New System.Drawing.Point(3, 140)
-        Me.btnSa.Name = "btnSa"
-        Me.btnSa.Size = New System.Drawing.Size(26, 23)
-        Me.btnSa.TabIndex = 11
-        Me.btnSa.Text = "ｻ"
-        Me.btnSa.UseVisualStyleBackColor = True
-        '
-        'btnTa
-        '
-        Me.btnTa.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnTa.Location = New System.Drawing.Point(3, 169)
-        Me.btnTa.Name = "btnTa"
-        Me.btnTa.Size = New System.Drawing.Size(26, 23)
-        Me.btnTa.TabIndex = 12
-        Me.btnTa.Text = "ﾀ"
-        Me.btnTa.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button4.Location = New System.Drawing.Point(3, 198)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(26, 23)
-        Me.Button4.TabIndex = 13
-        Me.Button4.Text = "ﾅ"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button5.Location = New System.Drawing.Point(3, 227)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(26, 23)
-        Me.Button5.TabIndex = 14
-        Me.Button5.Text = "ﾊ"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button6
-        '
-        Me.Button6.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button6.Location = New System.Drawing.Point(3, 256)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(26, 23)
-        Me.Button6.TabIndex = 15
-        Me.Button6.Text = "ﾏ"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button7
-        '
-        Me.Button7.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button7.Location = New System.Drawing.Point(3, 285)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(26, 23)
-        Me.Button7.TabIndex = 16
-        Me.Button7.Text = "ﾔ"
-        Me.Button7.UseVisualStyleBackColor = True
-        '
-        'Button8
-        '
-        Me.Button8.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button8.Location = New System.Drawing.Point(3, 314)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(26, 23)
-        Me.Button8.TabIndex = 17
-        Me.Button8.Text = "ﾗ"
-        Me.Button8.UseVisualStyleBackColor = True
-        '
-        'Button9
-        '
-        Me.Button9.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button9.Location = New System.Drawing.Point(3, 343)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(26, 23)
-        Me.Button9.TabIndex = 18
-        Me.Button9.Text = "ﾜ"
-        Me.Button9.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button1.Location = New System.Drawing.Point(35, 82)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(57, 23)
-        Me.Button1.TabIndex = 20
-        Me.Button1.Text = "1-"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button2.Location = New System.Drawing.Point(35, 111)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(57, 23)
-        Me.Button2.TabIndex = 21
-        Me.Button2.Text = "1000-"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button3.Location = New System.Drawing.Point(35, 140)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(57, 23)
-        Me.Button3.TabIndex = 22
-        Me.Button3.Text = "2000-"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button11
-        '
-        Me.Button11.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button11.Location = New System.Drawing.Point(35, 169)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(57, 23)
-        Me.Button11.TabIndex = 23
-        Me.Button11.Text = "3000-"
-        Me.Button11.UseVisualStyleBackColor = True
-        '
-        'Button12
-        '
-        Me.Button12.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button12.Location = New System.Drawing.Point(35, 198)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(57, 23)
-        Me.Button12.TabIndex = 24
-        Me.Button12.Text = "4000-"
-        Me.Button12.UseVisualStyleBackColor = True
-        '
-        'Button13
-        '
-        Me.Button13.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button13.Location = New System.Drawing.Point(35, 227)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(57, 23)
-        Me.Button13.TabIndex = 25
-        Me.Button13.Text = "5000-"
-        Me.Button13.UseVisualStyleBackColor = True
-        '
-        'Button14
-        '
-        Me.Button14.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button14.Location = New System.Drawing.Point(35, 256)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(57, 23)
-        Me.Button14.TabIndex = 26
-        Me.Button14.Text = "6000-"
-        Me.Button14.UseVisualStyleBackColor = True
-        '
-        'Button15
-        '
-        Me.Button15.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button15.Location = New System.Drawing.Point(35, 285)
-        Me.Button15.Name = "Button15"
-        Me.Button15.Size = New System.Drawing.Size(57, 23)
-        Me.Button15.TabIndex = 27
-        Me.Button15.Text = "7000-"
-        Me.Button15.UseVisualStyleBackColor = True
-        '
-        'Button16
-        '
-        Me.Button16.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button16.Location = New System.Drawing.Point(35, 314)
-        Me.Button16.Name = "Button16"
-        Me.Button16.Size = New System.Drawing.Size(57, 23)
-        Me.Button16.TabIndex = 28
-        Me.Button16.Text = "8000-"
-        Me.Button16.UseVisualStyleBackColor = True
-        '
-        'Button17
-        '
-        Me.Button17.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button17.Location = New System.Drawing.Point(35, 343)
-        Me.Button17.Name = "Button17"
-        Me.Button17.Size = New System.Drawing.Size(57, 23)
-        Me.Button17.TabIndex = 29
-        Me.Button17.Text = "9000-"
-        Me.Button17.UseVisualStyleBackColor = True
+        Me.cmbBranchCar.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.cmbBranchCar.FormattingEnabled = True
+        Me.cmbBranchCar.Location = New System.Drawing.Point(569, 56)
+        Me.cmbBranchCar.Name = "cmbBranchCar"
+        Me.cmbBranchCar.Size = New System.Drawing.Size(77, 20)
+        Me.cmbBranchCar.TabIndex = 30
         '
         'frmGrd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(746, 384)
-        Me.Controls.Add(Me.Button17)
-        Me.Controls.Add(Me.Button16)
-        Me.Controls.Add(Me.Button15)
-        Me.Controls.Add(Me.Button14)
-        Me.Controls.Add(Me.Button13)
-        Me.Controls.Add(Me.Button12)
-        Me.Controls.Add(Me.Button11)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Button9)
-        Me.Controls.Add(Me.Button8)
-        Me.Controls.Add(Me.Button7)
-        Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button4)
+        Me.ClientSize = New System.Drawing.Size(837, 384)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.cmbBranchCar)
+        Me.Controls.Add(Me.btn9000)
+        Me.Controls.Add(Me.btn8000)
+        Me.Controls.Add(Me.btn7000)
+        Me.Controls.Add(Me.btn6000)
+        Me.Controls.Add(Me.btn5000)
+        Me.Controls.Add(Me.btn4000)
+        Me.Controls.Add(Me.btn3000)
+        Me.Controls.Add(Me.btn2000)
+        Me.Controls.Add(Me.btn1000)
+        Me.Controls.Add(Me.btn1)
+        Me.Controls.Add(Me.btnWa)
+        Me.Controls.Add(Me.btnRa)
+        Me.Controls.Add(Me.btnYa)
+        Me.Controls.Add(Me.btnMa)
+        Me.Controls.Add(Me.btnHa)
+        Me.Controls.Add(Me.btnNa)
         Me.Controls.Add(Me.btnTa)
         Me.Controls.Add(Me.btnSa)
         Me.Controls.Add(Me.btnKa)
@@ -735,20 +757,20 @@ Partial Class frmGrd
         Me.Controls.Add(Me.txtFilterKana)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtFilterPhonenum)
-        Me.Controls.Add(Me.cmbBranch)
-        Me.Controls.Add(Me.DtIntegDataGridView)
+        Me.Controls.Add(Me.cmbBranchStaff)
+        Me.Controls.Add(Me.grdMain)
         Me.Controls.Add(Me.DtIntegBindingNavigator)
         Me.Font = New System.Drawing.Font("MS UI Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmGrd"
         Me.Text = "frmGrd"
-        CType(Me.PhoneNumDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DtIntegBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DtIntegBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DtIntegBindingNavigator.ResumeLayout(False)
         Me.DtIntegBindingNavigator.PerformLayout()
-        CType(Me.DtIntegDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DtIntegBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PhoneNumDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grdMain, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -771,7 +793,33 @@ Partial Class frmGrd
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents DtIntegBindingNavigatorSaveItem As ToolStripButton
-    Friend WithEvents DtIntegDataGridView As DataGridView
+    Friend WithEvents grdMain As DataGridView
+    Friend WithEvents cmbBranchStaff As ComboBox
+    Friend WithEvents txtFilterPhonenum As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtFilterKana As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents btnA As Button
+    Friend WithEvents btnKa As Button
+    Friend WithEvents btnSa As Button
+    Friend WithEvents btnTa As Button
+    Friend WithEvents btnNa As Button
+    Friend WithEvents btnHa As Button
+    Friend WithEvents btnMa As Button
+    Friend WithEvents btnYa As Button
+    Friend WithEvents btnRa As Button
+    Friend WithEvents btnWa As Button
+    Friend WithEvents btn1 As Button
+    Friend WithEvents btn1000 As Button
+    Friend WithEvents btn2000 As Button
+    Friend WithEvents btn3000 As Button
+    Friend WithEvents btn4000 As Button
+    Friend WithEvents btn5000 As Button
+    Friend WithEvents btn6000 As Button
+    Friend WithEvents btn7000 As Button
+    Friend WithEvents btn8000 As Button
+    Friend WithEvents btn9000 As Button
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
@@ -796,30 +844,6 @@ Partial Class frmGrd
     Friend WithEvents DataGridViewTextBoxColumn21 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn22 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn23 As DataGridViewTextBoxColumn
-    Friend WithEvents cmbBranch As ComboBox
-    Friend WithEvents txtFilterPhonenum As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents txtFilterKana As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents btnA As Button
-    Friend WithEvents btnKa As Button
-    Friend WithEvents btnSa As Button
-    Friend WithEvents btnTa As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button7 As Button
-    Friend WithEvents Button8 As Button
-    Friend WithEvents Button9 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button11 As Button
-    Friend WithEvents Button12 As Button
-    Friend WithEvents Button13 As Button
-    Friend WithEvents Button14 As Button
-    Friend WithEvents Button15 As Button
-    Friend WithEvents Button16 As Button
-    Friend WithEvents Button17 As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents cmbBranchCar As ComboBox
 End Class
