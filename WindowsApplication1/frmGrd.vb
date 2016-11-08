@@ -327,5 +327,30 @@
         shiboriDatabase(fs)
     End Sub
 
+    '[選択行の表示]ボタン
+    Private Sub btnModify_Click(sender As Object, e As EventArgs) Handles btnModify.Click
+        'データグリッドビューが空のときは終了する
+        If grdMain.Rows.Count = 0 Then Return
 
+        Dim row As Integer
+        Dim code As String
+
+        'データグリッドビューの行番号を取得する
+        row = grdMain.CurrentRow.Index
+        '行番号から電話番号を取得する
+        code = grdMain.Item(0, row).Value.ToString
+
+
+
+        Dim frm As New frmModifier
+        '[選択行の編集]フォームのSetSelectedRecordプロシージャを呼び出し、
+        '指定した電話番号のデータを表示する
+        frm.SetSelectedRecord(code, Me)
+        '[選択行の編集]フォームを表示する
+        frm.ShowDialog(Me)
+
+        '[選択行の編集］フォームから戻ったら、このフォームを更新する
+        LoadDatabase()
+
+    End Sub
 End Class
