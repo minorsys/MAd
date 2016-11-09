@@ -24,6 +24,7 @@ Partial Class frmGrd
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmGrd))
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DtIntegBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.DtIntegBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -97,6 +98,7 @@ Partial Class frmGrd
         Me.btnModify = New System.Windows.Forms.Button()
         Me.btnAdmin = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnFilterClear = New System.Windows.Forms.Button()
         CType(Me.DtIntegBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DtIntegBindingNavigator.SuspendLayout()
         CType(Me.DtIntegBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -234,12 +236,14 @@ Partial Class frmGrd
         Me.grdMain.AllowUserToDeleteRows = False
         Me.grdMain.AllowUserToResizeColumns = False
         Me.grdMain.AllowUserToResizeRows = False
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.grdMain.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.grdMain.AutoGenerateColumns = False
         Me.grdMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grdMain.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn24, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn21, Me.DataGridViewTextBoxColumn22, Me.DataGridViewTextBoxColumn23})
         Me.grdMain.DataSource = Me.DtIntegBindingSource
         Me.grdMain.Location = New System.Drawing.Point(115, 88)
-        Me.grdMain.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grdMain.Margin = New System.Windows.Forms.Padding(4)
         Me.grdMain.Name = "grdMain"
         Me.grdMain.ReadOnly = True
         Me.grdMain.RowHeadersWidth = 25
@@ -756,7 +760,7 @@ Partial Class frmGrd
         'btnModify
         '
         Me.btnModify.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnModify.Location = New System.Drawing.Point(115, 55)
+        Me.btnModify.Location = New System.Drawing.Point(115, 50)
         Me.btnModify.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnModify.Name = "btnModify"
         Me.btnModify.Size = New System.Drawing.Size(89, 22)
@@ -777,6 +781,7 @@ Partial Class frmGrd
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnFilterClear)
         Me.GroupBox1.Controls.Add(Me.txtFilterPhonenum)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txtFilterKana)
@@ -786,12 +791,22 @@ Partial Class frmGrd
         Me.GroupBox1.Controls.Add(Me.cmbBranchStaff)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(265, 34)
+        Me.GroupBox1.Location = New System.Drawing.Point(210, 34)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(559, 47)
+        Me.GroupBox1.Size = New System.Drawing.Size(614, 47)
         Me.GroupBox1.TabIndex = 35
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "絞り込み"
+        '
+        'btnFilterClear
+        '
+        Me.btnFilterClear.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btnFilterClear.Location = New System.Drawing.Point(550, 14)
+        Me.btnFilterClear.Name = "btnFilterClear"
+        Me.btnFilterClear.Size = New System.Drawing.Size(49, 23)
+        Me.btnFilterClear.TabIndex = 36
+        Me.btnFilterClear.Text = "解除"
+        Me.btnFilterClear.UseVisualStyleBackColor = True
         '
         'frmGrd
         '
@@ -825,7 +840,7 @@ Partial Class frmGrd
         Me.Controls.Add(Me.DtIntegBindingNavigator)
         Me.Font = New System.Drawing.Font("MS UI Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmGrd"
         Me.Text = "MAd"
         CType(Me.DtIntegBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
@@ -914,4 +929,5 @@ Partial Class frmGrd
     Friend WithEvents btnModify As Button
     Friend WithEvents btnAdmin As Button
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents btnFilterClear As Button
 End Class

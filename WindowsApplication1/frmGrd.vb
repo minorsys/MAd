@@ -340,8 +340,6 @@
         '行番号から電話番号を取得する
         code = grdMain.Item(0, row).Value.ToString
 
-
-
         Dim frm As New frmModifier
         '[選択行の編集]フォームのSetSelectedRecordプロシージャを呼び出し、
         '指定した電話番号のデータを表示する
