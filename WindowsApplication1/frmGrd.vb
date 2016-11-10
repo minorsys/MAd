@@ -151,7 +151,6 @@
                                     "LEFT OUTER JOIN tbl_branch INNER JOIN tbl_staff ON tbl_branch.id_branch = tbl_staff.branch_id ON tbl_Integrate.integ_staff = tbl_staff.id_staff ON " &
                                   "tbl_PhoneNum.phonenum = tbl_Integrate.integ_phonenum"
 
-
         sql &= " WHERE " & fs
 
 
@@ -350,5 +349,15 @@
         '[選択行の編集］フォームから戻ったら、このフォームを更新する
         LoadDatabase()
 
+    End Sub
+
+    '[解除]ボタンを押すとフィルタを解除して全レコードを表示する
+    Private Sub btnFilterClear_Click(sender As Object, e As EventArgs) Handles btnFilterClear.Click
+        txtFilterKana.Text = ""
+        txtFilterPhonenum.Text = ""
+        cmbBranchStaff.SelectedIndex = 0
+        cmbBranchCar.SelectedIndex = 0
+
+        LoadDatabase()
     End Sub
 End Class

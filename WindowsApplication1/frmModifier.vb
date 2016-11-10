@@ -1,4 +1,15 @@
 ﻿Public Class frmModifier
+    '###frmGrdからのデータの流れ###
+    'public sub SetSelectedRecordが実行されると、frmGrdから受け取ったIntegIDをもとに、Tbl_IntegTableAdapterにデータソースをセットする
+    '3つのラベルlblIntegPhonenum,lblIntegStaffID,IntegCarnumはTblIntegBindingSourceをデータソースにもつので、該当するレコードがセットされる。
+    'ラベルのtext値が変更されると、textChangedイベントが発生する。
+    '各イベントプロシージャ内ではラベルのtext値をキューにして、電話、社員、車両の3テーブルのテーブルアダプタにデータソースをセットする。
+    'フォーム内の各テキストボックスは各テーブルをデータソースにもつので、該当するレコードがセットされる。
+
+    '###電話、社員、車両の各レコードを変更する流れ###
+    '3つテーブルに対応する各コンボボックスの(cmbPhonenumChangeほか)のSelectedValueChangedイベントが発生すると、
+    'コンボボックスで選択されたtext値を、lblIntegPhonenum他3つのラベルに代入する。
+
 
     Private frm_Grd As frmGrd
 
@@ -9,7 +20,7 @@
         '電話番号マスタのデータをデータソースにセット
         'Me.Tbl_PhoneNumTableAdapter.Fill(Me.PhoneNumDBDataSet.tbl_PhoneNum)
 
-        '受け取ったコードを利用して、該当する電話番号データをデータソースにセット
+        '受け取ったコードを利用して、該当するIntegテーブルのデータをデータソースにセット
         Me.Tbl_IntegrateTableAdapter.FillByCode(Me.PhoneNumDBDataSet.tbl_Integrate, code)
 
     End Sub
@@ -30,7 +41,6 @@
         'Me.Tbl_staffTableAdapter.Fill(Me.PhoneNumDBDataSet.tbl_staff)
         'TODO: このコード行はデータを 'PhoneNumDBDataSet.tbl_PhoneNum' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
         'Me.Tbl_PhoneNumTableAdapter.Fill(Me.PhoneNumDBDataSet.tbl_PhoneNum)
-
 
         'コネクションを指定する
         Using connection As New SqlClient.SqlConnection(My.Settings.PhoneNumDBConnectionString)
@@ -95,6 +105,11 @@
             cmbCarnumChange.SelectedIndex = 0
 
         End Using
+
+        'フォーム開始時、所属コンボボックスの値が自動でセットされないでindex = 0になってしまうので苦肉の策
+        cmbStaffBranch.SelectedValue = lblStaffBranch.Text
+        cmbCarBranch.SelectedValue = lblCarBranch.Text
+
     End Sub
 
     '###frmGrdから受け取ったレコードをラベルに出力する###
@@ -102,12 +117,14 @@
     Private Sub lblIntegPhonenum_TextChanged(sender As Object, e As EventArgs) Handles lblIntegPhonenum.TextChanged
         Dim pcode As String = lblIntegPhonenum.Text
         Me.Tbl_PhoneNumTableAdapter.FillByPcode(Me.PhoneNumDBDataSet.tbl_PhoneNum, pcode)
+
     End Sub
 
     '社員ID
     Private Sub lblIntegStaffID_TextChanged(sender As Object, e As EventArgs) Handles lblIntegStaffID.TextChanged
         Dim scode As String = lblIntegStaffID.Text
         Me.Tbl_staffTableAdapter.FillByScode(Me.PhoneNumDBDataSet.tbl_staff, scode)
+
     End Sub
 
     '車番
@@ -151,5 +168,24 @@
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
         '必須チェック
 
+
+
+        '保存確認と保存処理
+        If MsgBox("これまでの修正内容をデータベースに保存しますか？", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+
+            '編集状態を確定する
+            Me.Tbl_IntegrateBindingSource.EndEdit()
+            'Me.Tbl_PhoneNumBindingSource.EndEdit()
+            Me.Tbl_staffBindingSource.EndEdit()
+            Me.Tbl_carBindingSource.EndEdit()
+
+            'テーブルアダプタを介して、レコードを更新する
+            Me.Tbl_IntegrateTableAdapter.Update(Me.PhoneNumDBDataSet.tbl_Integrate)
+            'Me.Tbl_PhoneNumTableAdapter.Update(Me.PhoneNumDBDataSet.tbl_PhoneNum)
+            Me.Tbl_staffTableAdapter.Update(Me.PhoneNumDBDataSet.tbl_staff)
+            Me.Tbl_carTableAdapter.Update(Me.PhoneNumDBDataSet.tbl_car)
+
+            'Me.TableAdapterManager.UpdateAll(Me.PhoneNumDBDataSet)
+        End If
     End Sub
 End Class

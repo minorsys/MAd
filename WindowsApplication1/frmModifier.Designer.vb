@@ -36,6 +36,7 @@ Partial Class frmModifier
         Dim TonLabel As System.Windows.Forms.Label
         Dim BikoLabel1 As System.Windows.Forms.Label
         Dim Branch_idLabel2 As System.Windows.Forms.Label
+        Dim PhonenumLabel1 As System.Windows.Forms.Label
         Me.btnOK = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -48,16 +49,20 @@ Partial Class frmModifier
         Me.BikoTextBox = New System.Windows.Forms.TextBox()
         Me.ModelTextBox = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.lblStaffName = New System.Windows.Forms.Label()
+        Me.cmbStaffBranch = New System.Windows.Forms.ComboBox()
         Me.Tbl_staffBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Tbl_branchBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.lblStaffName = New System.Windows.Forms.Label()
         Me.cmbStaffNameChange = New System.Windows.Forms.ComboBox()
         Me.lblIntegStaffID = New System.Windows.Forms.Label()
         Me.Staff_kanaTextBox = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.cmbCarBranch = New System.Windows.Forms.ComboBox()
+        Me.Tbl_carBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Tbl_branchBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         Me.cmbCarnumChange = New System.Windows.Forms.ComboBox()
         Me.lblIntegCarnum = New System.Windows.Forms.Label()
         Me.Carnum2TextBox = New System.Windows.Forms.TextBox()
-        Me.Tbl_carBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Carnum3TextBox = New System.Windows.Forms.TextBox()
         Me.Carnum4TextBox = New System.Windows.Forms.TextBox()
         Me.MusenTextBox = New System.Windows.Forms.TextBox()
@@ -69,12 +74,11 @@ Partial Class frmModifier
         Me.Tbl_carTableAdapter = New MAd.PhoneNumDBDataSetTableAdapters.tbl_carTableAdapter()
         Me.Tbl_IntegrateTableAdapter = New MAd.PhoneNumDBDataSetTableAdapters.tbl_IntegrateTableAdapter()
         Me.lblIntegID = New System.Windows.Forms.Label()
-        Me.Tbl_branchBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Tbl_branchTableAdapter = New MAd.PhoneNumDBDataSetTableAdapters.tbl_branchTableAdapter()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Branch_idComboBox = New System.Windows.Forms.ComboBox()
-        Me.Branch_idComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Tbl_branchBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.lblStaffBranch = New System.Windows.Forms.Label()
+        Me.lblCarBranch = New System.Windows.Forms.Label()
+        Me.PhonenumLabel2 = New System.Windows.Forms.Label()
         PhonenumLabel = New System.Windows.Forms.Label()
         MailLabel = New System.Windows.Forms.Label()
         BikoLabel = New System.Windows.Forms.Label()
@@ -88,15 +92,16 @@ Partial Class frmModifier
         TonLabel = New System.Windows.Forms.Label()
         BikoLabel1 = New System.Windows.Forms.Label()
         Branch_idLabel2 = New System.Windows.Forms.Label()
+        PhonenumLabel1 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Tbl_PhoneNumBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PhoneNumDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tbl_IntegrateBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.Tbl_staffBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Tbl_branchBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         CType(Me.Tbl_carBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Tbl_branchBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tbl_branchBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -208,9 +213,18 @@ Partial Class frmModifier
         BikoLabel1.TabIndex = 12
         BikoLabel1.Text = "備考"
         '
+        'Branch_idLabel2
+        '
+        Branch_idLabel2.AutoSize = True
+        Branch_idLabel2.Location = New System.Drawing.Point(20, 238)
+        Branch_idLabel2.Name = "Branch_idLabel2"
+        Branch_idLabel2.Size = New System.Drawing.Size(29, 12)
+        Branch_idLabel2.TabIndex = 18
+        Branch_idLabel2.Text = "車庫"
+        '
         'btnOK
         '
-        Me.btnOK.Location = New System.Drawing.Point(521, 335)
+        Me.btnOK.Location = New System.Drawing.Point(521, 316)
         Me.btnOK.Name = "btnOK"
         Me.btnOK.Size = New System.Drawing.Size(75, 23)
         Me.btnOK.TabIndex = 3
@@ -219,7 +233,7 @@ Partial Class frmModifier
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(602, 335)
+        Me.btnCancel.Location = New System.Drawing.Point(602, 316)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 4
@@ -228,6 +242,8 @@ Partial Class frmModifier
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(PhonenumLabel1)
+        Me.GroupBox1.Controls.Add(Me.PhonenumLabel2)
         Me.GroupBox1.Controls.Add(Me.cmbPhonenumChange)
         Me.GroupBox1.Controls.Add(PhonenumLabel)
         Me.GroupBox1.Controls.Add(MailLabel)
@@ -237,7 +253,7 @@ Partial Class frmModifier
         Me.GroupBox1.Controls.Add(Me.BikoTextBox)
         Me.GroupBox1.Controls.Add(ModelLabel)
         Me.GroupBox1.Controls.Add(Me.ModelTextBox)
-        Me.GroupBox1.Location = New System.Drawing.Point(10, 31)
+        Me.GroupBox1.Location = New System.Drawing.Point(10, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(239, 298)
         Me.GroupBox1.TabIndex = 5
@@ -308,7 +324,7 @@ Partial Class frmModifier
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.Branch_idComboBox)
+        Me.GroupBox2.Controls.Add(Me.cmbStaffBranch)
         Me.GroupBox2.Controls.Add(Me.lblStaffName)
         Me.GroupBox2.Controls.Add(Me.cmbStaffNameChange)
         Me.GroupBox2.Controls.Add(Id_staffLabel)
@@ -317,12 +333,36 @@ Partial Class frmModifier
         Me.GroupBox2.Controls.Add(Staff_kanaLabel)
         Me.GroupBox2.Controls.Add(Me.Staff_kanaTextBox)
         Me.GroupBox2.Controls.Add(Branch_idLabel)
-        Me.GroupBox2.Location = New System.Drawing.Point(255, 31)
+        Me.GroupBox2.Location = New System.Drawing.Point(255, 12)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(199, 298)
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "社員情報"
+        '
+        'cmbStaffBranch
+        '
+        Me.cmbStaffBranch.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_staffBindingSource, "branch_id", True))
+        Me.cmbStaffBranch.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.Tbl_staffBindingSource, "branch_id", True))
+        Me.cmbStaffBranch.DataSource = Me.Tbl_branchBindingSource
+        Me.cmbStaffBranch.DisplayMember = "branch_name"
+        Me.cmbStaffBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbStaffBranch.FormattingEnabled = True
+        Me.cmbStaffBranch.Location = New System.Drawing.Point(80, 106)
+        Me.cmbStaffBranch.Name = "cmbStaffBranch"
+        Me.cmbStaffBranch.Size = New System.Drawing.Size(99, 20)
+        Me.cmbStaffBranch.TabIndex = 20
+        Me.cmbStaffBranch.ValueMember = "id_branch"
+        '
+        'Tbl_staffBindingSource
+        '
+        Me.Tbl_staffBindingSource.DataMember = "tbl_staff"
+        Me.Tbl_staffBindingSource.DataSource = Me.PhoneNumDBDataSet
+        '
+        'Tbl_branchBindingSource
+        '
+        Me.Tbl_branchBindingSource.DataMember = "tbl_branch"
+        Me.Tbl_branchBindingSource.DataSource = Me.PhoneNumDBDataSet
         '
         'lblStaffName
         '
@@ -332,11 +372,6 @@ Partial Class frmModifier
         Me.lblStaffName.Size = New System.Drawing.Size(100, 16)
         Me.lblStaffName.TabIndex = 19
         Me.lblStaffName.Text = "lblStaffName"
-        '
-        'Tbl_staffBindingSource
-        '
-        Me.Tbl_staffBindingSource.DataMember = "tbl_staff"
-        Me.Tbl_staffBindingSource.DataSource = Me.PhoneNumDBDataSet
         '
         'cmbStaffNameChange
         '
@@ -371,7 +406,7 @@ Partial Class frmModifier
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Branch_idLabel2)
-        Me.GroupBox3.Controls.Add(Me.Branch_idComboBox1)
+        Me.GroupBox3.Controls.Add(Me.cmbCarBranch)
         Me.GroupBox3.Controls.Add(Me.cmbCarnumChange)
         Me.GroupBox3.Controls.Add(Me.lblIntegCarnum)
         Me.GroupBox3.Controls.Add(Carnum1Label)
@@ -384,12 +419,36 @@ Partial Class frmModifier
         Me.GroupBox3.Controls.Add(Me.TonTextBox)
         Me.GroupBox3.Controls.Add(BikoLabel1)
         Me.GroupBox3.Controls.Add(Me.BikoTextBox1)
-        Me.GroupBox3.Location = New System.Drawing.Point(460, 31)
+        Me.GroupBox3.Location = New System.Drawing.Point(460, 12)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(217, 298)
         Me.GroupBox3.TabIndex = 7
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "車両情報"
+        '
+        'cmbCarBranch
+        '
+        Me.cmbCarBranch.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_carBindingSource, "branch_id", True))
+        Me.cmbCarBranch.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.Tbl_carBindingSource, "branch_id", True))
+        Me.cmbCarBranch.DataSource = Me.Tbl_branchBindingSource2
+        Me.cmbCarBranch.DisplayMember = "branch_name"
+        Me.cmbCarBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbCarBranch.FormattingEnabled = True
+        Me.cmbCarBranch.Location = New System.Drawing.Point(80, 235)
+        Me.cmbCarBranch.Name = "cmbCarBranch"
+        Me.cmbCarBranch.Size = New System.Drawing.Size(100, 20)
+        Me.cmbCarBranch.TabIndex = 19
+        Me.cmbCarBranch.ValueMember = "id_branch"
+        '
+        'Tbl_carBindingSource
+        '
+        Me.Tbl_carBindingSource.DataMember = "tbl_car"
+        Me.Tbl_carBindingSource.DataSource = Me.PhoneNumDBDataSet
+        '
+        'Tbl_branchBindingSource2
+        '
+        Me.Tbl_branchBindingSource2.DataMember = "tbl_branch"
+        Me.Tbl_branchBindingSource2.DataSource = Me.PhoneNumDBDataSet
         '
         'cmbCarnumChange
         '
@@ -420,11 +479,6 @@ Partial Class frmModifier
         Me.Carnum2TextBox.Name = "Carnum2TextBox"
         Me.Carnum2TextBox.Size = New System.Drawing.Size(37, 19)
         Me.Carnum2TextBox.TabIndex = 3
-        '
-        'Tbl_carBindingSource
-        '
-        Me.Tbl_carBindingSource.DataMember = "tbl_car"
-        Me.Tbl_carBindingSource.DataSource = Me.PhoneNumDBDataSet
         '
         'Carnum3TextBox
         '
@@ -497,16 +551,11 @@ Partial Class frmModifier
         'lblIntegID
         '
         Me.lblIntegID.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_IntegrateBindingSource, "integ_id", True))
-        Me.lblIntegID.Location = New System.Drawing.Point(63, 9)
+        Me.lblIntegID.Location = New System.Drawing.Point(63, 316)
         Me.lblIntegID.Name = "lblIntegID"
-        Me.lblIntegID.Size = New System.Drawing.Size(100, 10)
+        Me.lblIntegID.Size = New System.Drawing.Size(40, 12)
         Me.lblIntegID.TabIndex = 16
         Me.lblIntegID.Text = "IntegID"
-        '
-        'Tbl_branchBindingSource
-        '
-        Me.Tbl_branchBindingSource.DataMember = "tbl_branch"
-        Me.Tbl_branchBindingSource.DataSource = Me.PhoneNumDBDataSet
         '
         'Tbl_branchTableAdapter
         '
@@ -515,66 +564,62 @@ Partial Class frmModifier
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Location = New System.Drawing.Point(12, 316)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(54, 12)
         Me.Label1.TabIndex = 17
         Me.Label1.Text = "レコードID:"
         '
-        'Branch_idComboBox
+        'lblStaffBranch
         '
-        Me.Branch_idComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_staffBindingSource, "branch_id", True))
-        Me.Branch_idComboBox.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.Tbl_staffBindingSource, "branch_id", True))
-        Me.Branch_idComboBox.DataSource = Me.Tbl_branchBindingSource
-        Me.Branch_idComboBox.DisplayMember = "branch_name"
-        Me.Branch_idComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Branch_idComboBox.FormattingEnabled = True
-        Me.Branch_idComboBox.Location = New System.Drawing.Point(80, 106)
-        Me.Branch_idComboBox.Name = "Branch_idComboBox"
-        Me.Branch_idComboBox.Size = New System.Drawing.Size(99, 20)
-        Me.Branch_idComboBox.TabIndex = 20
-        Me.Branch_idComboBox.ValueMember = "id_branch"
+        Me.lblStaffBranch.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_staffBindingSource, "branch_id", True))
+        Me.lblStaffBranch.Location = New System.Drawing.Point(97, 316)
+        Me.lblStaffBranch.Name = "lblStaffBranch"
+        Me.lblStaffBranch.Size = New System.Drawing.Size(28, 12)
+        Me.lblStaffBranch.TabIndex = 21
+        Me.lblStaffBranch.Text = "lblStaffBranch"
         '
-        'Branch_idLabel2
+        'lblCarBranch
         '
-        Branch_idLabel2.AutoSize = True
-        Branch_idLabel2.Location = New System.Drawing.Point(20, 238)
-        Branch_idLabel2.Name = "Branch_idLabel2"
-        Branch_idLabel2.Size = New System.Drawing.Size(29, 12)
-        Branch_idLabel2.TabIndex = 18
-        Branch_idLabel2.Text = "車庫"
+        Me.lblCarBranch.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_carBindingSource, "branch_id", True))
+        Me.lblCarBranch.Location = New System.Drawing.Point(122, 316)
+        Me.lblCarBranch.Name = "lblCarBranch"
+        Me.lblCarBranch.Size = New System.Drawing.Size(41, 12)
+        Me.lblCarBranch.TabIndex = 20
+        Me.lblCarBranch.Text = "lblCarBranch"
         '
-        'Branch_idComboBox1
+        'PhonenumLabel1
         '
-        Me.Branch_idComboBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_carBindingSource, "branch_id", True))
-        Me.Branch_idComboBox1.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.Tbl_carBindingSource, "branch_id", True))
-        Me.Branch_idComboBox1.DataSource = Me.Tbl_branchBindingSource2
-        Me.Branch_idComboBox1.DisplayMember = "branch_name"
-        Me.Branch_idComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Branch_idComboBox1.FormattingEnabled = True
-        Me.Branch_idComboBox1.Location = New System.Drawing.Point(80, 235)
-        Me.Branch_idComboBox1.Name = "Branch_idComboBox1"
-        Me.Branch_idComboBox1.Size = New System.Drawing.Size(100, 20)
-        Me.Branch_idComboBox1.TabIndex = 19
-        Me.Branch_idComboBox1.ValueMember = "id_branch"
+        PhonenumLabel1.AutoSize = True
+        PhonenumLabel1.Location = New System.Drawing.Point(18, 258)
+        PhonenumLabel1.Name = "PhonenumLabel1"
+        PhonenumLabel1.Size = New System.Drawing.Size(58, 12)
+        PhonenumLabel1.TabIndex = 17
+        PhonenumLabel1.Text = "phonenum:"
         '
-        'Tbl_branchBindingSource2
+        'PhonenumLabel2
         '
-        Me.Tbl_branchBindingSource2.DataMember = "tbl_branch"
-        Me.Tbl_branchBindingSource2.DataSource = Me.PhoneNumDBDataSet
+        Me.PhonenumLabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_PhoneNumBindingSource, "phonenum", True))
+        Me.PhonenumLabel2.Location = New System.Drawing.Point(87, 258)
+        Me.PhonenumLabel2.Name = "PhonenumLabel2"
+        Me.PhonenumLabel2.Size = New System.Drawing.Size(100, 10)
+        Me.PhonenumLabel2.TabIndex = 18
+        Me.PhonenumLabel2.Text = "Label2"
         '
         'frmModifier
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(699, 371)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.lblIntegID)
+        Me.ClientSize = New System.Drawing.Size(748, 371)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnOK)
+        Me.Controls.Add(Me.lblCarBranch)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblStaffBranch)
+        Me.Controls.Add(Me.lblIntegID)
         Me.Name = "frmModifier"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -584,10 +629,10 @@ Partial Class frmModifier
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.Tbl_staffBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Tbl_branchBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.Tbl_carBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Tbl_branchBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Tbl_branchBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -629,7 +674,10 @@ Partial Class frmModifier
     Friend WithEvents Tbl_branchBindingSource As BindingSource
     Friend WithEvents Tbl_branchTableAdapter As PhoneNumDBDataSetTableAdapters.tbl_branchTableAdapter
     Friend WithEvents Label1 As Label
-    Friend WithEvents Branch_idComboBox As ComboBox
-    Friend WithEvents Branch_idComboBox1 As ComboBox
+    Friend WithEvents cmbStaffBranch As ComboBox
+    Friend WithEvents cmbCarBranch As ComboBox
     Friend WithEvents Tbl_branchBindingSource2 As BindingSource
+    Friend WithEvents lblStaffBranch As Label
+    Friend WithEvents lblCarBranch As Label
+    Friend WithEvents PhonenumLabel2 As Label
 End Class
