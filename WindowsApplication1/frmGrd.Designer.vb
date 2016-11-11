@@ -24,7 +24,7 @@ Partial Class frmGrd
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmGrd))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DtIntegBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.DtIntegBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -99,6 +99,17 @@ Partial Class frmGrd
         Me.btnAdmin = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnFilterClear = New System.Windows.Forms.Button()
+        Me.btnAddNewRow = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.lblHowManyRecords = New System.Windows.Forms.Label()
+        Me.btn2tU = New System.Windows.Forms.Button()
+        Me.btn3tU = New System.Windows.Forms.Button()
+        Me.btn4tU = New System.Windows.Forms.Button()
+        Me.btn7tU = New System.Windows.Forms.Button()
+        Me.btn10tU = New System.Windows.Forms.Button()
+        Me.btn15tU = New System.Windows.Forms.Button()
+        Me.btn2tHira = New System.Windows.Forms.Button()
+        Me.btnAllCar = New System.Windows.Forms.Button()
         CType(Me.DtIntegBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DtIntegBindingNavigator.SuspendLayout()
         CType(Me.DtIntegBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -236,18 +247,18 @@ Partial Class frmGrd
         Me.grdMain.AllowUserToDeleteRows = False
         Me.grdMain.AllowUserToResizeColumns = False
         Me.grdMain.AllowUserToResizeRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InactiveCaption
-        Me.grdMain.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.grdMain.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.grdMain.AutoGenerateColumns = False
         Me.grdMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grdMain.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn24, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn21, Me.DataGridViewTextBoxColumn22, Me.DataGridViewTextBoxColumn23})
         Me.grdMain.DataSource = Me.DtIntegBindingSource
-        Me.grdMain.Location = New System.Drawing.Point(115, 88)
+        Me.grdMain.Location = New System.Drawing.Point(171, 72)
         Me.grdMain.Margin = New System.Windows.Forms.Padding(4)
         Me.grdMain.Name = "grdMain"
         Me.grdMain.ReadOnly = True
         Me.grdMain.RowHeadersWidth = 25
-        Me.grdMain.RowTemplate.Height = 21
+        Me.grdMain.RowTemplate.Height = 25
         Me.grdMain.Size = New System.Drawing.Size(709, 284)
         Me.grdMain.TabIndex = 1
         '
@@ -447,7 +458,7 @@ Partial Class frmGrd
         '
         Me.cmbBranchStaff.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.cmbBranchStaff.FormattingEnabled = True
-        Me.cmbBranchStaff.Location = New System.Drawing.Point(329, 16)
+        Me.cmbBranchStaff.Location = New System.Drawing.Point(361, 20)
         Me.cmbBranchStaff.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmbBranchStaff.Name = "cmbBranchStaff"
         Me.cmbBranchStaff.Size = New System.Drawing.Size(77, 20)
@@ -456,7 +467,7 @@ Partial Class frmGrd
         'txtFilterPhonenum
         '
         Me.txtFilterPhonenum.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.txtFilterPhonenum.Location = New System.Drawing.Point(76, 17)
+        Me.txtFilterPhonenum.Location = New System.Drawing.Point(76, 21)
         Me.txtFilterPhonenum.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtFilterPhonenum.Name = "txtFilterPhonenum"
         Me.txtFilterPhonenum.Size = New System.Drawing.Size(75, 19)
@@ -466,7 +477,7 @@ Partial Class frmGrd
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Label1.Location = New System.Drawing.Point(17, 20)
+        Me.Label1.Location = New System.Drawing.Point(17, 24)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(53, 12)
         Me.Label1.TabIndex = 5
@@ -476,7 +487,7 @@ Partial Class frmGrd
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Label2.Location = New System.Drawing.Point(159, 20)
+        Me.Label2.Location = New System.Drawing.Point(159, 24)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(44, 12)
         Me.Label2.TabIndex = 7
@@ -485,7 +496,7 @@ Partial Class frmGrd
         'txtFilterKana
         '
         Me.txtFilterKana.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.txtFilterKana.Location = New System.Drawing.Point(209, 17)
+        Me.txtFilterKana.Location = New System.Drawing.Point(209, 21)
         Me.txtFilterKana.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtFilterKana.Name = "txtFilterKana"
         Me.txtFilterKana.Size = New System.Drawing.Size(75, 19)
@@ -495,16 +506,16 @@ Partial Class frmGrd
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Label3.Location = New System.Drawing.Point(294, 20)
+        Me.Label3.Location = New System.Drawing.Point(294, 24)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(29, 12)
+        Me.Label3.Size = New System.Drawing.Size(61, 12)
         Me.Label3.TabIndex = 8
-        Me.Label3.Text = "所属"
+        Me.Label3.Text = "所属(社員)"
         '
         'btnA
         '
         Me.btnA.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnA.Location = New System.Drawing.Point(19, 88)
+        Me.btnA.Location = New System.Drawing.Point(14, 72)
         Me.btnA.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnA.Name = "btnA"
         Me.btnA.Size = New System.Drawing.Size(27, 22)
@@ -515,7 +526,7 @@ Partial Class frmGrd
         'btnKa
         '
         Me.btnKa.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnKa.Location = New System.Drawing.Point(19, 116)
+        Me.btnKa.Location = New System.Drawing.Point(14, 100)
         Me.btnKa.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnKa.Name = "btnKa"
         Me.btnKa.Size = New System.Drawing.Size(27, 22)
@@ -526,7 +537,7 @@ Partial Class frmGrd
         'btnSa
         '
         Me.btnSa.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnSa.Location = New System.Drawing.Point(19, 145)
+        Me.btnSa.Location = New System.Drawing.Point(14, 129)
         Me.btnSa.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSa.Name = "btnSa"
         Me.btnSa.Size = New System.Drawing.Size(27, 22)
@@ -537,7 +548,7 @@ Partial Class frmGrd
         'btnTa
         '
         Me.btnTa.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnTa.Location = New System.Drawing.Point(19, 174)
+        Me.btnTa.Location = New System.Drawing.Point(14, 158)
         Me.btnTa.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnTa.Name = "btnTa"
         Me.btnTa.Size = New System.Drawing.Size(27, 22)
@@ -548,7 +559,7 @@ Partial Class frmGrd
         'btnNa
         '
         Me.btnNa.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnNa.Location = New System.Drawing.Point(19, 202)
+        Me.btnNa.Location = New System.Drawing.Point(14, 186)
         Me.btnNa.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnNa.Name = "btnNa"
         Me.btnNa.Size = New System.Drawing.Size(27, 22)
@@ -559,7 +570,7 @@ Partial Class frmGrd
         'btnHa
         '
         Me.btnHa.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnHa.Location = New System.Drawing.Point(19, 232)
+        Me.btnHa.Location = New System.Drawing.Point(14, 216)
         Me.btnHa.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnHa.Name = "btnHa"
         Me.btnHa.Size = New System.Drawing.Size(27, 22)
@@ -570,7 +581,7 @@ Partial Class frmGrd
         'btnMa
         '
         Me.btnMa.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnMa.Location = New System.Drawing.Point(19, 261)
+        Me.btnMa.Location = New System.Drawing.Point(14, 245)
         Me.btnMa.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnMa.Name = "btnMa"
         Me.btnMa.Size = New System.Drawing.Size(27, 22)
@@ -581,7 +592,7 @@ Partial Class frmGrd
         'btnYa
         '
         Me.btnYa.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnYa.Location = New System.Drawing.Point(19, 290)
+        Me.btnYa.Location = New System.Drawing.Point(14, 274)
         Me.btnYa.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnYa.Name = "btnYa"
         Me.btnYa.Size = New System.Drawing.Size(27, 22)
@@ -592,7 +603,7 @@ Partial Class frmGrd
         'btnRa
         '
         Me.btnRa.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnRa.Location = New System.Drawing.Point(19, 319)
+        Me.btnRa.Location = New System.Drawing.Point(14, 303)
         Me.btnRa.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnRa.Name = "btnRa"
         Me.btnRa.Size = New System.Drawing.Size(27, 22)
@@ -603,7 +614,7 @@ Partial Class frmGrd
         'btnWa
         '
         Me.btnWa.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnWa.Location = New System.Drawing.Point(19, 348)
+        Me.btnWa.Location = New System.Drawing.Point(14, 332)
         Me.btnWa.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnWa.Name = "btnWa"
         Me.btnWa.Size = New System.Drawing.Size(27, 22)
@@ -614,7 +625,7 @@ Partial Class frmGrd
         'btn1
         '
         Me.btn1.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btn1.Location = New System.Drawing.Point(51, 88)
+        Me.btn1.Location = New System.Drawing.Point(46, 72)
         Me.btn1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn1.Name = "btn1"
         Me.btn1.Size = New System.Drawing.Size(57, 22)
@@ -625,7 +636,7 @@ Partial Class frmGrd
         'btn1000
         '
         Me.btn1000.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btn1000.Location = New System.Drawing.Point(51, 116)
+        Me.btn1000.Location = New System.Drawing.Point(46, 100)
         Me.btn1000.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn1000.Name = "btn1000"
         Me.btn1000.Size = New System.Drawing.Size(57, 22)
@@ -636,7 +647,7 @@ Partial Class frmGrd
         'btn2000
         '
         Me.btn2000.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btn2000.Location = New System.Drawing.Point(51, 145)
+        Me.btn2000.Location = New System.Drawing.Point(46, 129)
         Me.btn2000.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn2000.Name = "btn2000"
         Me.btn2000.Size = New System.Drawing.Size(57, 22)
@@ -647,7 +658,7 @@ Partial Class frmGrd
         'btn3000
         '
         Me.btn3000.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btn3000.Location = New System.Drawing.Point(51, 174)
+        Me.btn3000.Location = New System.Drawing.Point(46, 158)
         Me.btn3000.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn3000.Name = "btn3000"
         Me.btn3000.Size = New System.Drawing.Size(57, 22)
@@ -658,7 +669,7 @@ Partial Class frmGrd
         'btn4000
         '
         Me.btn4000.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btn4000.Location = New System.Drawing.Point(51, 202)
+        Me.btn4000.Location = New System.Drawing.Point(46, 186)
         Me.btn4000.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn4000.Name = "btn4000"
         Me.btn4000.Size = New System.Drawing.Size(57, 22)
@@ -669,7 +680,7 @@ Partial Class frmGrd
         'btn5000
         '
         Me.btn5000.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btn5000.Location = New System.Drawing.Point(51, 232)
+        Me.btn5000.Location = New System.Drawing.Point(46, 216)
         Me.btn5000.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn5000.Name = "btn5000"
         Me.btn5000.Size = New System.Drawing.Size(57, 22)
@@ -680,7 +691,7 @@ Partial Class frmGrd
         'btn6000
         '
         Me.btn6000.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btn6000.Location = New System.Drawing.Point(51, 261)
+        Me.btn6000.Location = New System.Drawing.Point(46, 245)
         Me.btn6000.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn6000.Name = "btn6000"
         Me.btn6000.Size = New System.Drawing.Size(57, 22)
@@ -691,7 +702,7 @@ Partial Class frmGrd
         'btn7000
         '
         Me.btn7000.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btn7000.Location = New System.Drawing.Point(51, 290)
+        Me.btn7000.Location = New System.Drawing.Point(46, 274)
         Me.btn7000.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn7000.Name = "btn7000"
         Me.btn7000.Size = New System.Drawing.Size(57, 22)
@@ -702,7 +713,7 @@ Partial Class frmGrd
         'btn8000
         '
         Me.btn8000.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btn8000.Location = New System.Drawing.Point(51, 319)
+        Me.btn8000.Location = New System.Drawing.Point(46, 303)
         Me.btn8000.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn8000.Name = "btn8000"
         Me.btn8000.Size = New System.Drawing.Size(57, 22)
@@ -713,7 +724,7 @@ Partial Class frmGrd
         'btn9000
         '
         Me.btn9000.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btn9000.Location = New System.Drawing.Point(51, 348)
+        Me.btn9000.Location = New System.Drawing.Point(46, 332)
         Me.btn9000.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn9000.Name = "btn9000"
         Me.btn9000.Size = New System.Drawing.Size(57, 22)
@@ -741,7 +752,7 @@ Partial Class frmGrd
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Label4.Location = New System.Drawing.Point(421, 19)
+        Me.Label4.Location = New System.Drawing.Point(454, 23)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(29, 12)
         Me.Label4.TabIndex = 31
@@ -751,7 +762,7 @@ Partial Class frmGrd
         '
         Me.cmbBranchCar.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.cmbBranchCar.FormattingEnabled = True
-        Me.cmbBranchCar.Location = New System.Drawing.Point(456, 16)
+        Me.cmbBranchCar.Location = New System.Drawing.Point(489, 20)
         Me.cmbBranchCar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmbBranchCar.Name = "cmbBranchCar"
         Me.cmbBranchCar.Size = New System.Drawing.Size(77, 20)
@@ -760,7 +771,7 @@ Partial Class frmGrd
         'btnModify
         '
         Me.btnModify.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnModify.Location = New System.Drawing.Point(115, 50)
+        Me.btnModify.Location = New System.Drawing.Point(696, 363)
         Me.btnModify.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnModify.Name = "btnModify"
         Me.btnModify.Size = New System.Drawing.Size(89, 22)
@@ -771,7 +782,7 @@ Partial Class frmGrd
         'btnAdmin
         '
         Me.btnAdmin.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnAdmin.Location = New System.Drawing.Point(19, 11)
+        Me.btnAdmin.Location = New System.Drawing.Point(14, 12)
         Me.btnAdmin.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnAdmin.Name = "btnAdmin"
         Me.btnAdmin.Size = New System.Drawing.Size(89, 22)
@@ -791,9 +802,9 @@ Partial Class frmGrd
         Me.GroupBox1.Controls.Add(Me.cmbBranchStaff)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(210, 34)
+        Me.GroupBox1.Location = New System.Drawing.Point(171, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(614, 47)
+        Me.GroupBox1.Size = New System.Drawing.Size(669, 53)
         Me.GroupBox1.TabIndex = 35
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "絞り込み"
@@ -801,18 +812,147 @@ Partial Class frmGrd
         'btnFilterClear
         '
         Me.btnFilterClear.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btnFilterClear.Location = New System.Drawing.Point(550, 14)
+        Me.btnFilterClear.Location = New System.Drawing.Point(591, 19)
         Me.btnFilterClear.Name = "btnFilterClear"
-        Me.btnFilterClear.Size = New System.Drawing.Size(49, 23)
+        Me.btnFilterClear.Size = New System.Drawing.Size(55, 23)
         Me.btnFilterClear.TabIndex = 36
         Me.btnFilterClear.Text = "解除"
         Me.btnFilterClear.UseVisualStyleBackColor = True
+        '
+        'btnAddNewRow
+        '
+        Me.btnAddNewRow.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btnAddNewRow.Location = New System.Drawing.Point(601, 364)
+        Me.btnAddNewRow.Name = "btnAddNewRow"
+        Me.btnAddNewRow.Size = New System.Drawing.Size(89, 21)
+        Me.btnAddNewRow.TabIndex = 36
+        Me.btnAddNewRow.Text = "新しい行を追加"
+        Me.btnAddNewRow.UseVisualStyleBackColor = True
+        '
+        'btnDelete
+        '
+        Me.btnDelete.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btnDelete.Location = New System.Drawing.Point(791, 362)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(89, 22)
+        Me.btnDelete.TabIndex = 37
+        Me.btnDelete.Text = "選択行の削除"
+        Me.btnDelete.UseVisualStyleBackColor = True
+        '
+        'lblHowManyRecords
+        '
+        Me.lblHowManyRecords.AutoSize = True
+        Me.lblHowManyRecords.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.lblHowManyRecords.Location = New System.Drawing.Point(169, 364)
+        Me.lblHowManyRecords.Name = "lblHowManyRecords"
+        Me.lblHowManyRecords.Size = New System.Drawing.Size(108, 12)
+        Me.lblHowManyRecords.TabIndex = 38
+        Me.lblHowManyRecords.Text = "lblHowManyRecords"
+        '
+        'btn2tU
+        '
+        Me.btn2tU.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn2tU.Location = New System.Drawing.Point(109, 100)
+        Me.btn2tU.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn2tU.Name = "btn2tU"
+        Me.btn2tU.Size = New System.Drawing.Size(52, 22)
+        Me.btn2tU.TabIndex = 39
+        Me.btn2tU.Text = "2tU"
+        Me.btn2tU.UseVisualStyleBackColor = True
+        '
+        'btn3tU
+        '
+        Me.btn3tU.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn3tU.Location = New System.Drawing.Point(109, 129)
+        Me.btn3tU.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn3tU.Name = "btn3tU"
+        Me.btn3tU.Size = New System.Drawing.Size(52, 22)
+        Me.btn3tU.TabIndex = 40
+        Me.btn3tU.Text = "3tU"
+        Me.btn3tU.UseVisualStyleBackColor = True
+        '
+        'btn4tU
+        '
+        Me.btn4tU.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn4tU.Location = New System.Drawing.Point(109, 158)
+        Me.btn4tU.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn4tU.Name = "btn4tU"
+        Me.btn4tU.Size = New System.Drawing.Size(52, 22)
+        Me.btn4tU.TabIndex = 41
+        Me.btn4tU.Text = "4tU"
+        Me.btn4tU.UseVisualStyleBackColor = True
+        '
+        'btn7tU
+        '
+        Me.btn7tU.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn7tU.Location = New System.Drawing.Point(109, 187)
+        Me.btn7tU.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn7tU.Name = "btn7tU"
+        Me.btn7tU.Size = New System.Drawing.Size(52, 22)
+        Me.btn7tU.TabIndex = 42
+        Me.btn7tU.Text = "7tU"
+        Me.btn7tU.UseVisualStyleBackColor = True
+        '
+        'btn10tU
+        '
+        Me.btn10tU.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn10tU.Location = New System.Drawing.Point(109, 215)
+        Me.btn10tU.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn10tU.Name = "btn10tU"
+        Me.btn10tU.Size = New System.Drawing.Size(52, 22)
+        Me.btn10tU.TabIndex = 43
+        Me.btn10tU.Text = "10tU"
+        Me.btn10tU.UseVisualStyleBackColor = True
+        '
+        'btn15tU
+        '
+        Me.btn15tU.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn15tU.Location = New System.Drawing.Point(109, 245)
+        Me.btn15tU.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn15tU.Name = "btn15tU"
+        Me.btn15tU.Size = New System.Drawing.Size(52, 22)
+        Me.btn15tU.TabIndex = 44
+        Me.btn15tU.Text = "15tU"
+        Me.btn15tU.UseVisualStyleBackColor = True
+        '
+        'btn2tHira
+        '
+        Me.btn2tHira.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn2tHira.Location = New System.Drawing.Point(109, 72)
+        Me.btn2tHira.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn2tHira.Name = "btn2tHira"
+        Me.btn2tHira.Size = New System.Drawing.Size(52, 22)
+        Me.btn2tHira.TabIndex = 45
+        Me.btn2tHira.Text = "2t平"
+        Me.btn2tHira.UseVisualStyleBackColor = True
+        '
+        'btnAllCar
+        '
+        Me.btnAllCar.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btnAllCar.Location = New System.Drawing.Point(109, 274)
+        Me.btnAllCar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAllCar.Name = "btnAllCar"
+        Me.btnAllCar.Size = New System.Drawing.Size(52, 22)
+        Me.btnAllCar.TabIndex = 46
+        Me.btnAllCar.Text = "全車両"
+        Me.btnAllCar.UseVisualStyleBackColor = True
         '
         'frmGrd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(837, 384)
+        Me.ClientSize = New System.Drawing.Size(894, 418)
+        Me.Controls.Add(Me.btnAllCar)
+        Me.Controls.Add(Me.btn2tHira)
+        Me.Controls.Add(Me.btn15tU)
+        Me.Controls.Add(Me.btn10tU)
+        Me.Controls.Add(Me.btn7tU)
+        Me.Controls.Add(Me.btn4tU)
+        Me.Controls.Add(Me.btn3tU)
+        Me.Controls.Add(Me.btn2tU)
+        Me.Controls.Add(Me.lblHowManyRecords)
+        Me.Controls.Add(Me.btnDelete)
+        Me.Controls.Add(Me.btnAddNewRow)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnAdmin)
         Me.Controls.Add(Me.btnModify)
@@ -930,4 +1070,15 @@ Partial Class frmGrd
     Friend WithEvents btnAdmin As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnFilterClear As Button
+    Friend WithEvents btnAddNewRow As Button
+    Friend WithEvents btnDelete As Button
+    Friend WithEvents lblHowManyRecords As Label
+    Friend WithEvents btn2tU As Button
+    Friend WithEvents btn3tU As Button
+    Friend WithEvents btn4tU As Button
+    Friend WithEvents btn7tU As Button
+    Friend WithEvents btn10tU As Button
+    Friend WithEvents btn15tU As Button
+    Friend WithEvents btn2tHira As Button
+    Friend WithEvents btnAllCar As Button
 End Class

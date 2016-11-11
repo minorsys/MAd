@@ -111,6 +111,9 @@
         'データテーブルにデータアダプタを介してデータをセットする
         da.Fill(Me.PhoneNumDBDataSet.dtInteg)
 
+        '現在の行数をラベルに表示する
+        lblHowManyRecords.Text = "現在の行数：" & Me.grdMain.RowCount
+
     End Sub
 
     '電話番号フィルター変更時、データベースを再読み込み
@@ -164,6 +167,9 @@
 
         'データテーブルにデータアダプタを介してデータをセットする
         da.Fill(Me.PhoneNumDBDataSet.dtInteg)
+
+        '現在の行数をラベルに表示する
+        lblHowManyRecords.Text = "現在の行数：" & Me.grdMain.RowCount
     End Sub
 
     '絞り込みア行
@@ -326,6 +332,16 @@
         shiboriDatabase(fs)
     End Sub
 
+    '[解除]ボタンを押すとフィルタを解除して全レコードを表示する
+    Private Sub btnFilterClear_Click(sender As Object, e As EventArgs) Handles btnFilterClear.Click
+        txtFilterKana.Text = ""
+        txtFilterPhonenum.Text = ""
+        cmbBranchStaff.SelectedIndex = 0
+        cmbBranchCar.SelectedIndex = 0
+
+        LoadDatabase()
+    End Sub
+
     '[選択行の表示]ボタン
     Private Sub btnModify_Click(sender As Object, e As EventArgs) Handles btnModify.Click
         'データグリッドビューが空のときは終了する
@@ -351,13 +367,83 @@
 
     End Sub
 
-    '[解除]ボタンを押すとフィルタを解除して全レコードを表示する
-    Private Sub btnFilterClear_Click(sender As Object, e As EventArgs) Handles btnFilterClear.Click
-        txtFilterKana.Text = ""
-        txtFilterPhonenum.Text = ""
-        cmbBranchStaff.SelectedIndex = 0
-        cmbBranchCar.SelectedIndex = 0
+    '管理メニューボタン
+    Private Sub btnAdmin_Click(sender As Object, e As EventArgs) Handles btnAdmin.Click
+        frmAdmin.Show()
+    End Sub
 
-        LoadDatabase()
+    '[新しい行を追加]ボタン
+    Private Sub btnAddRecord_Click(sender As Object, e As EventArgs) Handles btnAddNewRow.Click
+
+    End Sub
+
+    '[選択した行を削除]ボタン
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+
+    End Sub
+
+    '[2t平]ボタン
+    Private Sub btn2tHira_Click(sender As Object, e As EventArgs) Handles btn2tHira.Click
+        Dim fs As String
+        fs = "tbl_car.ton = '2t平'"
+
+        shiboriDatabase(fs)
+    End Sub
+
+
+    '[2tU]ボタン
+    Private Sub btn2tU_Click(sender As Object, e As EventArgs) Handles btn2tU.Click
+        Dim fs As String
+        fs = "tbl_car.ton = '2tU'"
+
+        shiboriDatabase(fs)
+    End Sub
+
+    '[3tu]ボタン
+    Private Sub btn3tU_Click(sender As Object, e As EventArgs) Handles btn3tU.Click
+        Dim fs As String
+        fs = "tbl_car.ton = '3tU'"
+
+        shiboriDatabase(fs)
+    End Sub
+
+    '[4tu]ボタン
+    Private Sub btn4tU_Click(sender As Object, e As EventArgs) Handles btn4tU.Click
+        Dim fs As String
+        fs = "tbl_car.ton = '4tU'"
+
+        shiboriDatabase(fs)
+    End Sub
+
+    '[7tu]ボタン
+    Private Sub btn7tU_Click(sender As Object, e As EventArgs) Handles btn7tU.Click
+        Dim fs As String
+        fs = "tbl_car.ton = '7tU'"
+
+        shiboriDatabase(fs)
+    End Sub
+
+    '[10tU]
+    Private Sub btn10tU_Click(sender As Object, e As EventArgs) Handles btn10tU.Click
+        Dim fs As String
+        fs = "tbl_car.ton = '10tU'"
+
+        shiboriDatabase(fs)
+    End Sub
+
+    '[15tU]ボタン
+    Private Sub btn15tU_Click(sender As Object, e As EventArgs) Handles btn15tU.Click
+        Dim fs As String
+        fs = "tbl_car.ton = '15tU'"
+
+        shiboriDatabase(fs)
+    End Sub
+
+    '[全車両]ボタン 
+    Private Sub btnAllCar_Click(sender As Object, e As EventArgs) Handles btnAllCar.Click
+        Dim fs As String
+        fs = "tbl_car.carnum1 like '%[0-9]%'"
+
+        shiboriDatabase(fs)
     End Sub
 End Class

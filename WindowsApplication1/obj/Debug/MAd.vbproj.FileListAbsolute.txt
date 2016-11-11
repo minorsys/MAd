@@ -10,3 +10,5 @@ C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.exe
 C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.xml
 C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.pdb
 C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.frmModifier.resources
+C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.frmAdmin.resources
+C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.frmMasterPhone.resources

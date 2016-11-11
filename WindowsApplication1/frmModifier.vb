@@ -164,9 +164,9 @@
 
     End Sub
 
-    '[決定]ボタンを押すと、現在表示されている内容で各テーブルのレコードを更新する
+    '[登録]ボタンを押すと、現在表示されている内容で各テーブルのレコードを更新する
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
-        '必須チェック
+        '登録する内容がデータ型と一致しているかチェック
 
 
 
@@ -175,17 +175,31 @@
 
             '編集状態を確定する
             Me.Tbl_IntegrateBindingSource.EndEdit()
-            'Me.Tbl_PhoneNumBindingSource.EndEdit()
+            Me.Tbl_PhoneNumBindingSource.EndEdit()
             Me.Tbl_staffBindingSource.EndEdit()
             Me.Tbl_carBindingSource.EndEdit()
 
             'テーブルアダプタを介して、レコードを更新する
             Me.Tbl_IntegrateTableAdapter.Update(Me.PhoneNumDBDataSet.tbl_Integrate)
-            'Me.Tbl_PhoneNumTableAdapter.Update(Me.PhoneNumDBDataSet.tbl_PhoneNum)
+            Me.Tbl_PhoneNumTableAdapter.Update(Me.PhoneNumDBDataSet.tbl_PhoneNum)
             Me.Tbl_staffTableAdapter.Update(Me.PhoneNumDBDataSet.tbl_staff)
             Me.Tbl_carTableAdapter.Update(Me.PhoneNumDBDataSet.tbl_car)
 
-            'Me.TableAdapterManager.UpdateAll(Me.PhoneNumDBDataSet)
+            'フォームを閉じる
+            Me.Close()
         End If
+    End Sub
+
+    '[クリア]ボタンを押すと、lblInteg～を空白にする。(LblInteg～はTblIntegにバインドしている)
+    Private Sub btnClearPhone_Click(sender As Object, e As EventArgs) Handles btnClearPhone.Click
+        lblIntegPhonenum.Text = ""
+    End Sub
+
+    Private Sub btnClearStaff_Click(sender As Object, e As EventArgs) Handles btnClearStaff.Click
+        lblIntegStaffID.Text = ""
+    End Sub
+
+    Private Sub btnClearCar_Click(sender As Object, e As EventArgs) Handles btnClearCar.Click
+        lblIntegCarnum.Text = ""
     End Sub
 End Class
