@@ -202,4 +202,130 @@
     Private Sub btnClearCar_Click(sender As Object, e As EventArgs) Handles btnClearCar.Click
         lblIntegCarnum.Text = ""
     End Sub
+
+    Private Function CheckEditData() As Boolean
+        'データの検査(機種名)
+        With txtModel
+            If Not CheckMaxLengthPhone("model", .Text) Then
+                MsgBox("機種名は半角20字以内で入力してください")
+                .Select()
+                Return False
+            End If
+        End With
+
+        With txtMail
+            'データの検査(メール)
+            If Not CheckMaxLengthPhone("mail", .text) Then
+                MsgBox("メールアドレスは半角50字以内で入力してください")
+                .Select()
+                Return False
+            End If
+        End With
+
+        'データの検査(備考)
+        With txtBikoPhone
+            If Not CheckMaxLengthPhone("biko", .Text) Then
+                MsgBox("備考は半角100字以内で入力してください")
+                .Select()
+                Return False
+            End If
+        End With
+
+        'データの検査(氏名ｶﾅ)
+        With txtStaffKana
+            If Not CheckMaxLengthStaff("staff_kana", .Text) Then
+                MsgBox("氏名ｶﾅは半角20字以内で入力してください")
+                .Select()
+                Return False
+            End If
+        End With
+
+        'データの検査(所属)
+        With cmbStaffBranch
+            If .SelectedIndex = 0 Then
+                MsgBox("社員の所属が選択されていません")
+                .Select()
+                Return False
+            End If
+        End With
+
+        'データの検査(車番2)
+        With txtCarnum2
+            If Not CheckMaxLengthCar("carnum2", .Text) Then
+                MsgBox("車番2は全角4字以内で入力してください")
+                .Select()
+                Return False
+            End If
+        End With
+
+        'データの検査(車番3)
+        With txtCarnum3
+            If Not CheckMaxLengthCar("carnum3", .Text) Then
+                MsgBox("車番3は半角3字以内で入力してください")
+                .Select()
+                Return False
+            End If
+        End With
+
+        'データの検査(車番4)
+        With txtCarnum4
+            If Not CheckMaxLengthCar("carnum4", .Text) Then
+                MsgBox("車番4は全角1文字で入力してください")
+                .Select()
+                Return False
+            End If
+        End With
+
+        'データの検査(無線)
+        With txtMusen
+
+        End With
+
+    End Function
+
+    '桁数チェック-電話番号(指定された列のサイズと文字列の比較)
+    Private Function CheckMaxLengthPhone(ByVal fieldname As String, ByVal value As String)
+        'データセットから列の情報を読み取る
+        Dim column As DataColumn = PhoneNumDBDataSet.tbl_PhoneNum.Columns(fieldname)
+        'シフトJISで文字列のバイト数を取得する
+        Dim length As Integer = System.Text.Encoding.GetEncoding(932).GetByteCount(value)
+
+        '指定されたサイズを超えたときはエラーになる
+        If length > column.MaxLength Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
+    '桁数チェック-社員(指定された列のサイズと文字列の比較)
+    Private Function CheckMaxLengthStaff(ByVal fieldname As String, ByVal value As String)
+        'データセットから列の情報を読み取る
+        Dim column As DataColumn = PhoneNumDBDataSet.tbl_staff.Columns(fieldname)
+        'シフトJISで文字列のバイト数を取得する
+        Dim length As Integer = System.Text.Encoding.GetEncoding(932).GetByteCount(value)
+
+        '指定されたサイズを超えたときはエラーになる
+        If length > column.MaxLength Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
+    '桁数チェック-車両(指定された列のサイズと文字列の比較)
+    Private Function CheckMaxLengthCar(ByVal fieldname As String, ByVal value As String)
+        'データセットから列の情報を読み取る
+        Dim column As DataColumn = PhoneNumDBDataSet.tbl_car.Columns(fieldname)
+        'シフトJISで文字列のバイト数を取得する
+        Dim length As Integer = System.Text.Encoding.GetEncoding(932).GetByteCount(value)
+
+        '指定されたサイズを超えたときはエラーになる
+        If length > column.MaxLength Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
 End Class

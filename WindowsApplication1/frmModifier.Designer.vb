@@ -500,7 +500,7 @@ Partial Class frmModifier
         'txtCarnum2
         '
         Me.txtCarnum2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_carBindingSource, "carnum2", True))
-        Me.txtCarnum2.Location = New System.Drawing.Point(73, 56)
+        Me.txtCarnum2.Location = New System.Drawing.Point(71, 59)
         Me.txtCarnum2.Name = "txtCarnum2"
         Me.txtCarnum2.Size = New System.Drawing.Size(53, 19)
         Me.txtCarnum2.TabIndex = 3
@@ -508,7 +508,7 @@ Partial Class frmModifier
         'txtCarnum3
         '
         Me.txtCarnum3.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_carBindingSource, "carnum3", True))
-        Me.txtCarnum3.Location = New System.Drawing.Point(132, 56)
+        Me.txtCarnum3.Location = New System.Drawing.Point(130, 59)
         Me.txtCarnum3.Name = "txtCarnum3"
         Me.txtCarnum3.Size = New System.Drawing.Size(39, 19)
         Me.txtCarnum3.TabIndex = 5
@@ -516,7 +516,7 @@ Partial Class frmModifier
         'txtCarnum4
         '
         Me.txtCarnum4.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_carBindingSource, "carnum4", True))
-        Me.txtCarnum4.Location = New System.Drawing.Point(177, 56)
+        Me.txtCarnum4.Location = New System.Drawing.Point(175, 59)
         Me.txtCarnum4.Name = "txtCarnum4"
         Me.txtCarnum4.Size = New System.Drawing.Size(35, 19)
         Me.txtCarnum4.TabIndex = 7
