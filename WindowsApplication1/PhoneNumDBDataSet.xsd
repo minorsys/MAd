@@ -581,7 +581,13 @@ WHERE tbl_staff.staff_kana like @filtername</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="musen" msprop:Generator_ColumnVarNameInTable="columnmusen" msprop:Generator_ColumnPropNameInRow="musen" msprop:Generator_ColumnPropNameInTable="musenColumn" msprop:Generator_UserColumnName="musen" type="xs:int" minOccurs="0" />
+              <xs:element name="musen" msprop:Generator_ColumnVarNameInTable="columnmusen" msprop:Generator_ColumnPropNameInRow="musen" msprop:Generator_ColumnPropNameInTable="musenColumn" msprop:Generator_UserColumnName="musen" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="ton" msprop:Generator_ColumnVarNameInTable="columnton" msprop:Generator_ColumnPropNameInRow="ton" msprop:Generator_ColumnPropNameInTable="tonColumn" msprop:Generator_UserColumnName="ton" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -838,7 +844,13 @@ WHERE tbl_staff.staff_kana like @filtername</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="musen" msprop:Generator_ColumnVarNameInTable="columnmusen" msprop:Generator_ColumnPropNameInRow="musen" msprop:Generator_ColumnPropNameInTable="musenColumn" msprop:Generator_UserColumnName="musen" type="xs:int" minOccurs="0" />
+              <xs:element name="musen" msprop:Generator_ColumnVarNameInTable="columnmusen" msprop:Generator_ColumnPropNameInRow="musen" msprop:Generator_ColumnPropNameInTable="musenColumn" msprop:Generator_UserColumnName="musen" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="carnum4" msprop:Generator_ColumnVarNameInTable="columncarnum4" msprop:Generator_ColumnPropNameInRow="carnum4" msprop:Generator_ColumnPropNameInTable="carnum4Column" msprop:Generator_UserColumnName="carnum4" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
