@@ -62,6 +62,7 @@
             '### 電話番号変更用コンボボックスの設定###
             'データコマンドの定義
             command.CommandText = "SELECT phonenum FROM tbl_phonenum ORDER BY phonenum"
+
             'データリーダーからのデータの読出し
             dr = command.ExecuteReader()
             Do While dr.Read

@@ -159,8 +159,8 @@
 
 
 
-            'データアダプタにSQLステートメントを設定する
-            Dim da As New SqlClient.SqlDataAdapter(Sql, My.Settings.PhoneNumDBConnectionString)
+        'データアダプタにSQLステートメントを設定する
+        Dim da As New SqlClient.SqlDataAdapter(sql, My.Settings.PhoneNumDBConnectionString)
 
         'データテーブルをクリアする
         Me.PhoneNumDBDataSet.dtInteg.Clear()
@@ -374,6 +374,13 @@
 
     '[新しい行を追加]ボタン
     Private Sub btnAddRecord_Click(sender As Object, e As EventArgs) Handles btnAddNewRow.Click
+        Dim f As New frmAddRecord() '[新しい行を追加]フォーム
+
+        '[新しい行を追加]フォームを表示する
+        f.ShowDialog(Me)
+
+        '新規登録の処理から戻ってきたら、表を更新する
+        LoadDatabase()
 
     End Sub
 
