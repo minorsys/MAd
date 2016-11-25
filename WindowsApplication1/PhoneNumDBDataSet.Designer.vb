@@ -987,7 +987,7 @@ Partial Public Class PhoneNumDBDataSet
             Me.columncarnum1.MaxLength = 4
             Me.columncarnum2.MaxLength = 4
             Me.columncarnum3.MaxLength = 3
-            Me.columncarnum4.MaxLength = 1
+            Me.columncarnum4.MaxLength = 2
             Me.columnmusen.MaxLength = 4
             Me.columnton.MaxLength = 4
             Me.columnbiko.MaxLength = 100
@@ -2674,7 +2674,7 @@ Partial Public Class PhoneNumDBDataSet
                     ByVal car_branch As String,  _
                     ByVal car_biko As String,  _
                     ByVal ton As String,  _
-                    ByVal musen As String,  _
+                    ByVal musen As Integer,  _
                     ByVal carnum4 As String,  _
                     ByVal carnum3 As String,  _
                     ByVal carnum2 As String,  _
@@ -2766,7 +2766,7 @@ Partial Public Class PhoneNumDBDataSet
             MyBase.Columns.Add(Me.columncar_biko)
             Me.columnton = New Global.System.Data.DataColumn("ton", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnton)
-            Me.columnmusen = New Global.System.Data.DataColumn("musen", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnmusen = New Global.System.Data.DataColumn("musen", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmusen)
             Me.columncarnum4 = New Global.System.Data.DataColumn("carnum4", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncarnum4)
@@ -2800,7 +2800,6 @@ Partial Public Class PhoneNumDBDataSet
             Me.columncar_branch.MaxLength = 3
             Me.columncar_biko.MaxLength = 100
             Me.columnton.MaxLength = 4
-            Me.columnmusen.MaxLength = 4
             Me.columncarnum4.MaxLength = 1
             Me.columncarnum3.MaxLength = 3
             Me.columncarnum2.MaxLength = 4
@@ -3830,10 +3829,10 @@ Partial Public Class PhoneNumDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property musen() As String
+        Public Property musen() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tabledtInteg.musenColumn),String)
+                    Return CType(Me(Me.tabledtInteg.musenColumn),Integer)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("テーブル 'dtInteg' にある列 'musen' の値は DBNull です。", e)
                 End Try

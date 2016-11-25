@@ -111,6 +111,17 @@
         cmbStaffBranch.SelectedValue = lblStaffBranch.Text
         cmbCarBranch.SelectedValue = lblCarBranch.Text
 
+        '### 車格コンボボックスに値をセット ###
+        cmbTon.Items.Add("2t平")
+        cmbTon.Items.Add("2t平PG")
+        cmbTon.Items.Add("2tU")
+        cmbTon.Items.Add("3tU")
+        cmbTon.Items.Add("4tU")
+        cmbTon.Items.Add("7tU")
+        cmbTon.Items.Add("10tU")
+        cmbTon.Items.Add("15tU")
+        cmbTon.Items.Add("その他")
+
     End Sub
 
     '###frmGrdから受け取ったレコードをラベルに出力する###
@@ -367,4 +378,8 @@
         End If
     End Function
 
+    '車格コンボボックスの値が変更されたら、車格テキストボックスに代入
+    Private Sub cmbTon_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbTon.SelectedIndexChanged
+        txtTon.Text = cmbTon.SelectedItem
+    End Sub
 End Class

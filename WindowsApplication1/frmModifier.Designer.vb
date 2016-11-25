@@ -58,6 +58,7 @@ Partial Class frmModifier
         Me.lblIntegStaffID = New System.Windows.Forms.Label()
         Me.txtStaffKana = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.cmbTon = New System.Windows.Forms.ComboBox()
         Me.btnClearCar = New System.Windows.Forms.Button()
         Me.cmbCarBranch = New System.Windows.Forms.ComboBox()
         Me.Tbl_carBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -283,6 +284,7 @@ Partial Class frmModifier
         'txtMail
         '
         Me.txtMail.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_PhoneNumBindingSource, "mail", True))
+        Me.txtMail.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.txtMail.Location = New System.Drawing.Point(55, 86)
         Me.txtMail.Name = "txtMail"
         Me.txtMail.Size = New System.Drawing.Size(161, 19)
@@ -315,6 +317,7 @@ Partial Class frmModifier
         'txtBikoPhone
         '
         Me.txtBikoPhone.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_PhoneNumBindingSource, "biko", True))
+        Me.txtBikoPhone.ImeMode = System.Windows.Forms.ImeMode.Hiragana
         Me.txtBikoPhone.Location = New System.Drawing.Point(55, 112)
         Me.txtBikoPhone.Multiline = True
         Me.txtBikoPhone.Name = "txtBikoPhone"
@@ -324,6 +327,7 @@ Partial Class frmModifier
         'txtModel
         '
         Me.txtModel.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_PhoneNumBindingSource, "model", True))
+        Me.txtModel.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.txtModel.Location = New System.Drawing.Point(55, 62)
         Me.txtModel.Name = "txtModel"
         Me.txtModel.Size = New System.Drawing.Size(98, 19)
@@ -414,6 +418,7 @@ Partial Class frmModifier
         'txtStaffKana
         '
         Me.txtStaffKana.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_staffBindingSource, "staff_kana", True))
+        Me.txtStaffKana.ImeMode = System.Windows.Forms.ImeMode.KatakanaHalf
         Me.txtStaffKana.Location = New System.Drawing.Point(80, 81)
         Me.txtStaffKana.Name = "txtStaffKana"
         Me.txtStaffKana.Size = New System.Drawing.Size(99, 19)
@@ -421,6 +426,7 @@ Partial Class frmModifier
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.cmbTon)
         Me.GroupBox3.Controls.Add(Me.btnClearCar)
         Me.GroupBox3.Controls.Add(Branch_idLabel2)
         Me.GroupBox3.Controls.Add(Me.cmbCarBranch)
@@ -442,6 +448,18 @@ Partial Class frmModifier
         Me.GroupBox3.TabIndex = 7
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "車両情報"
+        '
+        'cmbTon
+        '
+        Me.cmbTon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTon.DropDownWidth = 120
+        Me.cmbTon.FormattingEnabled = True
+        Me.cmbTon.Location = New System.Drawing.Point(175, 110)
+        Me.cmbTon.MaxDropDownItems = 30
+        Me.cmbTon.MaxLength = 50
+        Me.cmbTon.Name = "cmbTon"
+        Me.cmbTon.Size = New System.Drawing.Size(17, 20)
+        Me.cmbTon.TabIndex = 24
         '
         'btnClearCar
         '
@@ -500,6 +518,7 @@ Partial Class frmModifier
         'txtCarnum2
         '
         Me.txtCarnum2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_carBindingSource, "carnum2", True))
+        Me.txtCarnum2.ImeMode = System.Windows.Forms.ImeMode.Hiragana
         Me.txtCarnum2.Location = New System.Drawing.Point(71, 59)
         Me.txtCarnum2.Name = "txtCarnum2"
         Me.txtCarnum2.Size = New System.Drawing.Size(53, 19)
@@ -508,6 +527,7 @@ Partial Class frmModifier
         'txtCarnum3
         '
         Me.txtCarnum3.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_carBindingSource, "carnum3", True))
+        Me.txtCarnum3.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.txtCarnum3.Location = New System.Drawing.Point(130, 59)
         Me.txtCarnum3.Name = "txtCarnum3"
         Me.txtCarnum3.Size = New System.Drawing.Size(39, 19)
@@ -516,6 +536,7 @@ Partial Class frmModifier
         'txtCarnum4
         '
         Me.txtCarnum4.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_carBindingSource, "carnum4", True))
+        Me.txtCarnum4.ImeMode = System.Windows.Forms.ImeMode.Hiragana
         Me.txtCarnum4.Location = New System.Drawing.Point(175, 59)
         Me.txtCarnum4.Name = "txtCarnum4"
         Me.txtCarnum4.Size = New System.Drawing.Size(35, 19)
@@ -524,6 +545,7 @@ Partial Class frmModifier
         'txtMusen
         '
         Me.txtMusen.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_carBindingSource, "musen", True))
+        Me.txtMusen.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.txtMusen.Location = New System.Drawing.Point(71, 85)
         Me.txtMusen.Name = "txtMusen"
         Me.txtMusen.Size = New System.Drawing.Size(100, 19)
@@ -532,14 +554,17 @@ Partial Class frmModifier
         'txtTon
         '
         Me.txtTon.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_carBindingSource, "ton", True))
+        Me.txtTon.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.txtTon.Location = New System.Drawing.Point(71, 110)
         Me.txtTon.Name = "txtTon"
+        Me.txtTon.ReadOnly = True
         Me.txtTon.Size = New System.Drawing.Size(100, 19)
         Me.txtTon.TabIndex = 11
         '
         'txtBikoCar
         '
         Me.txtBikoCar.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_carBindingSource, "biko", True))
+        Me.txtBikoCar.ImeMode = System.Windows.Forms.ImeMode.Hiragana
         Me.txtBikoCar.Location = New System.Drawing.Point(71, 135)
         Me.txtBikoCar.Multiline = True
         Me.txtBikoCar.Name = "txtBikoCar"
@@ -690,4 +715,5 @@ Partial Class frmModifier
     Friend WithEvents btnClearStaff As Button
     Friend WithEvents btnClearPhone As Button
     Friend WithEvents btnClearCar As Button
+    Friend WithEvents cmbTon As ComboBox
 End Class
