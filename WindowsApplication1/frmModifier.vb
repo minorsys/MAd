@@ -62,6 +62,7 @@
             '### 電話番号変更用コンボボックスの設定###
             'データコマンドの定義
             command.CommandText = "SELECT phonenum FROM tbl_phonenum ORDER BY phonenum"
+
             'データリーダーからのデータの読出し
             dr = command.ExecuteReader()
             Do While dr.Read
@@ -109,6 +110,17 @@
         'フォーム開始時、所属コンボボックスの値が自動でセットされないでindex = 0になってしまうので苦肉の策
         cmbStaffBranch.SelectedValue = lblStaffBranch.Text
         cmbCarBranch.SelectedValue = lblCarBranch.Text
+
+        '### 車格コンボボックスに値をセット ###
+        cmbTon.Items.Add("2t平")
+        cmbTon.Items.Add("2t平PG")
+        cmbTon.Items.Add("2tU")
+        cmbTon.Items.Add("3tU")
+        cmbTon.Items.Add("4tU")
+        cmbTon.Items.Add("7tU")
+        cmbTon.Items.Add("10tU")
+        cmbTon.Items.Add("15tU")
+        cmbTon.Items.Add("その他")
 
     End Sub
 
@@ -167,7 +179,9 @@
     '[登録]ボタンを押すと、現在表示されている内容で各テーブルのレコードを更新する
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
         '登録する内容がデータ型と一致しているかチェック
-
+        If Not CheckEditData() Then
+            Return
+        End If
 
 
         '保存確認と保存処理
@@ -215,7 +229,7 @@
 
         With txtMail
             'データの検査(メール)
-            If Not CheckMaxLengthPhone("mail", .text) Then
+            If Not CheckMaxLengthPhone("mail", .Text) Then
                 MsgBox("メールアドレスは半角50字以内で入力してください")
                 .Select()
                 Return False
@@ -225,7 +239,7 @@
         'データの検査(備考)
         With txtBikoPhone
             If Not CheckMaxLengthPhone("biko", .Text) Then
-                MsgBox("備考は半角100字以内で入力してください")
+                MsgBox("備考は全角50字以内で入力してください")
                 .Select()
                 Return False
             End If
@@ -278,8 +292,44 @@
 
         'データの検査(無線)
         With txtMusen
+            If Not CheckMaxLengthCar("musen", .Text) Then
 
+                MsgBox("無線番号は半角4字以内で入力してください")
+                .Select()
+                Return False
+            End If
         End With
+
+        'データの検査(車格)
+        With txtTon
+            If Not CheckMaxLengthCar("ton", .Text) Then
+                MsgBox("車格は半角4字以内で入力してください")
+                .Select()
+                Return False
+            End If
+        End With
+
+        'データの検査(備考)
+        With txtBikoCar
+            If Not CheckMaxLengthCar("biko", .Text) Then
+                MsgBox("備考は全角50字以内で入力してください")
+                .Select()
+                Return False
+            End If
+        End With
+
+        'データの検査(車庫)
+        With cmbCarBranch
+            If .SelectedIndex = 0 Then
+                MsgBox("車両の所属が選択されていません")
+                .Select()
+                Return False
+
+            End If
+        End With
+
+        '全ての検査を通過した
+        Return True
 
     End Function
 
@@ -328,4 +378,8 @@
         End If
     End Function
 
+    '車格コンボボックスの値が変更されたら、車格テキストボックスに代入
+    Private Sub cmbTon_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbTon.SelectedIndexChanged
+        txtTon.Text = cmbTon.SelectedItem
+    End Sub
 End Class

@@ -921,7 +921,7 @@ Partial Public Class PhoneNumDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function Addtbl_carRow(ByVal carnum1 As String, ByVal carnum2 As String, ByVal carnum3 As String, ByVal carnum4 As String, ByVal musen As Integer, ByVal ton As String, ByVal biko As String, ByVal branch_id As String) As tbl_carRow
+        Public Overloads Function Addtbl_carRow(ByVal carnum1 As String, ByVal carnum2 As String, ByVal carnum3 As String, ByVal carnum4 As String, ByVal musen As String, ByVal ton As String, ByVal biko As String, ByVal branch_id As String) As tbl_carRow
             Dim rowtbl_carRow As tbl_carRow = CType(Me.NewRow,tbl_carRow)
             Dim columnValuesArray() As Object = New Object() {carnum1, carnum2, carnum3, carnum4, musen, ton, biko, branch_id}
             rowtbl_carRow.ItemArray = columnValuesArray
@@ -973,7 +973,7 @@ Partial Public Class PhoneNumDBDataSet
             MyBase.Columns.Add(Me.columncarnum3)
             Me.columncarnum4 = New Global.System.Data.DataColumn("carnum4", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncarnum4)
-            Me.columnmusen = New Global.System.Data.DataColumn("musen", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnmusen = New Global.System.Data.DataColumn("musen", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmusen)
             Me.columnton = New Global.System.Data.DataColumn("ton", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnton)
@@ -987,7 +987,8 @@ Partial Public Class PhoneNumDBDataSet
             Me.columncarnum1.MaxLength = 4
             Me.columncarnum2.MaxLength = 4
             Me.columncarnum3.MaxLength = 3
-            Me.columncarnum4.MaxLength = 1
+            Me.columncarnum4.MaxLength = 2
+            Me.columnmusen.MaxLength = 4
             Me.columnton.MaxLength = 4
             Me.columnbiko.MaxLength = 100
             Me.columnbranch_id.MaxLength = 3
@@ -3063,10 +3064,10 @@ Partial Public Class PhoneNumDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property musen() As Integer
+        Public Property musen() As String
             Get
                 Try 
-                    Return CType(Me(Me.tabletbl_car.musenColumn),Integer)
+                    Return CType(Me(Me.tabletbl_car.musenColumn),String)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("テーブル 'tbl_car' にある列 'musen' の値は DBNull です。", e)
                 End Try

@@ -93,14 +93,19 @@
                                   "tbl_branch As tbl_branch_1 On tbl_car.branch_id = tbl_branch_1.id_branch " &
                                     "RIGHT OUTER JOIN tbl_Integrate ON tbl_car.carnum1 = tbl_Integrate.integ_carnum " &
                                     "LEFT OUTER JOIN tbl_branch INNER JOIN tbl_staff ON tbl_branch.id_branch = tbl_staff.branch_id ON tbl_Integrate.integ_staff = tbl_staff.id_staff ON " &
-                                  "tbl_PhoneNum.phonenum = tbl_Integrate.integ_phonenum"
+                                  "tbl_PhoneNum.phonenum = tbl_Integrate.integ_phonenum "
+
 
         '条件が指定されているときには、WHERE句を追加する
         If fs <> "" Then
             sql &= " WHERE " & fs
 
-
+        Else
+            '条件がなければ、無線番号順にソート（SQL文の末尾にORDER BYを追加）
+            sql &= " ORDER BY tbl_integrate.integ_staff "
         End If
+
+
 
         'データアダプタにSQLステートメントを設定する
         Dim da As New SqlClient.SqlDataAdapter(sql, My.Settings.PhoneNumDBConnectionString)
@@ -112,7 +117,7 @@
         da.Fill(Me.PhoneNumDBDataSet.dtInteg)
 
         '現在の行数をラベルに表示する
-        lblHowManyRecords.Text = "現在の行数：" & Me.grdMain.RowCount
+        lblHowManyRecords.Text = "現在表示している行数：" & Me.grdMain.RowCount
 
     End Sub
 
@@ -152,15 +157,16 @@
                                   "tbl_branch As tbl_branch_1 On tbl_car.branch_id = tbl_branch_1.id_branch " &
                                     "RIGHT OUTER JOIN tbl_Integrate ON tbl_car.carnum1 = tbl_Integrate.integ_carnum " &
                                     "LEFT OUTER JOIN tbl_branch INNER JOIN tbl_staff ON tbl_branch.id_branch = tbl_staff.branch_id ON tbl_Integrate.integ_staff = tbl_staff.id_staff ON " &
-                                  "tbl_PhoneNum.phonenum = tbl_Integrate.integ_phonenum"
+                                  "tbl_PhoneNum.phonenum = tbl_Integrate.integ_phonenum "
+
 
         sql &= " WHERE " & fs
 
 
 
 
-            'データアダプタにSQLステートメントを設定する
-            Dim da As New SqlClient.SqlDataAdapter(Sql, My.Settings.PhoneNumDBConnectionString)
+        'データアダプタにSQLステートメントを設定する
+        Dim da As New SqlClient.SqlDataAdapter(sql, My.Settings.PhoneNumDBConnectionString)
 
         'データテーブルをクリアする
         Me.PhoneNumDBDataSet.dtInteg.Clear()
@@ -169,13 +175,13 @@
         da.Fill(Me.PhoneNumDBDataSet.dtInteg)
 
         '現在の行数をラベルに表示する
-        lblHowManyRecords.Text = "現在の行数：" & Me.grdMain.RowCount
+        lblHowManyRecords.Text = "現在表示している行数：" & Me.grdMain.RowCount
     End Sub
 
     '絞り込みア行
     Private Sub btnA_Click(sender As Object, e As EventArgs) Handles btnA.Click
         Dim fs As String
-        fs = "tbl_staff.staff_kana like '[ｱ-ｵ]%'"
+        fs = "tbl_staff.staff_kana like '[ｱ-ｵ]%' ORDER BY tbl_staff.staff_kana"
 
         shiboriDatabase(fs)
     End Sub
@@ -183,7 +189,7 @@
     '絞り込みカ行
     Private Sub btnKa_Click(sender As Object, e As EventArgs) Handles btnKa.Click
         Dim fs As String
-        fs = "tbl_staff.staff_kana like '[ｶ-ｺ]%'"
+        fs = "tbl_staff.staff_kana like '[ｶ-ｺ]%' ORDER BY tbl_staff.staff_kana"
 
         shiboriDatabase(fs)
     End Sub
@@ -191,7 +197,7 @@
     '絞り込みサ行
     Private Sub btnSa_Click(sender As Object, e As EventArgs) Handles btnSa.Click
         Dim fs As String
-        fs = "tbl_staff.staff_kana like '[ｻ-ｿ]%'"
+        fs = "tbl_staff.staff_kana like '[ｻ-ｿ]%' ORDER BY tbl_staff.staff_kana"
 
         shiboriDatabase(fs)
     End Sub
@@ -199,7 +205,7 @@
     '絞り込みタ行
     Private Sub btnTa_Click(sender As Object, e As EventArgs) Handles btnTa.Click
         Dim fs As String
-        fs = "tbl_staff.staff_kana like '[ﾀ-ﾄ]%'"
+        fs = "tbl_staff.staff_kana like '[ﾀ-ﾄ]%' ORDER BY tbl_staff.staff_kana"
 
         shiboriDatabase(fs)
     End Sub
@@ -207,7 +213,7 @@
     '絞り込みナ行
     Private Sub btnNa_Click(sender As Object, e As EventArgs) Handles btnNa.Click
         Dim fs As String
-        fs = "tbl_staff.staff_kana like '[ﾅ-ﾉ]%'"
+        fs = "tbl_staff.staff_kana like '[ﾅ-ﾉ]%' ORDER BY tbl_staff.staff_kana"
 
         shiboriDatabase(fs)
     End Sub
@@ -215,7 +221,7 @@
     '絞り込みハ行
     Private Sub btnHa_Click(sender As Object, e As EventArgs) Handles btnHa.Click
         Dim fs As String
-        fs = "tbl_staff.staff_kana like '[ﾊ-ﾎ]%'"
+        fs = "tbl_staff.staff_kana like '[ﾊ-ﾎ]%' ORDER BY tbl_staff.staff_kana"
 
         shiboriDatabase(fs)
     End Sub
@@ -223,7 +229,7 @@
     '絞り込みマ行
     Private Sub btnMa_Click(sender As Object, e As EventArgs) Handles btnMa.Click
         Dim fs As String
-        fs = "tbl_staff.staff_kana like '[ﾏ-ﾓ]%'"
+        fs = "tbl_staff.staff_kana like '[ﾏ-ﾓ]%' ORDER BY tbl_staff.staff_kana"
 
         shiboriDatabase(fs)
     End Sub
@@ -231,7 +237,7 @@
     '絞り込みヤ行
     Private Sub btnYa_Click(sender As Object, e As EventArgs) Handles btnYa.Click
         Dim fs As String
-        fs = "tbl_staff.staff_kana like '[ﾔ-ﾖ]%'"
+        fs = "tbl_staff.staff_kana like '[ﾔ-ﾖ]%' ORDER BY tbl_staff.staff_kana"
 
         shiboriDatabase(fs)
     End Sub
@@ -239,7 +245,7 @@
     '絞り込みラ行
     Private Sub btnRa_Click(sender As Object, e As EventArgs) Handles btnRa.Click
         Dim fs As String
-        fs = "tbl_staff.staff_kana like '[ﾗ-ﾛ]%'"
+        fs = "tbl_staff.staff_kana like '[ﾗ-ﾛ]%' ORDER BY tbl_staff.staff_kana"
 
         shiboriDatabase(fs)
     End Sub
@@ -247,7 +253,7 @@
     '絞り込みワ行
     Private Sub btnWa_Click(sender As Object, e As EventArgs) Handles btnWa.Click
         Dim fs As String
-        fs = "tbl_staff.staff_kana like '[ﾜ-ｦ]%'"
+        fs = "tbl_staff.staff_kana like '[ﾜ-ｦ]%' ORDER BY tbl_staff.staff_kana"
 
         shiboriDatabase(fs)
     End Sub
@@ -255,7 +261,7 @@
     '絞り込み1000未満
     Private Sub btn1_Click(sender As Object, e As EventArgs) Handles btn1.Click
         Dim fs As String
-        fs = "tbl_car.carnum1 like '___'"
+        fs = "tbl_car.carnum1 like '___' ORDER BY tbl_car.carnum1"
 
         shiboriDatabase(fs)
     End Sub
@@ -263,7 +269,7 @@
     '絞り込み1000番台
     Private Sub btn1000_Click(sender As Object, e As EventArgs) Handles btn1000.Click
         Dim fs As String
-        fs = "tbl_car.carnum1 like '1___'"
+        fs = "tbl_car.carnum1 like '1___' ORDER BY tbl_car.carnum1"
 
         shiboriDatabase(fs)
     End Sub
@@ -271,7 +277,7 @@
     '絞り込み2000番台
     Private Sub btn2000_Click(sender As Object, e As EventArgs) Handles btn2000.Click
         Dim fs As String
-        fs = "tbl_car.carnum1 like '2___'"
+        fs = "tbl_car.carnum1 like '2___' ORDER BY tbl_car.carnum1"
 
         shiboriDatabase(fs)
     End Sub
@@ -279,7 +285,7 @@
     '絞り込み3000番台
     Private Sub btn3000_Click(sender As Object, e As EventArgs) Handles btn3000.Click
         Dim fs As String
-        fs = "tbl_car.carnum1 like '3___'"
+        fs = "tbl_car.carnum1 like '3___' ORDER BY tbl_car.carnum1"
 
         shiboriDatabase(fs)
     End Sub
@@ -287,7 +293,7 @@
     '絞り込み4000番台
     Private Sub btn4000_Click(sender As Object, e As EventArgs) Handles btn4000.Click
         Dim fs As String
-        fs = "tbl_car.carnum1 like '4___'"
+        fs = "tbl_car.carnum1 like '4___' ORDER BY tbl_car.carnum1"
 
         shiboriDatabase(fs)
     End Sub
@@ -295,7 +301,7 @@
     '絞り込み5000番台
     Private Sub btn5000_Click(sender As Object, e As EventArgs) Handles btn5000.Click
         Dim fs As String
-        fs = "tbl_car.carnum1 like '5___'"
+        fs = "tbl_car.carnum1 like '5___' ORDER BY tbl_car.carnum1"
 
         shiboriDatabase(fs)
     End Sub
@@ -303,7 +309,7 @@
     '絞り込み6000番台
     Private Sub btn6000_Click(sender As Object, e As EventArgs) Handles btn6000.Click
         Dim fs As String
-        fs = "tbl_car.carnum1 like '6___'"
+        fs = "tbl_car.carnum1 like '6___' ORDER BY tbl_car.carnum1"
 
         shiboriDatabase(fs)
     End Sub
@@ -311,7 +317,7 @@
     '絞り込み7000番台
     Private Sub btn7000_Click(sender As Object, e As EventArgs) Handles btn7000.Click
         Dim fs As String
-        fs = "tbl_car.carnum1 like '7___'"
+        fs = "tbl_car.carnum1 like '7___' ORDER BY tbl_car.carnum1"
 
         shiboriDatabase(fs)
     End Sub
@@ -319,7 +325,7 @@
     '絞り込み8000番台
     Private Sub btn8000_Click(sender As Object, e As EventArgs) Handles btn8000.Click
         Dim fs As String
-        fs = "tbl_car.carnum1 like '8___'"
+        fs = "tbl_car.carnum1 like '8___' ORDER BY tbl_car.carnum1"
 
         shiboriDatabase(fs)
     End Sub
@@ -327,7 +333,7 @@
     '絞り込み9000番台
     Private Sub btn9000_Click(sender As Object, e As EventArgs) Handles btn9000.Click
         Dim fs As String
-        fs = "tbl_car.carnum1 like '9___'"
+        fs = "tbl_car.carnum1 like '9___' ORDER BY tbl_car.carnum1"
 
         shiboriDatabase(fs)
     End Sub
@@ -374,6 +380,13 @@
 
     '[新しい行を追加]ボタン
     Private Sub btnAddRecord_Click(sender As Object, e As EventArgs) Handles btnAddNewRow.Click
+        Dim f As New frmAddRecord() '[新しい行を追加]フォーム
+
+        '[新しい行を追加]フォームを表示する
+        f.ShowDialog(Me)
+
+        '新規登録の処理から戻ってきたら、表を更新する
+        LoadDatabase()
 
     End Sub
 
@@ -385,7 +398,7 @@
     '[2t平]ボタン
     Private Sub btn2tHira_Click(sender As Object, e As EventArgs) Handles btn2tHira.Click
         Dim fs As String
-        fs = "tbl_car.ton = '2t平'"
+        fs = "tbl_car.ton like '2t平%' ORDER BY tbl_car.carnum1"
 
         shiboriDatabase(fs)
     End Sub
@@ -394,7 +407,7 @@
     '[2tU]ボタン
     Private Sub btn2tU_Click(sender As Object, e As EventArgs) Handles btn2tU.Click
         Dim fs As String
-        fs = "tbl_car.ton = '2tU'"
+        fs = "tbl_car.ton = '2tU' ORDER BY tbl_car.carnum1"
 
         shiboriDatabase(fs)
     End Sub
@@ -402,7 +415,7 @@
     '[3tu]ボタン
     Private Sub btn3tU_Click(sender As Object, e As EventArgs) Handles btn3tU.Click
         Dim fs As String
-        fs = "tbl_car.ton = '3tU'"
+        fs = "tbl_car.ton = '3tU' ORDER BY tbl_car.carnum1"
 
         shiboriDatabase(fs)
     End Sub
@@ -410,7 +423,7 @@
     '[4tu]ボタン
     Private Sub btn4tU_Click(sender As Object, e As EventArgs) Handles btn4tU.Click
         Dim fs As String
-        fs = "tbl_car.ton = '4tU'"
+        fs = "tbl_car.ton = '4tU' ORDER BY tbl_car.carnum1"
 
         shiboriDatabase(fs)
     End Sub
@@ -418,7 +431,7 @@
     '[7tu]ボタン
     Private Sub btn7tU_Click(sender As Object, e As EventArgs) Handles btn7tU.Click
         Dim fs As String
-        fs = "tbl_car.ton = '7tU'"
+        fs = "tbl_car.ton = '7tU' ORDER BY tbl_car.carnum1"
 
         shiboriDatabase(fs)
     End Sub
@@ -426,7 +439,7 @@
     '[10tU]
     Private Sub btn10tU_Click(sender As Object, e As EventArgs) Handles btn10tU.Click
         Dim fs As String
-        fs = "tbl_car.ton = '10tU'"
+        fs = "tbl_car.ton = '10tU' ORDER BY tbl_car.carnum1"
 
         shiboriDatabase(fs)
     End Sub
@@ -434,7 +447,7 @@
     '[15tU]ボタン
     Private Sub btn15tU_Click(sender As Object, e As EventArgs) Handles btn15tU.Click
         Dim fs As String
-        fs = "tbl_car.ton = '15tU'"
+        fs = "tbl_car.ton = '15tU' ORDER BY tbl_car.carnum1"
 
         shiboriDatabase(fs)
     End Sub
@@ -442,7 +455,7 @@
     '[全車両]ボタン 
     Private Sub btnAllCar_Click(sender As Object, e As EventArgs) Handles btnAllCar.Click
         Dim fs As String
-        fs = "tbl_car.carnum1 like '%[0-9]%'"
+        fs = "tbl_car.carnum1 like '%[0-9]%' ORDER BY tbl_car.musen"
 
         shiboriDatabase(fs)
     End Sub

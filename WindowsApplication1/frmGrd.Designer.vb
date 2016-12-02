@@ -132,7 +132,7 @@ Partial Class frmGrd
         Me.DtIntegBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.DtIntegBindingNavigator.Name = "DtIntegBindingNavigator"
         Me.DtIntegBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.DtIntegBindingNavigator.Size = New System.Drawing.Size(1087, 31)
+        Me.DtIntegBindingNavigator.Size = New System.Drawing.Size(894, 25)
         Me.DtIntegBindingNavigator.TabIndex = 0
         Me.DtIntegBindingNavigator.Text = "BindingNavigator1"
         Me.DtIntegBindingNavigator.Visible = False
@@ -143,7 +143,7 @@ Partial Class frmGrd
         Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 28)
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorAddNewItem.Text = "新規追加"
         '
         'DtIntegBindingSource
@@ -159,7 +159,7 @@ Partial Class frmGrd
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(29, 22)
         Me.BindingNavigatorCountItem.Text = "/ {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "項目の総数"
         '
@@ -169,7 +169,7 @@ Partial Class frmGrd
         Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
         Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 28)
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorDeleteItem.Text = "削除"
         '
         'BindingNavigatorMoveFirstItem
@@ -178,7 +178,7 @@ Partial Class frmGrd
         Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
         Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(23, 28)
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorMoveFirstItem.Text = "最初に移動"
         '
         'BindingNavigatorMovePreviousItem
@@ -187,13 +187,13 @@ Partial Class frmGrd
         Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
         Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(23, 28)
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorMovePreviousItem.Text = "前に戻る"
         '
         'BindingNavigatorSeparator
         '
         Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 31)
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 25)
         '
         'BindingNavigatorPositionItem
         '
@@ -207,7 +207,7 @@ Partial Class frmGrd
         'BindingNavigatorSeparator1
         '
         Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 31)
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -215,7 +215,7 @@ Partial Class frmGrd
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 28)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorMoveNextItem.Text = "次に移動"
         '
         'BindingNavigatorMoveLastItem
@@ -224,13 +224,13 @@ Partial Class frmGrd
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 28)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorMoveLastItem.Text = "最後に移動"
         '
         'BindingNavigatorSeparator2
         '
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 31)
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
         '
         'DtIntegBindingNavigatorSaveItem
         '
@@ -238,7 +238,7 @@ Partial Class frmGrd
         Me.DtIntegBindingNavigatorSaveItem.Enabled = False
         Me.DtIntegBindingNavigatorSaveItem.Image = CType(resources.GetObject("DtIntegBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.DtIntegBindingNavigatorSaveItem.Name = "DtIntegBindingNavigatorSaveItem"
-        Me.DtIntegBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 28)
+        Me.DtIntegBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
         Me.DtIntegBindingNavigatorSaveItem.Text = "データの保存"
         '
         'grdMain
