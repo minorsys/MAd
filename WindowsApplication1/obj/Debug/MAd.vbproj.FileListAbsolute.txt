@@ -13,3 +13,16 @@ C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.frmModifie
 C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.frmAdmin.resources
 C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.frmMasterPhone.resources
 C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.frmAddRecord.resources
+<<<<<<< HEAD
+C:\Users\admin\Desktop\29\WindowsApplication1\bin\Debug\MAd.exe.config
+C:\Users\admin\Desktop\29\WindowsApplication1\obj\Debug\MAd.exe
+C:\Users\admin\Desktop\29\WindowsApplication1\obj\Debug\MAd.xml
+C:\Users\admin\Desktop\29\WindowsApplication1\obj\Debug\MAd.pdb
+C:\Users\admin\Desktop\29\WindowsApplication1\obj\Debug\MAd.vbprojResolveAssemblyReference.cache
+C:\Users\admin\Documents\GitHub\MAd\WindowsApplication1\obj\Debug\MAd.vbprojResolveAssemblyReference.cache
+C:\Users\admin\Documents\GitHub\MAd\WindowsApplication1\obj\Debug\MAd.exe
+C:\Users\admin\Documents\GitHub\MAd\WindowsApplication1\obj\Debug\MAd.xml
+C:\Users\admin\Documents\GitHub\MAd\WindowsApplication1\obj\Debug\MAd.pdb
+C:\Users\admin\Documents\GitHub\MAd\WindowsApplication1\bin\Debug\MAd.exe.config
+=======
+>>>>>>> refs/remotes/origin/DataSetIsBack
