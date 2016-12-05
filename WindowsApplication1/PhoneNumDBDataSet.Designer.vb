@@ -985,11 +985,11 @@ Partial Public Class PhoneNumDBDataSet
             Me.columncarnum1.AllowDBNull = false
             Me.columncarnum1.Unique = true
             Me.columncarnum1.MaxLength = 4
-            Me.columncarnum2.MaxLength = 4
+            Me.columncarnum2.MaxLength = 8
             Me.columncarnum3.MaxLength = 3
             Me.columncarnum4.MaxLength = 2
             Me.columnmusen.MaxLength = 4
-            Me.columnton.MaxLength = 4
+            Me.columnton.MaxLength = 8
             Me.columnbiko.MaxLength = 100
             Me.columnbranch_id.MaxLength = 3
         End Sub
@@ -2799,10 +2799,10 @@ Partial Public Class PhoneNumDBDataSet
             Me.columnbranch_id.MaxLength = 3
             Me.columncar_branch.MaxLength = 3
             Me.columncar_biko.MaxLength = 100
-            Me.columnton.MaxLength = 4
+            Me.columnton.MaxLength = 8
             Me.columncarnum4.MaxLength = 1
             Me.columncarnum3.MaxLength = 3
-            Me.columncarnum2.MaxLength = 4
+            Me.columncarnum2.MaxLength = 8
             Me.columncarnum1.MaxLength = 4
             Me.columnbranch_name.MaxLength = 20
             Me.columnid_branch.MaxLength = 3
@@ -4636,8 +4636,8 @@ Namespace PhoneNumDBDataSetTableAdapters
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbl_branch] ([id_branch], [branch_name]) VALUES (@id_branch, @"& _ 
-                "branch_name);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_branch, branch_name FROM tbl_branch WHERE (id_branch = "& _ 
-                "@id_branch)"
+                "branch_name);"&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_branch, branch_name FROM tbl_branch WHERE (id_branch = @"& _ 
+                "id_branch)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_branch", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_branch", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@branch_name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "branch_name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -4645,8 +4645,8 @@ Namespace PhoneNumDBDataSetTableAdapters
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[tbl_branch] SET [id_branch] = @id_branch, [branch_name] = @branch_n"& _ 
                 "ame WHERE (([id_branch] = @Original_id_branch) AND ((@IsNull_branch_name = 1 AND"& _ 
-                " [branch_name] IS NULL) OR ([branch_name] = @Original_branch_name)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id"& _ 
-                "_branch, branch_name FROM tbl_branch WHERE (id_branch = @id_branch)"
+                " [branch_name] IS NULL) OR ([branch_name] = @Original_branch_name)));"&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_"& _ 
+                "branch, branch_name FROM tbl_branch WHERE (id_branch = @id_branch)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_branch", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_branch", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@branch_name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "branch_name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -5003,8 +5003,8 @@ Namespace PhoneNumDBDataSetTableAdapters
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbl_car] ([carnum1], [carnum2], [carnum3], [carnum4], [musen],"& _ 
                 " [ton], [biko], [branch_id]) VALUES (@carnum1, @carnum2, @carnum3, @carnum4, @mu"& _ 
-                "sen, @ton, @biko, @branch_id);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT carnum1, carnum2, carnum3, carnum4, musen"& _ 
-                ", ton, biko, branch_id FROM tbl_car WHERE (carnum1 = @carnum1)"
+                "sen, @ton, @biko, @branch_id);"&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT carnum1, carnum2, carnum3, carnum4, musen,"& _ 
+                " ton, biko, branch_id FROM tbl_car WHERE (carnum1 = @carnum1)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@carnum1", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carnum1", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@carnum2", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carnum2", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -5025,9 +5025,9 @@ Namespace PhoneNumDBDataSetTableAdapters
                 " AND ((@IsNull_musen = 1 AND [musen] IS NULL) OR ([musen] = @Original_musen)) AN"& _ 
                 "D ((@IsNull_ton = 1 AND [ton] IS NULL) OR ([ton] = @Original_ton)) AND ((@IsNull"& _ 
                 "_biko = 1 AND [biko] IS NULL) OR ([biko] = @Original_biko)) AND ((@IsNull_branch"& _ 
-                "_id = 1 AND [branch_id] IS NULL) OR ([branch_id] = @Original_branch_id)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELE"& _ 
-                "CT carnum1, carnum2, carnum3, carnum4, musen, ton, biko, branch_id FROM tbl_car "& _ 
-                "WHERE (carnum1 = @carnum1)"
+                "_id = 1 AND [branch_id] IS NULL) OR ([branch_id] = @Original_branch_id)));"&Global.Microsoft.VisualBasic.ChrW(10)&"SELEC"& _ 
+                "T carnum1, carnum2, carnum3, carnum4, musen, ton, biko, branch_id FROM tbl_car W"& _ 
+                "HERE (carnum1 = @carnum1)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@carnum1", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carnum1", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@carnum2", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "carnum2", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -5073,7 +5073,7 @@ Namespace PhoneNumDBDataSetTableAdapters
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT carnum1, carnum2, carnum3, carnum4, musen, ton, biko, branch_id FROM dbo.t"& _ 
-                "bl_car"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE tbl_car.carnum1 = @Carcode"
+                "bl_car"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE tbl_car.carnum1 = @Carcode"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Carcode", Global.System.Data.SqlDbType.VarChar, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "carnum1", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -5566,8 +5566,8 @@ Namespace PhoneNumDBDataSetTableAdapters
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbl_fee] ([id_fee], [fee_phonenum], [fee_date], [fee]) VALUES "& _ 
-                "(@id_fee, @fee_phonenum, @fee_date, @fee);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_fee, fee_phonenum, fee_dat"& _ 
-                "e, fee FROM tbl_fee WHERE (id_fee = @id_fee)"
+                "(@id_fee, @fee_phonenum, @fee_date, @fee);"&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_fee, fee_phonenum, fee_date"& _ 
+                ", fee FROM tbl_fee WHERE (id_fee = @id_fee)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_fee", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_fee", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fee_phonenum", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fee_phonenum", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -5578,8 +5578,8 @@ Namespace PhoneNumDBDataSetTableAdapters
             Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[tbl_fee] SET [id_fee] = @id_fee, [fee_phonenum] = @fee_phonenum, [f"& _ 
                 "ee_date] = @fee_date, [fee] = @fee WHERE (([id_fee] = @Original_id_fee) AND ([fe"& _ 
                 "e_phonenum] = @Original_fee_phonenum) AND ([fee_date] = @Original_fee_date) AND "& _ 
-                "([fee] = @Original_fee));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_fee, fee_phonenum, fee_date, fee FROM tbl_f"& _ 
-                "ee WHERE (id_fee = @id_fee)"
+                "([fee] = @Original_fee));"&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_fee, fee_phonenum, fee_date, fee FROM tbl_fe"& _ 
+                "e WHERE (id_fee = @id_fee)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_fee", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_fee", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@fee_phonenum", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "fee_phonenum", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -5928,8 +5928,8 @@ Namespace PhoneNumDBDataSetTableAdapters
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbl_Integrate] ([integ_id], [integ_phonenum], [integ_staff], ["& _ 
                 "integ_carnum]) VALUES (@integ_id, @integ_phonenum, @integ_staff, @integ_carnum);"& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT integ_id, integ_phonenum, integ_staff, integ_carnum FROM tbl_Integrate "& _ 
-                "WHERE (integ_id = @integ_id)"
+                ""&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT integ_id, integ_phonenum, integ_staff, integ_carnum FROM tbl_Integrate W"& _ 
+                "HERE (integ_id = @integ_id)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@integ_id", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "integ_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@integ_phonenum", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "integ_phonenum", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -5943,8 +5943,8 @@ Namespace PhoneNumDBDataSetTableAdapters
                 "onenum] IS NULL) OR ([integ_phonenum] = @Original_integ_phonenum)) AND ((@IsNull"& _ 
                 "_integ_staff = 1 AND [integ_staff] IS NULL) OR ([integ_staff] = @Original_integ_"& _ 
                 "staff)) AND ((@IsNull_integ_carnum = 1 AND [integ_carnum] IS NULL) OR ([integ_ca"& _ 
-                "rnum] = @Original_integ_carnum)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT integ_id, integ_phonenum, integ_staff"& _ 
-                ", integ_carnum FROM tbl_Integrate WHERE (integ_id = @integ_id)"
+                "rnum] = @Original_integ_carnum)));"&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT integ_id, integ_phonenum, integ_staff,"& _ 
+                " integ_carnum FROM tbl_Integrate WHERE (integ_id = @integ_id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@integ_id", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "integ_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@integ_phonenum", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "integ_phonenum", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -5978,7 +5978,7 @@ Namespace PhoneNumDBDataSetTableAdapters
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT integ_id, integ_phonenum, integ_staff, integ_carnum FROM dbo.tbl_Integrate"& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE integ_id = @code"
+                ""&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE integ_id = @code"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@code", Global.System.Data.SqlDbType.[Char], 6, Global.System.Data.ParameterDirection.Input, 0, 0, "integ_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -6363,8 +6363,8 @@ Namespace PhoneNumDBDataSetTableAdapters
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbl_PhoneNum] ([phonenum], [mail], [biko], [model]) VALUES (@p"& _ 
-                "honenum, @mail, @biko, @model);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT phonenum, mail, biko, model FROM tbl_Pho"& _ 
-                "neNum WHERE (phonenum = @phonenum)"
+                "honenum, @mail, @biko, @model);"&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT phonenum, mail, biko, model FROM tbl_Phon"& _ 
+                "eNum WHERE (phonenum = @phonenum)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@phonenum", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "phonenum", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mail", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mail", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -6376,8 +6376,8 @@ Namespace PhoneNumDBDataSetTableAdapters
                 "@biko, [model] = @model WHERE (([phonenum] = @Original_phonenum) AND ((@IsNull_m"& _ 
                 "ail = 1 AND [mail] IS NULL) OR ([mail] = @Original_mail)) AND ((@IsNull_biko = 1"& _ 
                 " AND [biko] IS NULL) OR ([biko] = @Original_biko)) AND ((@IsNull_model = 1 AND ["& _ 
-                "model] IS NULL) OR ([model] = @Original_model)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT phonenum, mail, biko, "& _ 
-                "model FROM tbl_PhoneNum WHERE (phonenum = @phonenum)"
+                "model] IS NULL) OR ([model] = @Original_model)));"&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT phonenum, mail, biko, m"& _ 
+                "odel FROM tbl_PhoneNum WHERE (phonenum = @phonenum)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@phonenum", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "phonenum", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mail", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mail", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -6409,8 +6409,8 @@ Namespace PhoneNumDBDataSetTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT phonenum, mail, biko, model FROM dbo.tbl_PhoneNum"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"where tbl_phonenum.phon"& _ 
-                "enum = @pcode"
+            Me._commandCollection(1).CommandText = "SELECT phonenum, mail, biko, model FROM dbo.tbl_PhoneNum"&Global.Microsoft.VisualBasic.ChrW(10)&"where tbl_phonenum.phone"& _ 
+                "num = @pcode"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pcode", Global.System.Data.SqlDbType.VarChar, 13, Global.System.Data.ParameterDirection.Input, 0, 0, "phonenum", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -6796,8 +6796,8 @@ Namespace PhoneNumDBDataSetTableAdapters
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbl_staff] ([id_staff], [staff_name], [staff_kana], [branch_id"& _ 
-                "]) VALUES (@id_staff, @staff_name, @staff_kana, @branch_id);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_staff, s"& _ 
-                "taff_name, staff_kana, branch_id FROM tbl_staff WHERE (id_staff = @id_staff)"
+                "]) VALUES (@id_staff, @staff_name, @staff_kana, @branch_id);"&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_staff, st"& _ 
+                "aff_name, staff_kana, branch_id FROM tbl_staff WHERE (id_staff = @id_staff)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_staff", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_staff", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@staff_name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "staff_name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -6810,8 +6810,8 @@ Namespace PhoneNumDBDataSetTableAdapters
                 "nal_id_staff) AND ((@IsNull_staff_name = 1 AND [staff_name] IS NULL) OR ([staff_"& _ 
                 "name] = @Original_staff_name)) AND ((@IsNull_staff_kana = 1 AND [staff_kana] IS "& _ 
                 "NULL) OR ([staff_kana] = @Original_staff_kana)) AND ((@IsNull_branch_id = 1 AND "& _ 
-                "[branch_id] IS NULL) OR ([branch_id] = @Original_branch_id)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_staff,"& _ 
-                " staff_name, staff_kana, branch_id FROM tbl_staff WHERE (id_staff = @id_staff)"
+                "[branch_id] IS NULL) OR ([branch_id] = @Original_branch_id)));"&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_staff, "& _ 
+                "staff_name, staff_kana, branch_id FROM tbl_staff WHERE (id_staff = @id_staff)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_staff", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_staff", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@staff_name", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "staff_name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -6843,8 +6843,8 @@ Namespace PhoneNumDBDataSetTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT id_staff, staff_name, staff_kana, branch_id FROM dbo.tbl_staff"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE tbl_"& _ 
-                "staff.id_staff = @Scode"
+            Me._commandCollection(1).CommandText = "SELECT id_staff, staff_name, staff_kana, branch_id FROM dbo.tbl_staff"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE tbl_s"& _ 
+                "taff.id_staff = @Scode"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Scode", Global.System.Data.SqlDbType.[Char], 5, Global.System.Data.ParameterDirection.Input, 0, 0, "id_staff", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -7248,46 +7248,46 @@ Namespace PhoneNumDBDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT                      tbl_Integrate.integ_id, tbl_Integrate.integ_phonenum,"& _ 
-                " tbl_Integrate.integ_staff, tbl_Integrate.integ_carnum, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      "& _ 
-                "                tbl_PhoneNum.phonenum, tbl_PhoneNum.mail, tbl_PhoneNum.biko, tbl"& _ 
-                "_PhoneNum.model, tbl_staff.id_staff, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl"& _ 
-                "_staff.staff_name, tbl_staff.staff_kana, tbl_staff.branch_id, tbl_car.branch_id "& _ 
-                "AS car_branch, tbl_car.biko AS car_biko, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                     "& _ 
-                " tbl_car.ton, tbl_car.musen, tbl_car.carnum4, tbl_car.carnum3, tbl_car.carnum2, "& _ 
-                "tbl_car.carnum1, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_branch_1.branch_nam"& _ 
-                "e, tbl_branch_1.id_branch, tbl_branch.id_branch AS staff_branch_id, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"          "& _ 
-                "                            tbl_branch.branch_name AS staff_branch_name"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM   "& _ 
-                "                      tbl_PhoneNum RIGHT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                           "& _ 
-                "           tbl_car INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_branch "& _ 
-                "AS tbl_branch_1 ON tbl_car.branch_id = tbl_branch_1.id_branch RIGHT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
-                "                                      tbl_Integrate ON tbl_car.carnum1 = tbl_Int"& _ 
-                "egrate.integ_carnum LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_b"& _ 
-                "ranch INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_staff ON tbl_branch."& _ 
-                "id_branch = tbl_staff.branch_id ON tbl_Integrate.integ_staff = tbl_staff.id_staf"& _ 
-                "f ON "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_PhoneNum.phonenum = tbl_Integra"& _ 
-                "te.integ_phonenum"
+                " tbl_Integrate.integ_staff, tbl_Integrate.integ_carnum, "&Global.Microsoft.VisualBasic.ChrW(10)&"                       "& _ 
+                "               tbl_PhoneNum.phonenum, tbl_PhoneNum.mail, tbl_PhoneNum.biko, tbl_"& _ 
+                "PhoneNum.model, tbl_staff.id_staff, "&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_s"& _ 
+                "taff.staff_name, tbl_staff.staff_kana, tbl_staff.branch_id, tbl_car.branch_id AS"& _ 
+                " car_branch, tbl_car.biko AS car_biko, "&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tb"& _ 
+                "l_car.ton, tbl_car.musen, tbl_car.carnum4, tbl_car.carnum3, tbl_car.carnum2, tbl"& _ 
+                "_car.carnum1, "&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_branch_1.branch_name, t"& _ 
+                "bl_branch_1.id_branch, tbl_branch.id_branch AS staff_branch_id, "&Global.Microsoft.VisualBasic.ChrW(10)&"               "& _ 
+                "                       tbl_branch.branch_name AS staff_branch_name"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         "& _ 
+                "                tbl_PhoneNum RIGHT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                                  "& _ 
+                "    tbl_car INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_branch AS tbl_b"& _ 
+                "ranch_1 ON tbl_car.branch_id = tbl_branch_1.id_branch RIGHT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"         "& _ 
+                "                             tbl_Integrate ON tbl_car.carnum1 = tbl_Integrate.in"& _ 
+                "teg_carnum LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_branch INNE"& _ 
+                "R JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_staff ON tbl_branch.id_branch ="& _ 
+                " tbl_staff.branch_id ON tbl_Integrate.integ_staff = tbl_staff.id_staff ON "&Global.Microsoft.VisualBasic.ChrW(10)&"     "& _ 
+                "                                 tbl_PhoneNum.phonenum = tbl_Integrate.integ_pho"& _ 
+                "nenum"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT                      tbl_Integrate.integ_id, tbl_Integrate.integ_phonenum,"& _ 
-                " tbl_Integrate.integ_staff, tbl_Integrate.integ_carnum, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      "& _ 
-                "                tbl_PhoneNum.phonenum, tbl_PhoneNum.mail, tbl_PhoneNum.biko, tbl"& _ 
-                "_PhoneNum.model, tbl_staff.id_staff, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl"& _ 
-                "_staff.staff_name, tbl_staff.staff_kana, tbl_staff.branch_id, tbl_car.branch_id "& _ 
-                "AS car_branch, tbl_car.biko AS car_biko, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                     "& _ 
-                " tbl_car.ton, tbl_car.musen, tbl_car.carnum4, tbl_car.carnum3, tbl_car.carnum2, "& _ 
-                "tbl_car.carnum1, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_branch_1.branch_nam"& _ 
-                "e, tbl_branch_1.id_branch, tbl_branch.id_branch AS staff_branch_id, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"          "& _ 
-                "                            tbl_branch.branch_name AS staff_branch_name"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM   "& _ 
-                "                      tbl_PhoneNum RIGHT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                           "& _ 
-                "           tbl_car INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_branch "& _ 
-                "AS tbl_branch_1 ON tbl_car.branch_id = tbl_branch_1.id_branch RIGHT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
-                "                                      tbl_Integrate ON tbl_car.carnum1 = tbl_Int"& _ 
-                "egrate.integ_carnum LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_b"& _ 
-                "ranch INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_staff ON tbl_branch."& _ 
-                "id_branch = tbl_staff.branch_id ON tbl_Integrate.integ_staff = tbl_staff.id_staf"& _ 
-                "f ON "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_PhoneNum.phonenum = tbl_Integra"& _ 
-                "te.integ_phonenum"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE tbl_staff.staff_kana like @filtername"
+                " tbl_Integrate.integ_staff, tbl_Integrate.integ_carnum, "&Global.Microsoft.VisualBasic.ChrW(10)&"                       "& _ 
+                "               tbl_PhoneNum.phonenum, tbl_PhoneNum.mail, tbl_PhoneNum.biko, tbl_"& _ 
+                "PhoneNum.model, tbl_staff.id_staff, "&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_s"& _ 
+                "taff.staff_name, tbl_staff.staff_kana, tbl_staff.branch_id, tbl_car.branch_id AS"& _ 
+                " car_branch, tbl_car.biko AS car_biko, "&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tb"& _ 
+                "l_car.ton, tbl_car.musen, tbl_car.carnum4, tbl_car.carnum3, tbl_car.carnum2, tbl"& _ 
+                "_car.carnum1, "&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_branch_1.branch_name, t"& _ 
+                "bl_branch_1.id_branch, tbl_branch.id_branch AS staff_branch_id, "&Global.Microsoft.VisualBasic.ChrW(10)&"               "& _ 
+                "                       tbl_branch.branch_name AS staff_branch_name"&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         "& _ 
+                "                tbl_PhoneNum RIGHT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                                  "& _ 
+                "    tbl_car INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_branch AS tbl_b"& _ 
+                "ranch_1 ON tbl_car.branch_id = tbl_branch_1.id_branch RIGHT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"         "& _ 
+                "                             tbl_Integrate ON tbl_car.carnum1 = tbl_Integrate.in"& _ 
+                "teg_carnum LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_branch INNE"& _ 
+                "R JOIN"&Global.Microsoft.VisualBasic.ChrW(10)&"                                      tbl_staff ON tbl_branch.id_branch ="& _ 
+                " tbl_staff.branch_id ON tbl_Integrate.integ_staff = tbl_staff.id_staff ON "&Global.Microsoft.VisualBasic.ChrW(10)&"     "& _ 
+                "                                 tbl_PhoneNum.phonenum = tbl_Integrate.integ_pho"& _ 
+                "nenum"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE tbl_staff.staff_kana like @filtername"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@filtername", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "staff_kana", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub

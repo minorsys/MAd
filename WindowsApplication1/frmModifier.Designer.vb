@@ -225,7 +225,7 @@ Partial Class frmModifier
         '
         'btnOK
         '
-        Me.btnOK.Location = New System.Drawing.Point(553, 342)
+        Me.btnOK.Location = New System.Drawing.Point(552, 312)
         Me.btnOK.Name = "btnOK"
         Me.btnOK.Size = New System.Drawing.Size(75, 23)
         Me.btnOK.TabIndex = 3
@@ -234,7 +234,7 @@ Partial Class frmModifier
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(634, 342)
+        Me.btnCancel.Location = New System.Drawing.Point(633, 312)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 4
@@ -243,6 +243,7 @@ Partial Class frmModifier
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.GroupBox1.Controls.Add(Me.btnClearPhone)
         Me.GroupBox1.Controls.Add(Me.cmbPhonenumChange)
         Me.GroupBox1.Controls.Add(PhonenumLabel)
@@ -253,7 +254,7 @@ Partial Class frmModifier
         Me.GroupBox1.Controls.Add(Me.txtBikoPhone)
         Me.GroupBox1.Controls.Add(ModelLabel)
         Me.GroupBox1.Controls.Add(Me.txtModel)
-        Me.GroupBox1.Location = New System.Drawing.Point(10, 38)
+        Me.GroupBox1.Location = New System.Drawing.Point(9, 8)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(230, 298)
         Me.GroupBox1.TabIndex = 5
@@ -335,6 +336,7 @@ Partial Class frmModifier
         '
         'GroupBox2
         '
+        Me.GroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.GroupBox2.Controls.Add(Me.btnClearStaff)
         Me.GroupBox2.Controls.Add(Me.cmbStaffBranch)
         Me.GroupBox2.Controls.Add(Me.lblStaffName)
@@ -345,7 +347,7 @@ Partial Class frmModifier
         Me.GroupBox2.Controls.Add(Staff_kanaLabel)
         Me.GroupBox2.Controls.Add(Me.txtStaffKana)
         Me.GroupBox2.Controls.Add(Branch_idLabel)
-        Me.GroupBox2.Location = New System.Drawing.Point(246, 38)
+        Me.GroupBox2.Location = New System.Drawing.Point(245, 8)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(230, 298)
         Me.GroupBox2.TabIndex = 6
@@ -426,6 +428,7 @@ Partial Class frmModifier
         '
         'GroupBox3
         '
+        Me.GroupBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.GroupBox3.Controls.Add(Me.cmbTon)
         Me.GroupBox3.Controls.Add(Me.btnClearCar)
         Me.GroupBox3.Controls.Add(Branch_idLabel2)
@@ -442,7 +445,7 @@ Partial Class frmModifier
         Me.GroupBox3.Controls.Add(Me.txtTon)
         Me.GroupBox3.Controls.Add(BikoLabel1)
         Me.GroupBox3.Controls.Add(Me.txtBikoCar)
-        Me.GroupBox3.Location = New System.Drawing.Point(482, 38)
+        Me.GroupBox3.Location = New System.Drawing.Point(481, 8)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(227, 298)
         Me.GroupBox3.TabIndex = 7
@@ -601,7 +604,7 @@ Partial Class frmModifier
         'lblIntegID
         '
         Me.lblIntegID.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_IntegrateBindingSource, "integ_id", True))
-        Me.lblIntegID.Location = New System.Drawing.Point(63, 342)
+        Me.lblIntegID.Location = New System.Drawing.Point(62, 312)
         Me.lblIntegID.Name = "lblIntegID"
         Me.lblIntegID.Size = New System.Drawing.Size(40, 12)
         Me.lblIntegID.TabIndex = 16
@@ -614,7 +617,7 @@ Partial Class frmModifier
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 342)
+        Me.Label1.Location = New System.Drawing.Point(11, 312)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(54, 12)
         Me.Label1.TabIndex = 17
@@ -623,7 +626,7 @@ Partial Class frmModifier
         'lblStaffBranch
         '
         Me.lblStaffBranch.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_staffBindingSource, "branch_id", True))
-        Me.lblStaffBranch.Location = New System.Drawing.Point(97, 342)
+        Me.lblStaffBranch.Location = New System.Drawing.Point(96, 312)
         Me.lblStaffBranch.Name = "lblStaffBranch"
         Me.lblStaffBranch.Size = New System.Drawing.Size(28, 12)
         Me.lblStaffBranch.TabIndex = 21
@@ -632,7 +635,7 @@ Partial Class frmModifier
         'lblCarBranch
         '
         Me.lblCarBranch.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_carBindingSource, "branch_id", True))
-        Me.lblCarBranch.Location = New System.Drawing.Point(122, 342)
+        Me.lblCarBranch.Location = New System.Drawing.Point(121, 312)
         Me.lblCarBranch.Name = "lblCarBranch"
         Me.lblCarBranch.Size = New System.Drawing.Size(41, 12)
         Me.lblCarBranch.TabIndex = 20
@@ -642,7 +645,7 @@ Partial Class frmModifier
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(729, 372)
+        Me.ClientSize = New System.Drawing.Size(729, 350)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)

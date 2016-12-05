@@ -117,7 +117,7 @@
         da.Fill(Me.PhoneNumDBDataSet.dtInteg)
 
         '現在の行数をラベルに表示する
-        lblHowManyRecords.Text = "現在表示している行数：" & Me.grdMain.RowCount
+        lblHowManyRecords.Text = Me.grdMain.RowCount & "件のデータが選択されました"
 
     End Sub
 
@@ -175,7 +175,7 @@
         da.Fill(Me.PhoneNumDBDataSet.dtInteg)
 
         '現在の行数をラベルに表示する
-        lblHowManyRecords.Text = "現在表示している行数：" & Me.grdMain.RowCount
+        lblHowManyRecords.Text = Me.grdMain.RowCount & "件のデータが選択されました"
     End Sub
 
     '絞り込みア行
@@ -375,7 +375,9 @@
 
     '管理メニューボタン
     Private Sub btnAdmin_Click(sender As Object, e As EventArgs) Handles btnAdmin.Click
-        frmAdmin.Show()
+        Dim frm As New frmAdmin
+        frm.ShowDialog(Me)
+
     End Sub
 
     '[新しい行を追加]ボタン
@@ -392,6 +394,79 @@
 
     '[選択した行を削除]ボタン
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        'データグリッドビューが空のときは終了する
+        If grdMain.Rows.Count = 0 Then Return
+
+        Dim row As Integer
+        Dim phonenum As String
+        Dim staffname As String
+        Dim carnum As String
+        Dim id As String
+
+        'データグリッドビューの行番号を取得する
+        row = grdMain.CurrentRow.Index
+        '行番号から電話番号、氏名、車番、integ_idを取得する
+        phonenum = grdMain.Item(1, row).Value.ToString
+        staffname = grdMain.Item(9, row).Value.ToString
+        carnum = grdMain.Item(15, row).Value.ToString
+        id = grdMain.Item(0, row).Value.ToString
+
+
+        'メッセージボックスに行情報を表示し、削除してよいか確認
+        If MsgBox("電話番号：" & phonenum & ",　氏名：" & staffname & ",　車番：" & carnum & vbCrLf & "この行を削除してもよろしいですか？(マスタは削除されません。)", MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2) <> MsgBoxResult.Yes Then
+            Return
+
+        End If
+
+        '処理の成功をチェックするフラグ
+        Dim bSuccess As Boolean = False
+
+        'コネクションを指定する
+        Using connection As New SqlClient.SqlConnection(My.Settings.PhoneNumDBConnectionString)
+
+            'コマンドを定義する
+            Dim command As SqlClient.SqlCommand = connection.CreateCommand()
+
+            'コネクションを開く
+            connection.Open()
+
+            'トランザクションの開始
+            command.Transaction = connection.BeginTransaction()
+
+            Try
+                'コマンドの定義と実行
+                '
+                command.CommandText = "DELETE FROM tbl_integrate WHERE integ_id = '" & id & "'"
+                command.ExecuteNonQuery()
+
+                'トランザクションのコミット
+                command.Transaction.Commit()
+
+                MsgBox("選択された行を削除しました。")
+
+                '処理が成功したため、フラグにセットする
+                bSuccess = True
+
+                '処理が失敗したとき
+            Catch ex As Exception
+                'トランザクションのロールバック
+                command.Transaction.Rollback()
+
+                MsgBox("エラーが発生したため、処理を中止します。" & vbCrLf & ex.Message)
+
+            End Try
+
+        End Using
+
+        '成功した時の後処理
+        If bSuccess Then
+
+            'frmGrdを更新する
+            LoadDatabase()
+
+
+        End If
+
 
     End Sub
 
