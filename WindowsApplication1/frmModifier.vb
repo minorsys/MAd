@@ -25,12 +25,6 @@
 
     End Sub
 
-    Private Sub Tbl_PhoneNumBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
-        Me.Validate()
-        Me.Tbl_PhoneNumBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.PhoneNumDBDataSet)
-
-    End Sub
 
     Private Sub frmModifier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: このコード行はデータを 'PhoneNumDBDataSet.tbl_branch' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
@@ -320,7 +314,7 @@
 
         'データの検査(車庫)
         With cmbCarBranch
-            If .SelectedIndex = 0 Then
+            If .SelectedIndex = -1 Then
                 MsgBox("車両の所属が選択されていません")
                 .Select()
                 Return False

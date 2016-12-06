@@ -348,7 +348,7 @@
         LoadDatabase()
     End Sub
 
-    '[選択行の表示]ボタン
+    '[選択行の編集]ボタン
     Private Sub btnModify_Click(sender As Object, e As EventArgs) Handles btnModify.Click
         'データグリッドビューが空のときは終了する
         If grdMain.Rows.Count = 0 Then Return
