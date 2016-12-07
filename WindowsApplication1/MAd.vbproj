@@ -110,6 +110,12 @@
     <Compile Include="frmMasterEditPhone.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmMasterEditStaff.Designer.vb">
+      <DependentUpon>frmMasterEditStaff.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMasterEditStaff.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMasterGrdCar.Designer.vb">
       <DependentUpon>frmMasterGrdCar.vb</DependentUpon>
     </Compile>
@@ -189,11 +195,17 @@
     <EmbeddedResource Include="frmMasterEditPhone.resx">
       <DependentUpon>frmMasterEditPhone.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMasterEditStaff.resx">
+      <DependentUpon>frmMasterEditStaff.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMasterGrdCar.resx">
       <DependentUpon>frmMasterGrdCar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMasterGrdPhone.resx">
       <DependentUpon>frmMasterGrdPhone.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMasterGrdStaff.resx">
+      <DependentUpon>frmMasterGrdStaff.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMasterPhone.resx">
       <DependentUpon>frmMasterPhone.vb</DependentUpon>

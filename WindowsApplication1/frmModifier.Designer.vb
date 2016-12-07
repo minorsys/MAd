@@ -228,7 +228,7 @@ Partial Class frmModifier
         Me.btnOK.Location = New System.Drawing.Point(552, 312)
         Me.btnOK.Name = "btnOK"
         Me.btnOK.Size = New System.Drawing.Size(75, 23)
-        Me.btnOK.TabIndex = 3
+        Me.btnOK.TabIndex = 20
         Me.btnOK.Text = "登録"
         Me.btnOK.UseVisualStyleBackColor = True
         '
@@ -237,7 +237,7 @@ Partial Class frmModifier
         Me.btnCancel.Location = New System.Drawing.Point(633, 312)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancel.TabIndex = 4
+        Me.btnCancel.TabIndex = 21
         Me.btnCancel.Text = "キャンセル"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
@@ -266,7 +266,7 @@ Partial Class frmModifier
         Me.btnClearPhone.Location = New System.Drawing.Point(171, 30)
         Me.btnClearPhone.Name = "btnClearPhone"
         Me.btnClearPhone.Size = New System.Drawing.Size(49, 20)
-        Me.btnClearPhone.TabIndex = 23
+        Me.btnClearPhone.TabIndex = 2
         Me.btnClearPhone.Text = "クリア"
         Me.btnClearPhone.UseVisualStyleBackColor = True
         '
@@ -274,13 +274,14 @@ Partial Class frmModifier
         '
         Me.cmbPhonenumChange.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbPhonenumChange.DropDownWidth = 120
+        Me.cmbPhonenumChange.Font = New System.Drawing.Font("MS UI Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.cmbPhonenumChange.FormattingEnabled = True
         Me.cmbPhonenumChange.Location = New System.Drawing.Point(148, 30)
-        Me.cmbPhonenumChange.MaxDropDownItems = 30
+        Me.cmbPhonenumChange.MaxDropDownItems = 50
         Me.cmbPhonenumChange.MaxLength = 50
         Me.cmbPhonenumChange.Name = "cmbPhonenumChange"
-        Me.cmbPhonenumChange.Size = New System.Drawing.Size(17, 20)
-        Me.cmbPhonenumChange.TabIndex = 17
+        Me.cmbPhonenumChange.Size = New System.Drawing.Size(17, 23)
+        Me.cmbPhonenumChange.TabIndex = 1
         '
         'txtMail
         '
@@ -289,7 +290,7 @@ Partial Class frmModifier
         Me.txtMail.Location = New System.Drawing.Point(55, 86)
         Me.txtMail.Name = "txtMail"
         Me.txtMail.Size = New System.Drawing.Size(161, 19)
-        Me.txtMail.TabIndex = 3
+        Me.txtMail.TabIndex = 4
         '
         'Tbl_PhoneNumBindingSource
         '
@@ -332,7 +333,7 @@ Partial Class frmModifier
         Me.txtModel.Location = New System.Drawing.Point(55, 62)
         Me.txtModel.Name = "txtModel"
         Me.txtModel.Size = New System.Drawing.Size(98, 19)
-        Me.txtModel.TabIndex = 7
+        Me.txtModel.TabIndex = 3
         '
         'GroupBox2
         '
@@ -359,7 +360,7 @@ Partial Class frmModifier
         Me.btnClearStaff.Location = New System.Drawing.Point(170, 30)
         Me.btnClearStaff.Name = "btnClearStaff"
         Me.btnClearStaff.Size = New System.Drawing.Size(49, 20)
-        Me.btnClearStaff.TabIndex = 22
+        Me.btnClearStaff.TabIndex = 7
         Me.btnClearStaff.Text = "クリア"
         Me.btnClearStaff.UseVisualStyleBackColor = True
         '
@@ -374,7 +375,7 @@ Partial Class frmModifier
         Me.cmbStaffBranch.Location = New System.Drawing.Point(80, 106)
         Me.cmbStaffBranch.Name = "cmbStaffBranch"
         Me.cmbStaffBranch.Size = New System.Drawing.Size(99, 20)
-        Me.cmbStaffBranch.TabIndex = 20
+        Me.cmbStaffBranch.TabIndex = 9
         Me.cmbStaffBranch.ValueMember = "id_branch"
         '
         'Tbl_staffBindingSource
@@ -399,14 +400,15 @@ Partial Class frmModifier
         'cmbStaffNameChange
         '
         Me.cmbStaffNameChange.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbStaffNameChange.DropDownWidth = 120
+        Me.cmbStaffNameChange.DropDownWidth = 180
+        Me.cmbStaffNameChange.Font = New System.Drawing.Font("MS UI Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.cmbStaffNameChange.FormattingEnabled = True
         Me.cmbStaffNameChange.Location = New System.Drawing.Point(147, 30)
-        Me.cmbStaffNameChange.MaxDropDownItems = 30
+        Me.cmbStaffNameChange.MaxDropDownItems = 50
         Me.cmbStaffNameChange.MaxLength = 50
         Me.cmbStaffNameChange.Name = "cmbStaffNameChange"
-        Me.cmbStaffNameChange.Size = New System.Drawing.Size(17, 20)
-        Me.cmbStaffNameChange.TabIndex = 18
+        Me.cmbStaffNameChange.Size = New System.Drawing.Size(17, 23)
+        Me.cmbStaffNameChange.TabIndex = 6
         '
         'lblIntegStaffID
         '
@@ -424,7 +426,7 @@ Partial Class frmModifier
         Me.txtStaffKana.Location = New System.Drawing.Point(80, 81)
         Me.txtStaffKana.Name = "txtStaffKana"
         Me.txtStaffKana.Size = New System.Drawing.Size(99, 19)
-        Me.txtStaffKana.TabIndex = 5
+        Me.txtStaffKana.TabIndex = 8
         '
         'GroupBox3
         '
@@ -462,14 +464,14 @@ Partial Class frmModifier
         Me.cmbTon.MaxLength = 50
         Me.cmbTon.Name = "cmbTon"
         Me.cmbTon.Size = New System.Drawing.Size(17, 20)
-        Me.cmbTon.TabIndex = 24
+        Me.cmbTon.TabIndex = 17
         '
         'btnClearCar
         '
         Me.btnClearCar.Location = New System.Drawing.Point(161, 30)
         Me.btnClearCar.Name = "btnClearCar"
         Me.btnClearCar.Size = New System.Drawing.Size(49, 20)
-        Me.btnClearCar.TabIndex = 23
+        Me.btnClearCar.TabIndex = 11
         Me.btnClearCar.Text = "クリア"
         Me.btnClearCar.UseVisualStyleBackColor = True
         '
@@ -501,13 +503,14 @@ Partial Class frmModifier
         '
         Me.cmbCarnumChange.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbCarnumChange.DropDownWidth = 120
+        Me.cmbCarnumChange.Font = New System.Drawing.Font("MS UI Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.cmbCarnumChange.FormattingEnabled = True
         Me.cmbCarnumChange.Location = New System.Drawing.Point(140, 30)
-        Me.cmbCarnumChange.MaxDropDownItems = 30
+        Me.cmbCarnumChange.MaxDropDownItems = 50
         Me.cmbCarnumChange.MaxLength = 50
         Me.cmbCarnumChange.Name = "cmbCarnumChange"
-        Me.cmbCarnumChange.Size = New System.Drawing.Size(17, 20)
-        Me.cmbCarnumChange.TabIndex = 18
+        Me.cmbCarnumChange.Size = New System.Drawing.Size(17, 23)
+        Me.cmbCarnumChange.TabIndex = 10
         '
         'lblIntegCarnum
         '
@@ -525,7 +528,7 @@ Partial Class frmModifier
         Me.txtCarnum2.Location = New System.Drawing.Point(71, 59)
         Me.txtCarnum2.Name = "txtCarnum2"
         Me.txtCarnum2.Size = New System.Drawing.Size(53, 19)
-        Me.txtCarnum2.TabIndex = 3
+        Me.txtCarnum2.TabIndex = 12
         '
         'txtCarnum3
         '
@@ -534,7 +537,7 @@ Partial Class frmModifier
         Me.txtCarnum3.Location = New System.Drawing.Point(130, 59)
         Me.txtCarnum3.Name = "txtCarnum3"
         Me.txtCarnum3.Size = New System.Drawing.Size(39, 19)
-        Me.txtCarnum3.TabIndex = 5
+        Me.txtCarnum3.TabIndex = 13
         '
         'txtCarnum4
         '
@@ -543,7 +546,7 @@ Partial Class frmModifier
         Me.txtCarnum4.Location = New System.Drawing.Point(175, 59)
         Me.txtCarnum4.Name = "txtCarnum4"
         Me.txtCarnum4.Size = New System.Drawing.Size(35, 19)
-        Me.txtCarnum4.TabIndex = 7
+        Me.txtCarnum4.TabIndex = 14
         '
         'txtMusen
         '
@@ -552,7 +555,7 @@ Partial Class frmModifier
         Me.txtMusen.Location = New System.Drawing.Point(71, 85)
         Me.txtMusen.Name = "txtMusen"
         Me.txtMusen.Size = New System.Drawing.Size(100, 19)
-        Me.txtMusen.TabIndex = 9
+        Me.txtMusen.TabIndex = 15
         '
         'txtTon
         '
@@ -562,7 +565,7 @@ Partial Class frmModifier
         Me.txtTon.Name = "txtTon"
         Me.txtTon.ReadOnly = True
         Me.txtTon.Size = New System.Drawing.Size(100, 19)
-        Me.txtTon.TabIndex = 11
+        Me.txtTon.TabIndex = 16
         '
         'txtBikoCar
         '
@@ -572,7 +575,7 @@ Partial Class frmModifier
         Me.txtBikoCar.Multiline = True
         Me.txtBikoCar.Name = "txtBikoCar"
         Me.txtBikoCar.Size = New System.Drawing.Size(139, 95)
-        Me.txtBikoCar.TabIndex = 13
+        Me.txtBikoCar.TabIndex = 18
         '
         'Tbl_PhoneNumTableAdapter
         '

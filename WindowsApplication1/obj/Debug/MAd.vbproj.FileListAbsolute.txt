@@ -36,3 +36,5 @@ C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.frmMasterG
 C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.frmMasterEditPhone.resources
 C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.frmMasterGrdCar.resources
 C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.frmMasterEditCar.resources
+C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.frmMasterGrdStaff.resources
+C:\Users\admin\Source\Repos\MAd\MAd\WindowsApplication1\obj\Debug\MAd.frmMasterEditStaff.resources
