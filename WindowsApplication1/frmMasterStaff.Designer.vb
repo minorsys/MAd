@@ -187,6 +187,7 @@ Partial Class frmMasterStaff
         Me.Controls.Add(Me.txtStaffKana)
         Me.Controls.Add(Me.Branch_idLabel)
         Me.Controls.Add(Me.cmbBranch)
+        Me.KeyPreview = True
         Me.Name = "frmMasterStaff"
         Me.Text = "社員マスタ新規"
         CType(Me.PhoneNumDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()

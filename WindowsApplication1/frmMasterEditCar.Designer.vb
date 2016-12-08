@@ -220,7 +220,7 @@ Partial Class frmMasterEditCar
         Me.cmbTon.Location = New System.Drawing.Point(165, 139)
         Me.cmbTon.Name = "cmbTon"
         Me.cmbTon.Size = New System.Drawing.Size(20, 20)
-        Me.cmbTon.TabIndex = 50
+        Me.cmbTon.TabIndex = 7
         '
         'Label3
         '
@@ -405,7 +405,7 @@ Partial Class frmMasterEditCar
         Me.cmbBranch.Location = New System.Drawing.Point(84, 165)
         Me.cmbBranch.Name = "cmbBranch"
         Me.cmbBranch.Size = New System.Drawing.Size(101, 20)
-        Me.cmbBranch.TabIndex = 7
+        Me.cmbBranch.TabIndex = 8
         Me.cmbBranch.ValueMember = "id_branch"
         '
         'TblbranchBindingSource
@@ -477,6 +477,7 @@ Partial Class frmMasterEditCar
         Me.Controls.Add(Me.Branch_idLabel)
         Me.Controls.Add(Me.cmbBranch)
         Me.Controls.Add(Me.Tbl_carBindingNavigator)
+        Me.KeyPreview = True
         Me.Name = "frmMasterEditCar"
         Me.Text = "車両マスタ編集"
         CType(Me.PhoneNumDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()

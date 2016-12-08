@@ -154,4 +154,13 @@
             Return True
         End If
     End Function
+
+    'キーボードショートカット
+    Private Sub frmMasterEditCar_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyCode
+            Case Keys.Escape
+                Me.Close()
+
+        End Select
+    End Sub
 End Class

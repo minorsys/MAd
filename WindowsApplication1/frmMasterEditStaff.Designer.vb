@@ -356,6 +356,7 @@ Partial Class frmMasterEditStaff
         Me.Controls.Add(Me.Branch_idLabel)
         Me.Controls.Add(Me.cmbBranch)
         Me.Controls.Add(Me.Tbl_staffBindingNavigator)
+        Me.KeyPreview = True
         Me.Name = "frmMasterEditStaff"
         Me.Text = "社員マスタ編集"
         CType(Me.PhoneNumDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()

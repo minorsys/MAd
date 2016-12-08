@@ -287,6 +287,7 @@ Partial Class frmMasterGrdStaff
         Me.Controls.Add(Me.btnNew)
         Me.Controls.Add(Me.grdStaff)
         Me.Controls.Add(Me.Tbl_staffBindingNavigator)
+        Me.KeyPreview = True
         Me.Name = "frmMasterGrdStaff"
         Me.Text = "社員マスタ"
         CType(Me.PhoneNumDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()

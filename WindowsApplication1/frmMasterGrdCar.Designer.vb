@@ -324,6 +324,7 @@ Partial Class frmMasterGrdCar
         Me.Controls.Add(Me.btnNew)
         Me.Controls.Add(Me.grdCar)
         Me.Controls.Add(Me.Tbl_carBindingNavigator)
+        Me.KeyPreview = True
         Me.Name = "frmMasterGrdCar"
         Me.Text = "車両マスタ"
         CType(Me.PhoneNumDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()

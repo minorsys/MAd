@@ -437,6 +437,7 @@ Partial Class frmMasterCar
         Me.Controls.Add(Me.txtBiko)
         Me.Controls.Add(Me.Branch_idLabel)
         Me.Controls.Add(Me.cmbBranch)
+        Me.KeyPreview = True
         Me.Name = "frmMasterCar"
         Me.Text = "車両マスタ新規"
         CType(Me.Tbl_carBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

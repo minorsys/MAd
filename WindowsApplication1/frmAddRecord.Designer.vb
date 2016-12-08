@@ -81,6 +81,7 @@ Partial Class frmAddRecord
         Me.Tbl_carTableAdapter = New MAd.PhoneNumDBDataSetTableAdapters.tbl_carTableAdapter()
         Me.Tbl_IntegrateTableAdapter = New MAd.PhoneNumDBDataSetTableAdapters.tbl_IntegrateTableAdapter()
         Me.Tbl_branchTableAdapter = New MAd.PhoneNumDBDataSetTableAdapters.tbl_branchTableAdapter()
+        Me.Label2 = New System.Windows.Forms.Label()
         Branch_idLabel2 = New System.Windows.Forms.Label()
         Carnum1Label = New System.Windows.Forms.Label()
         MusenLabel = New System.Windows.Forms.Label()
@@ -242,7 +243,7 @@ Partial Class frmAddRecord
         Me.GroupBox3.Controls.Add(Me.txtTon)
         Me.GroupBox3.Controls.Add(BikoLabel1)
         Me.GroupBox3.Controls.Add(Me.txtBikoCar)
-        Me.GroupBox3.Location = New System.Drawing.Point(505, 12)
+        Me.GroupBox3.Location = New System.Drawing.Point(502, 43)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(235, 273)
         Me.GroupBox3.TabIndex = 26
@@ -392,7 +393,7 @@ Partial Class frmAddRecord
         Me.GroupBox2.Controls.Add(Staff_kanaLabel)
         Me.GroupBox2.Controls.Add(Me.txtStaffKana)
         Me.GroupBox2.Controls.Add(Branch_idLabel)
-        Me.GroupBox2.Location = New System.Drawing.Point(260, 12)
+        Me.GroupBox2.Location = New System.Drawing.Point(257, 43)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(239, 273)
         Me.GroupBox2.TabIndex = 25
@@ -482,7 +483,7 @@ Partial Class frmAddRecord
         Me.GroupBox1.Controls.Add(Me.txtBikoPhone)
         Me.GroupBox1.Controls.Add(ModelLabel)
         Me.GroupBox1.Controls.Add(Me.txtModel)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(9, 43)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(242, 273)
         Me.GroupBox1.TabIndex = 24
@@ -501,7 +502,7 @@ Partial Class frmAddRecord
         'cmbPhonenumChange
         '
         Me.cmbPhonenumChange.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbPhonenumChange.DropDownWidth = 120
+        Me.cmbPhonenumChange.DropDownWidth = 160
         Me.cmbPhonenumChange.Font = New System.Drawing.Font("MS UI Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.cmbPhonenumChange.FormattingEnabled = True
         Me.cmbPhonenumChange.Location = New System.Drawing.Point(148, 30)
@@ -554,7 +555,7 @@ Partial Class frmAddRecord
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(665, 294)
+        Me.btnCancel.Location = New System.Drawing.Point(662, 325)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 21
@@ -563,7 +564,7 @@ Partial Class frmAddRecord
         '
         'btnOK
         '
-        Me.btnOK.Location = New System.Drawing.Point(584, 294)
+        Me.btnOK.Location = New System.Drawing.Point(581, 325)
         Me.btnOK.Name = "btnOK"
         Me.btnOK.Size = New System.Drawing.Size(75, 23)
         Me.btnOK.TabIndex = 20
@@ -572,7 +573,7 @@ Partial Class frmAddRecord
         '
         'lblCarBranch
         '
-        Me.lblCarBranch.Location = New System.Drawing.Point(89, 315)
+        Me.lblCarBranch.Location = New System.Drawing.Point(86, 346)
         Me.lblCarBranch.Name = "lblCarBranch"
         Me.lblCarBranch.Size = New System.Drawing.Size(41, 12)
         Me.lblCarBranch.TabIndex = 29
@@ -581,7 +582,7 @@ Partial Class frmAddRecord
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(14, 299)
+        Me.Label1.Location = New System.Drawing.Point(11, 330)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(54, 12)
         Me.Label1.TabIndex = 28
@@ -589,7 +590,7 @@ Partial Class frmAddRecord
         '
         'lblStaffBranch
         '
-        Me.lblStaffBranch.Location = New System.Drawing.Point(64, 315)
+        Me.lblStaffBranch.Location = New System.Drawing.Point(61, 346)
         Me.lblStaffBranch.Name = "lblStaffBranch"
         Me.lblStaffBranch.Size = New System.Drawing.Size(28, 12)
         Me.lblStaffBranch.TabIndex = 30
@@ -597,7 +598,7 @@ Partial Class frmAddRecord
         '
         'lblIntegID
         '
-        Me.lblIntegID.Location = New System.Drawing.Point(65, 299)
+        Me.lblIntegID.Location = New System.Drawing.Point(62, 330)
         Me.lblIntegID.Name = "lblIntegID"
         Me.lblIntegID.Size = New System.Drawing.Size(74, 12)
         Me.lblIntegID.TabIndex = 27
@@ -634,11 +635,23 @@ Partial Class frmAddRecord
         '
         Me.Tbl_branchTableAdapter.ClearBeforeFill = True
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("MS UI Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Red
+        Me.Label2.Location = New System.Drawing.Point(12, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(58, 24)
+        Me.Label2.TabIndex = 31
+        Me.Label2.Text = "新規"
+        '
         'frmAddRecord
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(750, 336)
+        Me.ClientSize = New System.Drawing.Size(750, 364)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -648,6 +661,7 @@ Partial Class frmAddRecord
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblStaffBranch)
         Me.Controls.Add(Me.lblIntegID)
+        Me.KeyPreview = True
         Me.Name = "frmAddRecord"
         Me.Text = "新しい行の追加"
         Me.GroupBox3.ResumeLayout(False)
@@ -713,4 +727,5 @@ Partial Class frmAddRecord
     Friend WithEvents Tbl_IntegrateTableAdapter As PhoneNumDBDataSetTableAdapters.tbl_IntegrateTableAdapter
     Friend WithEvents Tbl_branchTableAdapter As PhoneNumDBDataSetTableAdapters.tbl_branchTableAdapter
     Friend WithEvents cmbTon As ComboBox
+    Friend WithEvents Label2 As Label
 End Class

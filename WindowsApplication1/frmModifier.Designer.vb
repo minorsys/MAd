@@ -81,6 +81,7 @@ Partial Class frmModifier
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblStaffBranch = New System.Windows.Forms.Label()
         Me.lblCarBranch = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         PhonenumLabel = New System.Windows.Forms.Label()
         MailLabel = New System.Windows.Forms.Label()
         BikoLabel = New System.Windows.Forms.Label()
@@ -225,7 +226,7 @@ Partial Class frmModifier
         '
         'btnOK
         '
-        Me.btnOK.Location = New System.Drawing.Point(552, 312)
+        Me.btnOK.Location = New System.Drawing.Point(553, 349)
         Me.btnOK.Name = "btnOK"
         Me.btnOK.Size = New System.Drawing.Size(75, 23)
         Me.btnOK.TabIndex = 20
@@ -234,11 +235,12 @@ Partial Class frmModifier
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(633, 312)
+        Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnCancel.Location = New System.Drawing.Point(634, 349)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 21
-        Me.btnCancel.Text = "キャンセル"
+        Me.btnCancel.Text = "キャンセル(&esc)"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
         'GroupBox1
@@ -254,7 +256,7 @@ Partial Class frmModifier
         Me.GroupBox1.Controls.Add(Me.txtBikoPhone)
         Me.GroupBox1.Controls.Add(ModelLabel)
         Me.GroupBox1.Controls.Add(Me.txtModel)
-        Me.GroupBox1.Location = New System.Drawing.Point(9, 8)
+        Me.GroupBox1.Location = New System.Drawing.Point(10, 45)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(230, 298)
         Me.GroupBox1.TabIndex = 5
@@ -273,7 +275,7 @@ Partial Class frmModifier
         'cmbPhonenumChange
         '
         Me.cmbPhonenumChange.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbPhonenumChange.DropDownWidth = 120
+        Me.cmbPhonenumChange.DropDownWidth = 150
         Me.cmbPhonenumChange.Font = New System.Drawing.Font("MS UI Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.cmbPhonenumChange.FormattingEnabled = True
         Me.cmbPhonenumChange.Location = New System.Drawing.Point(148, 30)
@@ -348,7 +350,7 @@ Partial Class frmModifier
         Me.GroupBox2.Controls.Add(Staff_kanaLabel)
         Me.GroupBox2.Controls.Add(Me.txtStaffKana)
         Me.GroupBox2.Controls.Add(Branch_idLabel)
-        Me.GroupBox2.Location = New System.Drawing.Point(245, 8)
+        Me.GroupBox2.Location = New System.Drawing.Point(246, 45)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(230, 298)
         Me.GroupBox2.TabIndex = 6
@@ -447,7 +449,7 @@ Partial Class frmModifier
         Me.GroupBox3.Controls.Add(Me.txtTon)
         Me.GroupBox3.Controls.Add(BikoLabel1)
         Me.GroupBox3.Controls.Add(Me.txtBikoCar)
-        Me.GroupBox3.Location = New System.Drawing.Point(481, 8)
+        Me.GroupBox3.Location = New System.Drawing.Point(482, 45)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(227, 298)
         Me.GroupBox3.TabIndex = 7
@@ -607,7 +609,7 @@ Partial Class frmModifier
         'lblIntegID
         '
         Me.lblIntegID.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_IntegrateBindingSource, "integ_id", True))
-        Me.lblIntegID.Location = New System.Drawing.Point(62, 312)
+        Me.lblIntegID.Location = New System.Drawing.Point(63, 349)
         Me.lblIntegID.Name = "lblIntegID"
         Me.lblIntegID.Size = New System.Drawing.Size(40, 12)
         Me.lblIntegID.TabIndex = 16
@@ -620,7 +622,7 @@ Partial Class frmModifier
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(11, 312)
+        Me.Label1.Location = New System.Drawing.Point(12, 349)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(54, 12)
         Me.Label1.TabIndex = 17
@@ -629,7 +631,7 @@ Partial Class frmModifier
         'lblStaffBranch
         '
         Me.lblStaffBranch.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_staffBindingSource, "branch_id", True))
-        Me.lblStaffBranch.Location = New System.Drawing.Point(96, 312)
+        Me.lblStaffBranch.Location = New System.Drawing.Point(97, 349)
         Me.lblStaffBranch.Name = "lblStaffBranch"
         Me.lblStaffBranch.Size = New System.Drawing.Size(28, 12)
         Me.lblStaffBranch.TabIndex = 21
@@ -638,17 +640,28 @@ Partial Class frmModifier
         'lblCarBranch
         '
         Me.lblCarBranch.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Tbl_carBindingSource, "branch_id", True))
-        Me.lblCarBranch.Location = New System.Drawing.Point(121, 312)
+        Me.lblCarBranch.Location = New System.Drawing.Point(122, 349)
         Me.lblCarBranch.Name = "lblCarBranch"
         Me.lblCarBranch.Size = New System.Drawing.Size(41, 12)
         Me.lblCarBranch.TabIndex = 20
         Me.lblCarBranch.Text = "lblCarBranch"
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("MS UI Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Label2.Location = New System.Drawing.Point(10, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(58, 24)
+        Me.Label2.TabIndex = 22
+        Me.Label2.Text = "編集"
+        '
         'frmModifier
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(729, 350)
+        Me.ClientSize = New System.Drawing.Size(729, 381)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -658,6 +671,7 @@ Partial Class frmModifier
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblStaffBranch)
         Me.Controls.Add(Me.lblIntegID)
+        Me.KeyPreview = True
         Me.Name = "frmModifier"
         Me.Text = "選択した行の編集"
         Me.GroupBox1.ResumeLayout(False)
@@ -722,4 +736,5 @@ Partial Class frmModifier
     Friend WithEvents btnClearPhone As Button
     Friend WithEvents btnClearCar As Button
     Friend WithEvents cmbTon As ComboBox
+    Friend WithEvents Label2 As Label
 End Class

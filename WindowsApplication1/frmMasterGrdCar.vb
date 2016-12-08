@@ -117,4 +117,13 @@
         Me.Tbl_carTableAdapter.Fill(Me.PhoneNumDBDataSet.tbl_car)
 
     End Sub
+
+    'キーボードショートカット
+    Private Sub frmMasterGrdCar_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyCode
+            Case Keys.Escape
+                Me.Close()
+
+        End Select
+    End Sub
 End Class

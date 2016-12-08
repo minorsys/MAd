@@ -319,6 +319,7 @@ Partial Class frmMasterGrdPhone
         Me.Controls.Add(Me.btnNew)
         Me.Controls.Add(Me.grdPhone)
         Me.Controls.Add(Me.Tbl_PhoneNumBindingNavigator)
+        Me.KeyPreview = True
         Me.Name = "frmMasterGrdPhone"
         Me.Text = "電話番号マスタ"
         CType(Me.PhoneNumDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()

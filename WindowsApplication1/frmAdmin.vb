@@ -61,7 +61,7 @@
                 linetext = dr("phonenum") & ","
                 linetext &= dr("mail") & ","
                 linetext &= dr("biko") & ","
-                linetext &= dr("model") & ","
+                linetext &= dr("model") & ""
 
                 'ファイルの書き込み
                 sr.WriteLine(linetext)
@@ -124,7 +124,7 @@
                 linetext = dr("id_staff") & ","
                 linetext &= dr("staff_name") & ","
                 linetext &= dr("staff_kana") & ","
-                linetext &= dr("branch_id") & ","
+                linetext &= dr("branch_id") & ""
 
                 'ファイルの書き込み
                 sr.WriteLine(linetext)
@@ -191,7 +191,7 @@
                 linetext &= dr("musen") & ","
                 linetext &= dr("ton") & ","
                 linetext &= dr("biko") & ","
-                linetext &= dr("branch_id") & ","
+                linetext &= dr("branch_id") & ""
 
 
                 'ファイルの書き込み
@@ -215,4 +215,33 @@
 
         MsgBox("車両データを以下のフォルダにエクスポートしました" & vbCrLf & vbCrLf & exfolder)
     End Sub
+
+    'キーボードショートカット
+    Private Sub frmAdmin_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyCode
+            Case Keys.Escape
+                Me.Close()
+
+        End Select
+    End Sub
+
+    '[電話番号csvインポート]ボタン
+    'Private Sub btnImportPhone_Click(sender As Object, e As EventArgs) Handles btnImportPhone.Click
+    '    Dim ofd As New OpenFileDialog
+    '    'ofd.Filter = "csvファイル(*.csv)"
+    '    If ofd.ShowDialog() = DialogResult.OK Then
+
+    '        'コネクションを指定する
+    '        Using connection As New SqlClient.SqlConnection(My.Settings.PhoneNumDBConnectionString)
+    '            'コマンドを定義する
+    '            Dim command As New SqlClient.SqlCommand("BULK INSERT tbl_phonenum FROM '" & ofd.FileName & "," &
+    '                "WITH (FIELDTERMINATOR = ',' , ROWTERMINATOR = '\n')")
+
+    '        End Using
+    '    End If
+
+
+
+
+    'End Sub
 End Class

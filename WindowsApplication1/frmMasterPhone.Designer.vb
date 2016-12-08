@@ -312,6 +312,7 @@ Partial Class frmMasterPhone
         Me.Controls.Add(ModelLabel)
         Me.Controls.Add(Me.txtModel)
         Me.Controls.Add(Me.Tbl_PhoneNumBindingNavigator)
+        Me.KeyPreview = True
         Me.Name = "frmMasterPhone"
         Me.Text = "電話番号マスタ新規"
         CType(Me.PhoneNumDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()

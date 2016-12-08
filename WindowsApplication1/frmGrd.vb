@@ -1,5 +1,8 @@
 ﻿Public Class frmGrd
 
+    Private cmbBranchCarIsOn As Boolean
+    Private cmbBranchStaffIsOn As Boolean
+
     Private Sub frmGrd_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: このコード行はデータを 'PhoneNumDBDataSet.dtInteg' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
         'Me.DtIntegTableAdapter.FillIntegTable(Me.PhoneNumDBDataSet.dtInteg)
@@ -105,8 +108,6 @@
             sql &= " ORDER BY tbl_integrate.integ_staff "
         End If
 
-
-
         'データアダプタにSQLステートメントを設定する
         Dim da As New SqlClient.SqlDataAdapter(sql, My.Settings.PhoneNumDBConnectionString)
 
@@ -133,12 +134,16 @@
 
     '所属コンボボックス変更時、データベースを再読み込み
     Private Sub cmbBranchStaff_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbBranchStaff.SelectedIndexChanged
+
+
         LoadDatabase()
 
     End Sub
 
     '車庫コンボボックス変更時、データベースを再読み込み
     Private Sub cmbBranchCar_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbBranchCar.SelectedIndexChanged
+
+
         LoadDatabase()
 
     End Sub
@@ -146,6 +151,8 @@
 
     Private Sub shiboriDatabase(ByVal fs As String)
         Dim sql As String
+
+
 
         'SQLステートメントの定義
         sql = "SELECT tbl_Integrate.integ_id, tbl_Integrate.integ_phonenum, tbl_Integrate.integ_staff, tbl_Integrate.integ_carnum, " &
@@ -160,10 +167,32 @@
                                   "tbl_PhoneNum.phonenum = tbl_Integrate.integ_phonenum "
 
 
-        sql &= " WHERE " & fs
+        sql &= " WHERE "
 
+        '所属コンボボックスの条件指定と条件式の作成
+        If cmbBranchStaff.SelectedIndex > 0 Then
 
+            ' sql &= "AND "
 
+            sql &= "tbl_staff.branch_id = '" & Strings.Left(cmbBranchStaff.Text, cmbBranchStaff.Text.IndexOf(":")) & "'"
+
+        End If
+
+        '車庫コンボボックスの条件指定と条件式の作成
+        If cmbBranchCar.SelectedIndex > 0 Then
+            If cmbBranchStaff.SelectedIndex > 0 Then
+                sql &= "AND "
+            End If
+            sql &= "tbl_car.branch_id = '" & Strings.Left(cmbBranchCar.Text, cmbBranchCar.Text.IndexOf(":")) & "'"
+
+        End If
+
+        If cmbBranchCar.SelectedIndex > 0 OrElse cmbBranchStaff.SelectedIndex > 0 Then
+            sql &= "AND "
+
+        End If
+
+        sql &= fs
 
         'データアダプタにSQLステートメントを設定する
         Dim da As New SqlClient.SqlDataAdapter(sql, My.Settings.PhoneNumDBConnectionString)

@@ -212,115 +212,129 @@
     End Sub
 
     Private Function CheckEditData() As Boolean
-        'データの検査(機種名)
-        With txtModel
-            If Not CheckMaxLengthPhone("model", .Text) Then
-                MsgBox("機種名は半角20字以内で入力してください")
-                .Select()
-                Return False
-            End If
-        End With
 
-        With txtMail
-            'データの検査(メール)
-            If Not CheckMaxLengthPhone("mail", .Text) Then
-                MsgBox("メールアドレスは半角50字以内で入力してください")
-                .Select()
-                Return False
-            End If
-        End With
+        '電話番号情報の検査 電話番号が選択されてなければスキップ
+        If lblIntegPhonenum.Text <> "" Then
 
-        'データの検査(備考)
-        With txtBikoPhone
-            If Not CheckMaxLengthPhone("biko", .Text) Then
-                MsgBox("備考は全角50字以内で入力してください")
-                .Select()
-                Return False
-            End If
-        End With
 
-        'データの検査(氏名ｶﾅ)
-        With txtStaffKana
-            If Not CheckMaxLengthStaff("staff_kana", .Text) Then
-                MsgBox("氏名ｶﾅは半角20字以内で入力してください")
-                .Select()
-                Return False
-            End If
-        End With
+            'データの検査(機種名)
+            With txtModel
+                If Not CheckMaxLengthPhone("model", .Text) Then
+                    MsgBox("機種名は半角20字以内で入力してください")
+                    .Select()
+                    Return False
+                End If
+            End With
 
-        'データの検査(所属)
-        With cmbStaffBranch
-            If .SelectedIndex = 0 Then
-                MsgBox("社員の所属が選択されていません")
-                .Select()
-                Return False
-            End If
-        End With
+            With txtMail
+                'データの検査(メール)
+                If Not CheckMaxLengthPhone("mail", .Text) Then
+                    MsgBox("メールアドレスは半角50字以内で入力してください")
+                    .Select()
+                    Return False
+                End If
+            End With
 
-        'データの検査(車番2)
-        With txtCarnum2
-            If Not CheckMaxLengthCar("carnum2", .Text) Then
-                MsgBox("車番2は全角4字以内で入力してください")
-                .Select()
-                Return False
-            End If
-        End With
+            'データの検査(備考)
+            With txtBikoPhone
+                If Not CheckMaxLengthPhone("biko", .Text) Then
+                    MsgBox("備考は全角50字以内で入力してください")
+                    .Select()
+                    Return False
+                End If
+            End With
 
-        'データの検査(車番3)
-        With txtCarnum3
-            If Not CheckMaxLengthCar("carnum3", .Text) Then
-                MsgBox("車番3は半角3字以内で入力してください")
-                .Select()
-                Return False
-            End If
-        End With
+        End If
 
-        'データの検査(車番4)
-        With txtCarnum4
-            If Not CheckMaxLengthCar("carnum4", .Text) Then
-                MsgBox("車番4は全角1文字で入力してください")
-                .Select()
-                Return False
-            End If
-        End With
+        '社員情報の検査　社員が選択されていなければスキップ
+        If lblIntegStaffID.Text <> "" Then
+            'データの検査(氏名ｶﾅ)
+            With txtStaffKana
+                If Not CheckMaxLengthStaff("staff_kana", .Text) Then
+                    MsgBox("氏名ｶﾅは半角20字以内で入力してください")
+                    .Select()
+                    Return False
+                End If
+            End With
 
-        'データの検査(無線)
-        With txtMusen
-            If Not CheckMaxLengthCar("musen", .Text) Then
+            'データの検査(所属)
+            With cmbStaffBranch
+                If .SelectedIndex = -1 Then
+                    MsgBox("社員の所属が選択されていません")
+                    .Select()
+                    Return False
+                End If
+            End With
 
-                MsgBox("無線番号は半角4字以内で入力してください")
-                .Select()
-                Return False
-            End If
-        End With
+        End If
 
-        'データの検査(車格)
-        With txtTon
-            If Not CheckMaxLengthCar("ton", .Text) Then
-                MsgBox("車格は半角4字以内で入力してください")
-                .Select()
-                Return False
-            End If
-        End With
+        '車両情報の検査　車両が選択されていなければスキップ
+        If lblIntegCarnum.Text <> "" Then
+            'データの検査(車番2)
+            With txtCarnum2
+                If Not CheckMaxLengthCar("carnum2", .Text) Then
+                    MsgBox("車番2は全角4字以内で入力してください")
+                    .Select()
+                    Return False
+                End If
+            End With
 
-        'データの検査(備考)
-        With txtBikoCar
-            If Not CheckMaxLengthCar("biko", .Text) Then
-                MsgBox("備考は全角50字以内で入力してください")
-                .Select()
-                Return False
-            End If
-        End With
+            'データの検査(車番3)
+            With txtCarnum3
+                If Not CheckMaxLengthCar("carnum3", .Text) Then
+                    MsgBox("車番3は半角3字以内で入力してください")
+                    .Select()
+                    Return False
+                End If
+            End With
 
-        'データの検査(車庫)
-        With cmbCarBranch
-            If .SelectedIndex = -1 Then
-                MsgBox("車両の所属が選択されていません")
-                .Select()
-                Return False
+            'データの検査(車番4)
+            With txtCarnum4
+                If Not CheckMaxLengthCar("carnum4", .Text) Then
+                    MsgBox("車番4は全角1文字で入力してください")
+                    .Select()
+                    Return False
+                End If
+            End With
 
-            End If
-        End With
+            'データの検査(無線)
+            With txtMusen
+                If Not CheckMaxLengthCar("musen", .Text) Then
+
+                    MsgBox("無線番号は半角4字以内で入力してください")
+                    .Select()
+                    Return False
+                End If
+            End With
+
+            'データの検査(車格)
+            With txtTon
+                If Not CheckMaxLengthCar("ton", .Text) Then
+                    MsgBox("車格は半角4字以内で入力してください")
+                    .Select()
+                    Return False
+                End If
+            End With
+
+            'データの検査(備考)
+            With txtBikoCar
+                If Not CheckMaxLengthCar("biko", .Text) Then
+                    MsgBox("備考は全角50字以内で入力してください")
+                    .Select()
+                    Return False
+                End If
+            End With
+
+            'データの検査(車庫)
+            With cmbCarBranch
+                If .SelectedIndex = -1 Then
+                    MsgBox("車両の所属が選択されていません")
+                    .Select()
+                    Return False
+
+                End If
+            End With
+        End If
 
         '全ての検査を通過した
         Return True
@@ -375,5 +389,14 @@
     '車格コンボボックスの値が変更されたら、車格テキストボックスに代入
     Private Sub cmbTon_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbTon.SelectedIndexChanged
         txtTon.Text = cmbTon.SelectedItem
+    End Sub
+
+    'キーボードショートカット
+    Private Sub frmModifier_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyCode
+            Case Keys.Escape
+                Me.Close()
+
+        End Select
     End Sub
 End Class
